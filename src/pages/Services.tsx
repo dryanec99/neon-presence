@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
   Globe, Code, Smartphone, ShoppingCart, 
-  Search, FileText, Link2, MapPin,
-  Megaphone, BarChart3, Mail, Users,
+  Search, BarChart3, MapPin,
+  Megaphone, Users, Mail, Star,
   ArrowRight
 } from 'lucide-react';
 import { type LanguageCode } from '@/i18n';
@@ -25,9 +25,8 @@ const Services = () => {
       color: 'primary',
       services: [
         { key: 'webDesign', icon: Code },
-        { key: 'webDev', icon: Code },
-        { key: 'mobileApps', icon: Smartphone },
         { key: 'ecommerce', icon: ShoppingCart },
+        { key: 'mobileApps', icon: Smartphone },
       ],
     },
     {
@@ -35,10 +34,9 @@ const Services = () => {
       icon: Search,
       color: 'blue-500',
       services: [
-        { key: 'seoTechnical', icon: Search },
-        { key: 'contentStrategy', icon: FileText },
-        { key: 'linkBuilding', icon: Link2, custom: true },
-        { key: 'localSeo', icon: MapPin, custom: true },
+        { key: 'googleAds', icon: BarChart3 },
+        { key: 'seoOptimization', icon: Search },
+        { key: 'googleMyBusiness', icon: MapPin },
       ],
     },
     {
@@ -46,49 +44,12 @@ const Services = () => {
       icon: Megaphone,
       color: 'purple-500',
       services: [
-        { key: 'ppc', icon: BarChart3 },
-        { key: 'socialMedia', icon: Users },
-        { key: 'emailMarketing', icon: Mail, custom: true },
-        { key: 'analytics', icon: BarChart3, custom: true },
+        { key: 'socialNetworks', icon: Users },
+        { key: 'onlineReputation', icon: Star },
+        { key: 'emailMarketing', icon: Mail },
       ],
     },
   ];
-
-  // Custom translations for services not in the main JSON
-  const customServices: Record<string, { title: string; description: string }> = {
-    linkBuilding: {
-      title: currentLang === 'bg' ? 'Линк Билдинг' : currentLang === 'ru' ? 'Линкбилдинг' : 'Link Building',
-      description: currentLang === 'bg' 
-        ? 'Изграждане на качествени обратни връзки за авторитет' 
-        : currentLang === 'ru'
-        ? 'Построение качественных обратных ссылок для авторитета'
-        : 'Build quality backlinks for domain authority',
-    },
-    localSeo: {
-      title: currentLang === 'bg' ? 'Локално SEO' : currentLang === 'ru' ? 'Локальное SEO' : 'Local SEO',
-      description: currentLang === 'bg'
-        ? 'Оптимизация за локално търсене и Google Maps'
-        : currentLang === 'ru'
-        ? 'Оптимизация для локального поиска и Google Maps'
-        : 'Optimization for local search and Google Maps',
-    },
-    emailMarketing: {
-      title: currentLang === 'bg' ? 'Имейл Маркетинг' : currentLang === 'ru' ? 'Email Маркетинг' : 'Email Marketing',
-      description: currentLang === 'bg'
-        ? 'Автоматизирани имейл кампании за ангажираност'
-        : currentLang === 'ru'
-        ? 'Автоматизированные email кампании для вовлечения'
-        : 'Automated email campaigns for engagement',
-    },
-    analytics: {
-      title: currentLang === 'bg' ? 'Анализи' : currentLang === 'ru' ? 'Аналитика' : 'Analytics',
-      description: currentLang === 'bg'
-        ? 'Проследяване на данни и отчитане на резултати'
-        : currentLang === 'ru'
-        ? 'Отслеживание данных и отчётность'
-        : 'Data tracking and performance reporting',
-    },
-  };
 
   return (
     <>
@@ -145,37 +106,27 @@ const Services = () => {
               </div>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {group.services.map((service, index) => {
-                const isCustom = service.custom;
-                const title = isCustom 
-                  ? customServices[service.key]?.title 
-                  : t(`services.items.${service.key}.title`);
-                const description = isCustom 
-                  ? customServices[service.key]?.description 
-                  : t(`services.items.${service.key}.description`);
-
-                return (
-                  <motion.div
-                    key={service.key}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="bento-item group cursor-pointer"
-                  >
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                      <service.icon className="w-6 h-6 text-primary" />
-                    </div>
-                    <h3 className="text-lg font-semibold mb-2 text-foreground group-hover:text-primary transition-colors">
-                      {title}
-                    </h3>
-                    <p className="text-muted-foreground text-sm">
-                      {description}
-                    </p>
-                  </motion.div>
-                );
-              })}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {group.services.map((service, index) => (
+                <motion.div
+                  key={service.key}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="bento-item group cursor-pointer"
+                >
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                    <service.icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2 text-foreground group-hover:text-primary transition-colors">
+                    {t(`services.items.${service.key}.title`)}
+                  </h3>
+                  <p className="text-muted-foreground text-sm">
+                    {t(`services.items.${service.key}.description`)}
+                  </p>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>

@@ -21,9 +21,9 @@ const Footer = () => {
 
   const serviceLinks = [
     { key: 'webDesign', path: 'services' },
-    { key: 'webDev', path: 'services' },
-    { key: 'seoTechnical', path: 'services' },
-    { key: 'ppc', path: 'services' },
+    { key: 'ecommerce', path: 'services' },
+    { key: 'seoOptimization', path: 'services' },
+    { key: 'socialNetworks', path: 'services' },
   ];
 
   const socialLinks = [
@@ -126,8 +126,8 @@ const Footer = () => {
             © {new Date().getFullYear()} WebBuilder. {t('footer.rights')}
           </p>
           <div className="flex items-center gap-6 text-sm text-muted-foreground">
-            <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-primary transition-colors">{t('footer.privacy')}</a>
+            <a href="#" className="hover:text-primary transition-colors">{t('footer.terms')}</a>
           </div>
         </div>
       </div>

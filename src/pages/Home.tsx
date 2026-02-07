@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Globe, Search, Megaphone, Code, Smartphone, ShoppingCart, BarChart3, Users } from 'lucide-react';
+import { ArrowRight, Globe, Search, Megaphone, Code, Smartphone, ShoppingCart } from 'lucide-react';
 import { type LanguageCode } from '@/i18n';
 import SEOHead from '@/components/SEOHead';
 
@@ -35,21 +35,20 @@ const Home = () => {
     { key: 'webDesign', icon: Code },
     { key: 'mobileApps', icon: Smartphone },
     { key: 'ecommerce', icon: ShoppingCart },
-    { key: 'seoTechnical', icon: BarChart3 },
   ];
 
   const stats = [
-    { value: '150+', label: 'Projects Delivered' },
-    { value: '98%', label: 'Client Satisfaction' },
-    { value: '10+', label: 'Years Experience' },
-    { value: '24/7', label: 'Support' },
+    { value: '150+', labelKey: 'stats.projects' },
+    { value: '98%', labelKey: 'stats.satisfaction' },
+    { value: '10+', labelKey: 'stats.experience' },
+    { value: '24/7', labelKey: 'stats.support' },
   ];
 
   return (
     <>
       <SEOHead 
-        title="WebBuilder - Complete Digital Agency" 
-        description="We build high-performance websites, apps, and digital strategies that convert visitors into customers."
+        title={`WebBuilder - ${t('hero.badge')}`}
+        description={t('hero.subtitle')}
       />
 
       {/* Hero Section */}
@@ -66,7 +65,7 @@ const Home = () => {
               transition={{ duration: 0.6 }}
             >
               <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-                Digital Agency
+                {t('hero.badge')}
               </span>
             </motion.div>
 
@@ -121,7 +120,7 @@ const Home = () => {
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-primary mb-1">{stat.value}</div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
+                <div className="text-sm text-muted-foreground">{t(stat.labelKey)}</div>
               </div>
             ))}
           </motion.div>
@@ -174,7 +173,7 @@ const Home = () => {
       {/* Bento Grid Services */}
       <section className="py-20 md:py-32 bg-card/50">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
             {featuredServices.map((service, index) => (
               <motion.div
                 key={service.key}
@@ -182,7 +181,7 @@ const Home = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`bento-item group ${index === 0 ? 'md:col-span-2 md:row-span-2' : ''}`}
+                className={`bento-item group ${index === 0 ? 'md:col-span-2 lg:col-span-1' : ''}`}
               >
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                   <service.icon className="w-6 h-6 text-primary" />

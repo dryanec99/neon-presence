@@ -10,7 +10,14 @@
     "title": "Complete Construction of Your Online Presence",
     "subtitle": "We build high-performance websites, apps, and digital strategies that convert visitors into customers.",
     "cta": "Get Started",
-    "ctaSecondary": "View Our Work"
+    "ctaSecondary": "View Our Work",
+    "badge": "Digital Agency"
+  },
+  "stats": {
+    "projects": "Projects Delivered",
+    "satisfaction": "Client Satisfaction",
+    "experience": "Years Experience",
+    "support": "Support"
   },
   "services": {
     "title": "Our Services",
@@ -18,20 +25,20 @@
     "categories": {
       "presence": {
         "title": "Building Presence",
-        "description": "Website design & development, mobile apps, e-commerce solutions"
+        "description": "Website development, Online store development, App development"
       },
       "seo": {
-        "title": "SEO Optimization",
-        "description": "Technical SEO, content strategy, link building, local SEO"
+        "title": "Positioning & SEO",
+        "description": "Google Ads, SEO optimization, Google My Business"
       },
       "marketing": {
-        "title": "Digital Marketing",
-        "description": "PPC campaigns, social media, email marketing, analytics"
+        "title": "Audience Engagement",
+        "description": "Social networks, Online reputation, E-mail marketing"
       }
     },
     "items": {
       "webDesign": {
-        "title": "Web Design",
+        "title": "Website Development",
         "description": "Custom, responsive websites that capture your brand essence"
       },
       "webDev": {
@@ -39,28 +46,36 @@
         "description": "Scalable solutions built with modern technologies"
       },
       "ecommerce": {
-        "title": "E-Commerce",
-        "description": "Online stores optimized for conversions and sales"
+        "title": "Online Store Development",
+        "description": "E-commerce stores optimized for conversions and sales"
       },
       "mobileApps": {
-        "title": "Mobile Apps",
-        "description": "Native and cross-platform applications"
+        "title": "App Development",
+        "description": "Native and cross-platform mobile applications"
       },
-      "seoTechnical": {
-        "title": "Technical SEO",
-        "description": "Site audits, speed optimization, structured data"
+      "googleAds": {
+        "title": "Google Ads",
+        "description": "Targeted advertising campaigns for maximum ROI"
       },
-      "contentStrategy": {
-        "title": "Content Strategy",
-        "description": "Content that ranks and engages your audience"
+      "seoOptimization": {
+        "title": "SEO Optimization",
+        "description": "Improve your search rankings and organic traffic"
       },
-      "ppc": {
-        "title": "PPC Advertising",
-        "description": "Google Ads, Meta Ads, programmatic campaigns"
+      "googleMyBusiness": {
+        "title": "Google My Business",
+        "description": "Local presence optimization for more customers"
       },
-      "socialMedia": {
-        "title": "Social Media",
+      "socialNetworks": {
+        "title": "Social Networks",
         "description": "Strategy, content creation, and community management"
+      },
+      "onlineReputation": {
+        "title": "Online Reputation",
+        "description": "Manage and improve your brand's online image"
+      },
+      "emailMarketing": {
+        "title": "E-mail Marketing",
+        "description": "Automated email campaigns for engagement"
       }
     }
   },
@@ -79,6 +94,13 @@
   "contact": {
     "title": "Let's Work Together",
     "subtitle": "Ready to start your project? Get in touch with us.",
+    "info": {
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email",
+      "workingHours": "Working Hours",
+      "workingHoursValue": "Mon-Fri: 9:00 AM - 6:00 PM"
+    },
     "form": {
       "name": "Your Name",
       "phone": "Phone Number",
@@ -86,11 +108,17 @@
       "subject": "Subject",
       "message": "Your Message",
       "submit": "Send Message",
+      "sendAnother": "Send another message",
       "subjects": {
-        "webDesign": "Web Design",
-        "development": "Development",
-        "seo": "SEO Services",
-        "marketing": "Marketing",
+        "webDesign": "Website Development",
+        "ecommerce": "Online Store",
+        "appDev": "App Development",
+        "googleAds": "Google Ads",
+        "seo": "SEO Optimization",
+        "gmb": "Google My Business",
+        "social": "Social Networks",
+        "reputation": "Online Reputation",
+        "email": "Email Marketing",
         "other": "Other"
       }
     },
@@ -107,7 +135,9 @@
     "quickLinks": "Quick Links",
     "services": "Services",
     "connect": "Connect",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
   },
   "cta": {
     "title": "Ready to Transform Your Digital Presence?",
