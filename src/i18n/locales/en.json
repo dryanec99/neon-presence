@@ -1,0 +1,117 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Complete Construction of Your Online Presence",
+    "subtitle": "We build high-performance websites, apps, and digital strategies that convert visitors into customers.",
+    "cta": "Get Started",
+    "ctaSecondary": "View Our Work"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Everything you need to dominate the digital landscape",
+    "categories": {
+      "presence": {
+        "title": "Building Presence",
+        "description": "Website design & development, mobile apps, e-commerce solutions"
+      },
+      "seo": {
+        "title": "SEO Optimization",
+        "description": "Technical SEO, content strategy, link building, local SEO"
+      },
+      "marketing": {
+        "title": "Digital Marketing",
+        "description": "PPC campaigns, social media, email marketing, analytics"
+      }
+    },
+    "items": {
+      "webDesign": {
+        "title": "Web Design",
+        "description": "Custom, responsive websites that capture your brand essence"
+      },
+      "webDev": {
+        "title": "Web Development",
+        "description": "Scalable solutions built with modern technologies"
+      },
+      "ecommerce": {
+        "title": "E-Commerce",
+        "description": "Online stores optimized for conversions and sales"
+      },
+      "mobileApps": {
+        "title": "Mobile Apps",
+        "description": "Native and cross-platform applications"
+      },
+      "seoTechnical": {
+        "title": "Technical SEO",
+        "description": "Site audits, speed optimization, structured data"
+      },
+      "contentStrategy": {
+        "title": "Content Strategy",
+        "description": "Content that ranks and engages your audience"
+      },
+      "ppc": {
+        "title": "PPC Advertising",
+        "description": "Google Ads, Meta Ads, programmatic campaigns"
+      },
+      "socialMedia": {
+        "title": "Social Media",
+        "description": "Strategy, content creation, and community management"
+      }
+    }
+  },
+  "portfolio": {
+    "title": "Our Work",
+    "subtitle": "Selected projects showcasing our expertise",
+    "viewProject": "View Project",
+    "viewAll": "View All Projects"
+  },
+  "blog": {
+    "title": "Insights & Articles",
+    "subtitle": "Latest thoughts on digital strategy and technology",
+    "readMore": "Read More",
+    "viewAll": "View All Articles"
+  },
+  "contact": {
+    "title": "Let's Work Together",
+    "subtitle": "Ready to start your project? Get in touch with us.",
+    "form": {
+      "name": "Your Name",
+      "phone": "Phone Number",
+      "email": "Email Address",
+      "subject": "Subject",
+      "message": "Your Message",
+      "submit": "Send Message",
+      "subjects": {
+        "webDesign": "Web Design",
+        "development": "Development",
+        "seo": "SEO Services",
+        "marketing": "Marketing",
+        "other": "Other"
+      }
+    },
+    "validation": {
+      "nameRequired": "Name is required",
+      "emailInvalid": "Please enter a valid email",
+      "phoneInvalid": "Please enter a valid phone number",
+      "messageRequired": "Message is required"
+    },
+    "success": "Thank you! We'll be in touch soon."
+  },
+  "footer": {
+    "description": "Your partner in digital transformation. We build experiences that matter.",
+    "quickLinks": "Quick Links",
+    "services": "Services",
+    "connect": "Connect",
+    "rights": "All rights reserved."
+  },
+  "cta": {
+    "title": "Ready to Transform Your Digital Presence?",
+    "subtitle": "Let's discuss how we can help you achieve your goals.",
+    "button": "Start Your Project"
+  }
+}
