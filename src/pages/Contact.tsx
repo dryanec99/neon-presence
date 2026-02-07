@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Send, MapPin, Phone, Mail, Clock, CheckCircle } from 'lucide-react';
-import { type LanguageCode } from '@/i18n';
 import SEOHead from '@/components/SEOHead';
 import { cn } from '@/lib/utils';
 
@@ -22,8 +21,7 @@ interface FormErrors {
 }
 
 const Contact = () => {
-  const { t, i18n } = useTranslation();
-  const currentLang = i18n.language as LanguageCode;
+  const { t } = useTranslation();
 
   const [formData, setFormData] = useState<FormData>({
     name: '',
@@ -71,8 +69,11 @@ const Contact = () => {
 
     setIsSubmitting(true);
     
-    // Simulate API call
+    // Simulate API call - form data is ready for backend integration
     await new Promise(resolve => setTimeout(resolve, 1500));
+    
+    // Log form data for backend integration (Windsurf)
+    console.log('Form submission ready for backend:', formData);
     
     setIsSubmitting(false);
     setIsSuccess(true);
@@ -94,30 +95,41 @@ const Contact = () => {
     }
   };
 
-  const subjects = ['webDesign', 'development', 'seo', 'marketing', 'other'] as const;
+  const subjects = [
+    'webDesign',
+    'ecommerce', 
+    'appDev',
+    'googleAds',
+    'seo',
+    'gmb',
+    'social',
+    'reputation',
+    'email',
+    'other'
+  ] as const;
 
   const contactInfo = [
     {
       icon: MapPin,
-      label: currentLang === 'bg' ? 'Адрес' : currentLang === 'ru' ? 'Адрес' : 'Address',
+      labelKey: 'contact.info.address',
       value: 'Sofia, Bulgaria',
     },
     {
       icon: Phone,
-      label: currentLang === 'bg' ? 'Телефон' : currentLang === 'ru' ? 'Телефон' : 'Phone',
+      labelKey: 'contact.info.phone',
       value: '+359 888 123 456',
       href: 'tel:+359888123456',
     },
     {
       icon: Mail,
-      label: 'Email',
+      labelKey: 'contact.info.email',
       value: 'hello@webbuilder.bg',
       href: 'mailto:hello@webbuilder.bg',
     },
     {
       icon: Clock,
-      label: currentLang === 'bg' ? 'Работно време' : currentLang === 'ru' ? 'Рабочее время' : 'Working Hours',
-      value: currentLang === 'bg' ? 'Пон-Пет: 9:00 - 18:00' : currentLang === 'ru' ? 'Пн-Пт: 9:00 - 18:00' : 'Mon-Fri: 9:00 AM - 6:00 PM',
+      labelKey: 'contact.info.workingHours',
+      valueKey: 'contact.info.workingHoursValue',
     },
   ];
 
@@ -172,7 +184,7 @@ const Contact = () => {
                       onClick={() => setIsSuccess(false)}
                       className="mt-4 text-primary hover:underline"
                     >
-                      {currentLang === 'bg' ? 'Изпрати ново съобщение' : currentLang === 'ru' ? 'Отправить новое сообщение' : 'Send another message'}
+                      {t('contact.form.sendAnother')}
                     </button>
                   </div>
                 ) : (
@@ -323,7 +335,7 @@ const Contact = () => {
                     <info.icon className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground mb-1">{info.label}</p>
+                    <p className="text-sm text-muted-foreground mb-1">{t(info.labelKey)}</p>
                     {info.href ? (
                       <a 
                         href={info.href}
@@ -332,7 +344,9 @@ const Contact = () => {
                         {info.value}
                       </a>
                     ) : (
-                      <p className="text-foreground font-medium">{info.value}</p>
+                      <p className="text-foreground font-medium">
+                        {info.valueKey ? t(info.valueKey) : info.value}
+                      </p>
                     )}
                   </div>
                 </div>
