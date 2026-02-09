@@ -10,6 +10,7 @@ import "@/i18n";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
+import ServiceDetail from "./pages/ServiceDetail";
 import Portfolio from "./pages/Portfolio";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
