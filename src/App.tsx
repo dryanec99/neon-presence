@@ -47,6 +47,7 @@ const App = () => (
           <Route path="/:lang" element={<LanguageRoute><Layout /></LanguageRoute>}>
             <Route index element={<Home />} />
             <Route path="services" element={<Services />} />
+            <Route path="services/:serviceSlug" element={<ServiceDetail />} />
             <Route path="portfolio" element={<Portfolio />} />
             <Route path="blog" element={<Blog />} />
             <Route path="contact" element={<Contact />} />
