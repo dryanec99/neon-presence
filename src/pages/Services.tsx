@@ -107,26 +107,37 @@ const Services = () => {
             </motion.div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {group.services.map((service, index) => (
-                <motion.div
-                  key={service.key}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bento-item group cursor-pointer"
-                >
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                    <service.icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2 text-foreground group-hover:text-primary transition-colors">
-                    {t(`services.items.${service.key}.title`)}
-                  </h3>
-                  <p className="text-muted-foreground text-sm">
-                    {t(`services.items.${service.key}.description`)}
-                  </p>
-                </motion.div>
-              ))}
+              {group.services.map((service, index) => {
+                const slugMap: Record<string, string> = {
+                  webDesign: 'web-design', ecommerce: 'ecommerce', mobileApps: 'mobile-apps',
+                  googleAds: 'google-ads', seoOptimization: 'seo', googleMyBusiness: 'google-my-business',
+                  socialNetworks: 'social-networks', onlineReputation: 'online-reputation', emailMarketing: 'email-marketing',
+                };
+                return (
+                  <motion.div
+                    key={service.key}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                  >
+                    <Link
+                      to={getLocalizedPath(`services/${slugMap[service.key]}`)}
+                      className="bento-item group cursor-pointer block h-full"
+                    >
+                      <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                        <service.icon className="w-6 h-6 text-primary" />
+                      </div>
+                      <h3 className="text-lg font-semibold mb-2 text-foreground group-hover:text-primary transition-colors">
+                        {t(`services.items.${service.key}.title`)}
+                      </h3>
+                      <p className="text-muted-foreground text-sm">
+                        {t(`services.items.${service.key}.description`)}
+                      </p>
+                    </Link>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </section>

@@ -10,6 +10,7 @@ import "@/i18n";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
+import ServiceDetail from "./pages/ServiceDetail";
 import Portfolio from "./pages/Portfolio";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
@@ -46,6 +47,7 @@ const App = () => (
           <Route path="/:lang" element={<LanguageRoute><Layout /></LanguageRoute>}>
             <Route index element={<Home />} />
             <Route path="services" element={<Services />} />
+            <Route path="services/:serviceSlug" element={<ServiceDetail />} />
             <Route path="portfolio" element={<Portfolio />} />
             <Route path="blog" element={<Blog />} />
             <Route path="contact" element={<Contact />} />

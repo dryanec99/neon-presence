@@ -79,6 +79,562 @@
       }
     }
   },
+  "serviceDetail": {
+    "popular": "Most Popular",
+    "getStarted": "Get Started",
+    "faqTitle": "Frequently Asked Questions",
+    "formTitle": "Request a Quote",
+    "formSubtitle": "Tell us about your project and we'll get back to you within 24 hours.",
+    "webDesign": {
+      "title": "Website Development",
+      "description": "We create custom, high-performance websites tailored to your brand. From landing pages to complex corporate sites, we deliver responsive designs that convert visitors into customers.",
+      "featuresTitle": "What's Included",
+      "features": {
+        "0": "Custom responsive design for all devices",
+        "1": "SEO-optimized structure and content",
+        "2": "Fast loading speeds with modern technologies",
+        "3": "Content management system integration",
+        "4": "SSL certificate and security setup",
+        "5": "Analytics and performance tracking"
+      },
+      "pricingTitle": "Website Packages",
+      "pricingSubtitle": "Choose the plan that fits your business needs",
+      "pricing": {
+        "basic": {
+          "name": "Landing Page",
+          "price": "€499",
+          "period": "one-time",
+          "features": {
+            "0": "Single page responsive design",
+            "1": "Contact form integration",
+            "2": "Basic SEO setup",
+            "3": "Mobile optimization",
+            "4": "1 round of revisions"
+          }
+        },
+        "standard": {
+          "name": "Business Website",
+          "price": "€1,299",
+          "period": "one-time",
+          "features": {
+            "0": "Up to 10 pages",
+            "1": "Custom design & branding",
+            "2": "CMS integration",
+            "3": "Advanced SEO optimization",
+            "4": "Blog functionality",
+            "5": "3 rounds of revisions"
+          }
+        },
+        "premium": {
+          "name": "Enterprise Solution",
+          "price": "€2,999+",
+          "period": "one-time",
+          "features": {
+            "0": "Unlimited pages",
+            "1": "Custom functionality & integrations",
+            "2": "Multi-language support",
+            "3": "Advanced animations & interactions",
+            "4": "Priority support for 6 months",
+            "5": "Unlimited revisions"
+          }
+        }
+      },
+      "faq": {
+        "0": { "q": "How long does it take to build a website?", "a": "Depending on complexity, a landing page takes 1-2 weeks, a business site 3-5 weeks, and enterprise solutions 6-12 weeks." },
+        "1": { "q": "Do you provide hosting?", "a": "We help you set up hosting with reliable providers and can manage it for you as part of a maintenance plan." },
+        "2": { "q": "Can I update the content myself?", "a": "Yes! We integrate a user-friendly CMS so you can easily update text, images, and blog posts without technical knowledge." },
+        "3": { "q": "Is the website mobile-friendly?", "a": "Absolutely. All our websites are fully responsive and tested across devices and browsers." }
+      }
+    },
+    "ecommerce": {
+      "title": "Online Store Development",
+      "description": "Launch a powerful e-commerce store optimized for conversions. We build secure, fast, and scalable online shops that help you sell more.",
+      "featuresTitle": "What's Included",
+      "features": {
+        "0": "Product catalog with advanced filtering",
+        "1": "Secure payment gateway integration",
+        "2": "Inventory management system",
+        "3": "Order tracking and notifications",
+        "4": "Customer accounts and wishlists",
+        "5": "Shipping and tax configuration"
+      },
+      "pricingTitle": "E-commerce Packages",
+      "pricingSubtitle": "Start selling online with confidence",
+      "pricing": {
+        "basic": {
+          "name": "Starter Shop",
+          "price": "€999",
+          "period": "one-time",
+          "features": {
+            "0": "Up to 50 products",
+            "1": "Payment gateway setup",
+            "2": "Basic product filtering",
+            "3": "Order management",
+            "4": "Mobile-responsive design"
+          }
+        },
+        "standard": {
+          "name": "Professional Store",
+          "price": "€2,499",
+          "period": "one-time",
+          "features": {
+            "0": "Up to 500 products",
+            "1": "Multiple payment methods",
+            "2": "Advanced filtering & search",
+            "3": "Customer accounts",
+            "4": "Discount & coupon system",
+            "5": "Inventory management"
+          }
+        },
+        "premium": {
+          "name": "Enterprise Commerce",
+          "price": "€4,999+",
+          "period": "one-time",
+          "features": {
+            "0": "Unlimited products",
+            "1": "Multi-currency support",
+            "2": "ERP/CRM integrations",
+            "3": "Advanced analytics dashboard",
+            "4": "Custom checkout flow",
+            "5": "Dedicated support"
+          }
+        }
+      },
+      "faq": {
+        "0": { "q": "Which payment gateways do you support?", "a": "We integrate with Stripe, PayPal, and local payment providers depending on your market." },
+        "1": { "q": "Can I import products from another platform?", "a": "Yes, we can migrate your products, categories, and customer data from most e-commerce platforms." },
+        "2": { "q": "Do you provide ongoing support?", "a": "We offer maintenance plans that include updates, security patches, and technical support." },
+        "3": { "q": "Is the store SEO-optimized?", "a": "Yes, we implement proper product schema, meta tags, sitemaps, and fast loading for optimal search rankings." }
+      }
+    },
+    "mobileApps": {
+      "title": "App Development",
+      "description": "Build native and cross-platform mobile apps that delight users. From concept to App Store, we handle the entire development process.",
+      "featuresTitle": "What's Included",
+      "features": {
+        "0": "iOS and Android development",
+        "1": "UI/UX design and prototyping",
+        "2": "Push notifications",
+        "3": "API integrations",
+        "4": "App Store submission & optimization",
+        "5": "Performance monitoring"
+      },
+      "pricingTitle": "App Development Packages",
+      "pricingSubtitle": "Bring your app idea to life",
+      "pricing": {
+        "basic": {
+          "name": "MVP App",
+          "price": "€3,999",
+          "period": "one-time",
+          "features": {
+            "0": "Core feature development",
+            "1": "Single platform (iOS or Android)",
+            "2": "Basic UI design",
+            "3": "User authentication",
+            "4": "App Store submission"
+          }
+        },
+        "standard": {
+          "name": "Cross-Platform App",
+          "price": "€7,999",
+          "period": "one-time",
+          "features": {
+            "0": "iOS + Android (React Native)",
+            "1": "Custom UI/UX design",
+            "2": "Push notifications",
+            "3": "API integrations",
+            "4": "Admin dashboard",
+            "5": "3 months support"
+          }
+        },
+        "premium": {
+          "name": "Enterprise App",
+          "price": "€14,999+",
+          "period": "one-time",
+          "features": {
+            "0": "Complex feature set",
+            "1": "Native iOS + Android",
+            "2": "Backend infrastructure",
+            "3": "Real-time features",
+            "4": "Advanced analytics",
+            "5": "12 months support"
+          }
+        }
+      },
+      "faq": {
+        "0": { "q": "How long does app development take?", "a": "An MVP typically takes 2-3 months, a cross-platform app 4-6 months, and enterprise apps 6-12 months." },
+        "1": { "q": "Do you handle App Store submissions?", "a": "Yes, we manage the entire submission process for both Apple App Store and Google Play Store." },
+        "2": { "q": "Can you update my existing app?", "a": "Absolutely. We can redesign, add features, or optimize your existing mobile application." },
+        "3": { "q": "What technologies do you use?", "a": "We use React Native for cross-platform and Swift/Kotlin for native development." }
+      }
+    },
+    "googleAds": {
+      "title": "Google Ads",
+      "description": "Maximize your ROI with targeted Google Ads campaigns. We create, manage, and optimize campaigns that drive qualified traffic to your business.",
+      "featuresTitle": "What's Included",
+      "features": {
+        "0": "Keyword research and strategy",
+        "1": "Ad copy creation and A/B testing",
+        "2": "Landing page optimization",
+        "3": "Conversion tracking setup",
+        "4": "Bid management and optimization",
+        "5": "Monthly performance reports"
+      },
+      "pricingTitle": "Google Ads Plans",
+      "pricingSubtitle": "Invest in growth with data-driven advertising",
+      "pricing": {
+        "basic": {
+          "name": "Starter",
+          "price": "€299",
+          "period": "/month",
+          "features": {
+            "0": "Up to €1,000 ad spend management",
+            "1": "1 campaign setup",
+            "2": "Keyword research",
+            "3": "Monthly reporting",
+            "4": "Basic optimization"
+          }
+        },
+        "standard": {
+          "name": "Growth",
+          "price": "€599",
+          "period": "/month",
+          "features": {
+            "0": "Up to €5,000 ad spend management",
+            "1": "Multiple campaigns",
+            "2": "A/B testing",
+            "3": "Conversion tracking",
+            "4": "Bi-weekly optimization",
+            "5": "Detailed analytics"
+          }
+        },
+        "premium": {
+          "name": "Scale",
+          "price": "€1,199",
+          "period": "/month",
+          "features": {
+            "0": "Unlimited ad spend management",
+            "1": "Full campaign strategy",
+            "2": "Advanced remarketing",
+            "3": "Landing page creation",
+            "4": "Weekly optimization",
+            "5": "Dedicated account manager"
+          }
+        }
+      },
+      "faq": {
+        "0": { "q": "How quickly will I see results?", "a": "Google Ads can drive traffic immediately. Optimization for best ROI typically takes 2-4 weeks of data collection." },
+        "1": { "q": "Is the ad spend included in the price?", "a": "No, the prices listed are for management. Ad spend is a separate budget you control." },
+        "2": { "q": "Can you manage my existing campaigns?", "a": "Yes, we can audit and optimize your current Google Ads campaigns for better performance." },
+        "3": { "q": "Do you provide reports?", "a": "Yes, you receive detailed performance reports with metrics, insights, and recommendations." }
+      }
+    },
+    "seoOptimization": {
+      "title": "SEO Optimization",
+      "description": "Climb to the top of search results with our comprehensive SEO strategies. We combine technical excellence with content optimization for lasting organic growth.",
+      "featuresTitle": "What's Included",
+      "features": {
+        "0": "Technical SEO audit and fixes",
+        "1": "On-page optimization",
+        "2": "Keyword strategy and mapping",
+        "3": "Content creation and optimization",
+        "4": "Link building strategy",
+        "5": "Monthly ranking reports"
+      },
+      "pricingTitle": "SEO Plans",
+      "pricingSubtitle": "Long-term organic growth for your business",
+      "pricing": {
+        "basic": {
+          "name": "SEO Essentials",
+          "price": "€399",
+          "period": "/month",
+          "features": {
+            "0": "Technical SEO audit",
+            "1": "On-page optimization (10 pages)",
+            "2": "Keyword tracking (20 keywords)",
+            "3": "Monthly reporting",
+            "4": "Google Search Console setup"
+          }
+        },
+        "standard": {
+          "name": "SEO Growth",
+          "price": "€799",
+          "period": "/month",
+          "features": {
+            "0": "Full technical optimization",
+            "1": "Content strategy & creation",
+            "2": "Keyword tracking (50 keywords)",
+            "3": "Link building (5 links/month)",
+            "4": "Competitor analysis",
+            "5": "Bi-weekly reports"
+          }
+        },
+        "premium": {
+          "name": "SEO Domination",
+          "price": "€1,499",
+          "period": "/month",
+          "features": {
+            "0": "Enterprise-level optimization",
+            "1": "Content marketing strategy",
+            "2": "Unlimited keyword tracking",
+            "3": "Premium link building",
+            "4": "International SEO",
+            "5": "Weekly strategy calls"
+          }
+        }
+      },
+      "faq": {
+        "0": { "q": "How long does SEO take to show results?", "a": "SEO is a long-term strategy. You can expect initial improvements in 3-6 months with significant results in 6-12 months." },
+        "1": { "q": "Do you guarantee first page rankings?", "a": "We don't guarantee specific positions as search algorithms constantly change, but we use proven strategies to maximize your visibility." },
+        "2": { "q": "What's included in technical SEO?", "a": "Site speed optimization, mobile-friendliness, crawlability, structured data, HTTPS setup, and fixing broken links." },
+        "3": { "q": "Do you create content?", "a": "Yes, our Growth and Domination plans include professional content creation optimized for your target keywords." }
+      }
+    },
+    "googleMyBusiness": {
+      "title": "Google My Business",
+      "description": "Dominate local search and attract nearby customers. We optimize your Google Business Profile to increase visibility, reviews, and foot traffic.",
+      "featuresTitle": "What's Included",
+      "features": {
+        "0": "Profile creation and optimization",
+        "1": "Photo and video management",
+        "2": "Review management strategy",
+        "3": "Local SEO optimization",
+        "4": "Google Maps optimization",
+        "5": "Insights and analytics reporting"
+      },
+      "pricingTitle": "GMB Plans",
+      "pricingSubtitle": "Get found by customers near you",
+      "pricing": {
+        "basic": {
+          "name": "Local Start",
+          "price": "€149",
+          "period": "/month",
+          "features": {
+            "0": "Profile setup and verification",
+            "1": "Basic optimization",
+            "2": "Photo uploads (5/month)",
+            "3": "Review monitoring",
+            "4": "Monthly reporting"
+          }
+        },
+        "standard": {
+          "name": "Local Growth",
+          "price": "€299",
+          "period": "/month",
+          "features": {
+            "0": "Advanced profile optimization",
+            "1": "Weekly posts and updates",
+            "2": "Review response management",
+            "3": "Local citation building",
+            "4": "Competitor analysis",
+            "5": "Bi-weekly reporting"
+          }
+        },
+        "premium": {
+          "name": "Local Domination",
+          "price": "€499",
+          "period": "/month",
+          "features": {
+            "0": "Multi-location management",
+            "1": "Full content strategy",
+            "2": "Review generation campaigns",
+            "3": "Local link building",
+            "4": "Google Ads integration",
+            "5": "Weekly strategy updates"
+          }
+        }
+      },
+      "faq": {
+        "0": { "q": "How does GMB help my business?", "a": "An optimized Google Business Profile increases your visibility in local searches and Google Maps, driving more calls and visits." },
+        "1": { "q": "Can you help with negative reviews?", "a": "Yes, we provide review response strategies and help you encourage positive reviews from satisfied customers." },
+        "2": { "q": "Do I need a physical address?", "a": "For most businesses, yes. Service-area businesses can hide their address while still appearing in local results." },
+        "3": { "q": "How quickly will I see improvements?", "a": "Many businesses see increased visibility within 2-4 weeks after optimization." }
+      }
+    },
+    "socialNetworks": {
+      "title": "Social Networks",
+      "description": "Build a powerful social media presence that engages your audience. We handle strategy, content creation, and community management across all platforms.",
+      "featuresTitle": "What's Included",
+      "features": {
+        "0": "Social media strategy development",
+        "1": "Content creation and scheduling",
+        "2": "Community management",
+        "3": "Paid social advertising",
+        "4": "Influencer outreach",
+        "5": "Performance analytics and reporting"
+      },
+      "pricingTitle": "Social Media Plans",
+      "pricingSubtitle": "Grow your brand on social media",
+      "pricing": {
+        "basic": {
+          "name": "Social Starter",
+          "price": "€349",
+          "period": "/month",
+          "features": {
+            "0": "2 social platforms",
+            "1": "12 posts per month",
+            "2": "Basic graphic design",
+            "3": "Community monitoring",
+            "4": "Monthly reporting"
+          }
+        },
+        "standard": {
+          "name": "Social Growth",
+          "price": "€699",
+          "period": "/month",
+          "features": {
+            "0": "4 social platforms",
+            "1": "20 posts per month",
+            "2": "Custom graphic design",
+            "3": "Community management",
+            "4": "Paid ad management",
+            "5": "Bi-weekly reporting"
+          }
+        },
+        "premium": {
+          "name": "Social Domination",
+          "price": "€1,299",
+          "period": "/month",
+          "features": {
+            "0": "All platforms",
+            "1": "Daily content posting",
+            "2": "Video content creation",
+            "3": "Influencer campaigns",
+            "4": "Advanced analytics",
+            "5": "Dedicated social manager"
+          }
+        }
+      },
+      "faq": {
+        "0": { "q": "Which platforms do you manage?", "a": "We manage Facebook, Instagram, LinkedIn, TikTok, Twitter/X, YouTube, and Pinterest." },
+        "1": { "q": "Do you create the content?", "a": "Yes, we create all visual and written content aligned with your brand guidelines." },
+        "2": { "q": "Can you run paid ads on social media?", "a": "Yes, our Growth and Domination plans include paid social advertising management." },
+        "3": { "q": "How do you measure success?", "a": "We track engagement rate, follower growth, reach, website traffic from social, and conversions." }
+      }
+    },
+    "onlineReputation": {
+      "title": "Online Reputation",
+      "description": "Protect and enhance your brand's online image. We monitor, manage, and improve how your business appears across the internet.",
+      "featuresTitle": "What's Included",
+      "features": {
+        "0": "Brand monitoring across platforms",
+        "1": "Review management and response",
+        "2": "Negative content mitigation",
+        "3": "Positive content promotion",
+        "4": "Crisis communication planning",
+        "5": "Monthly reputation reports"
+      },
+      "pricingTitle": "Reputation Plans",
+      "pricingSubtitle": "Protect your most valuable asset — your reputation",
+      "pricing": {
+        "basic": {
+          "name": "Monitor",
+          "price": "€249",
+          "period": "/month",
+          "features": {
+            "0": "Brand mention monitoring",
+            "1": "Review alerts",
+            "2": "Monthly reputation report",
+            "3": "Basic response templates",
+            "4": "1 platform monitored"
+          }
+        },
+        "standard": {
+          "name": "Protect",
+          "price": "€549",
+          "period": "/month",
+          "features": {
+            "0": "Multi-platform monitoring",
+            "1": "Professional review responses",
+            "2": "Negative content strategy",
+            "3": "Positive review generation",
+            "4": "Competitor monitoring",
+            "5": "Bi-weekly reporting"
+          }
+        },
+        "premium": {
+          "name": "Dominate",
+          "price": "€999",
+          "period": "/month",
+          "features": {
+            "0": "Full web monitoring",
+            "1": "Crisis management plan",
+            "2": "PR content creation",
+            "3": "Legal review support",
+            "4": "Executive reputation management",
+            "5": "Weekly strategy updates"
+          }
+        }
+      },
+      "faq": {
+        "0": { "q": "What do you monitor?", "a": "We monitor Google reviews, social media mentions, news articles, forums, and review platforms relevant to your industry." },
+        "1": { "q": "Can you remove negative reviews?", "a": "We can flag fraudulent or policy-violating reviews for removal and implement strategies to push down negative content." },
+        "2": { "q": "How fast do you respond to mentions?", "a": "We aim to respond to critical mentions within 24 hours and routine mentions within 48 hours." },
+        "3": { "q": "Do you handle crisis situations?", "a": "Yes, our Dominate plan includes a crisis communication strategy and rapid response protocols." }
+      }
+    },
+    "emailMarketing": {
+      "title": "E-mail Marketing",
+      "description": "Drive engagement and conversions with automated email campaigns. We create targeted sequences that nurture leads and retain customers.",
+      "featuresTitle": "What's Included",
+      "features": {
+        "0": "Email template design",
+        "1": "Automation workflow setup",
+        "2": "List segmentation and management",
+        "3": "A/B testing and optimization",
+        "4": "Deliverability optimization",
+        "5": "Performance analytics"
+      },
+      "pricingTitle": "Email Marketing Plans",
+      "pricingSubtitle": "Turn subscribers into loyal customers",
+      "pricing": {
+        "basic": {
+          "name": "Email Starter",
+          "price": "€199",
+          "period": "/month",
+          "features": {
+            "0": "Up to 2,500 subscribers",
+            "1": "4 email campaigns/month",
+            "2": "Basic templates",
+            "3": "List management",
+            "4": "Monthly reporting"
+          }
+        },
+        "standard": {
+          "name": "Email Growth",
+          "price": "€449",
+          "period": "/month",
+          "features": {
+            "0": "Up to 10,000 subscribers",
+            "1": "8 campaigns/month",
+            "2": "Custom templates",
+            "3": "Automation workflows",
+            "4": "A/B testing",
+            "5": "Bi-weekly reporting"
+          }
+        },
+        "premium": {
+          "name": "Email Pro",
+          "price": "€899",
+          "period": "/month",
+          "features": {
+            "0": "Unlimited subscribers",
+            "1": "Unlimited campaigns",
+            "2": "Advanced automation",
+            "3": "Dynamic content",
+            "4": "CRM integration",
+            "5": "Dedicated strategist"
+          }
+        }
+      },
+      "faq": {
+        "0": { "q": "Which email platforms do you use?", "a": "We work with Mailchimp, Klaviyo, ActiveCampaign, and other major email marketing platforms." },
+        "1": { "q": "Can you migrate my existing email list?", "a": "Yes, we handle the complete migration of your subscriber lists and existing automation flows." },
+        "2": { "q": "How do you handle GDPR compliance?", "a": "All our email campaigns are GDPR-compliant with proper consent management, unsubscribe options, and data handling." },
+        "3": { "q": "What kind of ROI can I expect?", "a": "Email marketing typically delivers an ROI of $36-42 for every $1 spent, though results vary by industry." }
+      }
+    }
+  },
   "portfolio": {
     "title": "Our Work",
     "subtitle": "Selected projects showcasing our expertise",
