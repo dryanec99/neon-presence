@@ -636,10 +636,78 @@
     }
   },
   "portfolio": {
-    "title": "Our Work",
-    "subtitle": "Selected projects showcasing our expertise",
-    "viewProject": "View Project",
-    "viewAll": "View All Projects"
+    "title": "Template Showcase",
+    "subtitle": "Premium WordPress kits built with Elementor Pro — designed to convert, optimized to rank.",
+    "viewProject": "View Details",
+    "viewAll": "View All Templates",
+    "livePreview": "Live Preview",
+    "close": "Close",
+    "features": "Key Features",
+    "techStack": "Tech Stack",
+    "requestQuote": "Request a Quote",
+    "filterAll": "All",
+    "filterEcommerce": "E-commerce",
+    "filterSaas": "SaaS",
+    "filterCorporate": "Corporate",
+    "filterMarketing": "Marketing",
+    "templates": {
+      "ecommerce": {
+        "title": "Premium E-commerce Kit",
+        "category": "E-commerce",
+        "description": "High-conversion online store template with advanced product filtering, dynamic cart, and checkout flow. Built for speed and SEO.",
+        "features": ["WooCommerce Integration", "Dynamic Product Filtering", "One-Page Checkout", "Mobile-First Design", "Schema Markup for Products", "Speed Optimized (90+ PageSpeed)"]
+      },
+      "saas": {
+        "title": "Enterprise SaaS Landing Page",
+        "category": "SaaS",
+        "description": "Modern dark-mode SaaS template with interactive pricing tables, feature comparison grids, and seamless CTA flow.",
+        "features": ["Dark Mode Aesthetic", "Interactive Pricing Table", "Feature Comparison Grid", "Testimonial Carousel", "Lead Capture Forms", "A/B Test Ready"]
+      },
+      "agency": {
+        "title": "Creative Agency Portfolio",
+        "category": "Corporate",
+        "description": "Visual-heavy template for design studios and creative agencies. Fullscreen galleries, case study layouts, and smooth scroll animations.",
+        "features": ["Fullscreen Image Galleries", "Case Study Layouts", "Smooth Scroll Animations", "Team Member Profiles", "Client Logo Carousel", "Video Background Sections"]
+      },
+      "local": {
+        "title": "Local Business Growth Kit",
+        "category": "Marketing",
+        "description": "Specifically designed for the Bulgarian market with built-in local SEO hooks, Google Maps integration, and review widgets.",
+        "features": ["Local SEO Schema", "Google Maps Integration", "Review Aggregation Widget", "Click-to-Call Buttons", "Appointment Booking Form", "Multi-Location Support"]
+      },
+      "restaurant": {
+        "title": "Restaurant & Hospitality Suite",
+        "category": "E-commerce",
+        "description": "Elegant dining template with online menu, reservation system, and delivery integration. Optimized for local discovery.",
+        "features": ["Interactive Menu Builder", "Online Reservation System", "Delivery Integration", "Photo Gallery with Lightbox", "Events & Specials Section", "Google Reviews Widget"]
+      },
+      "medical": {
+        "title": "Medical & Wellness Platform",
+        "category": "Corporate",
+        "description": "GDPR-compliant healthcare template with appointment booking, doctor profiles, and patient portal integration.",
+        "features": ["GDPR-Compliant Forms", "Appointment Booking System", "Doctor/Staff Profiles", "Service Catalog", "Patient Testimonials", "Insurance Info Section"]
+      },
+      "realestate": {
+        "title": "Real Estate Starter Kit",
+        "category": "Marketing",
+        "description": "Property listing template with advanced search filters, virtual tour embeds, and agent profiles. IDX-ready.",
+        "features": ["Property Listing Grid", "Advanced Search Filters", "Virtual Tour Embeds", "Agent Profile Pages", "Mortgage Calculator", "Neighborhood Guides"]
+      },
+      "startup": {
+        "title": "Startup Launch Page",
+        "category": "SaaS",
+        "description": "Conversion-focused landing page for product launches. Waitlist forms, feature reveals, and social proof sections.",
+        "features": ["Waitlist / Email Capture", "Animated Feature Reveals", "Social Proof Counter", "Product Screenshot Showcase", "Investor Section", "Press Kit Download"]
+      }
+    },
+    "techBadges": {
+      "wordpress": "WordPress",
+      "elementor": "Elementor Pro",
+      "seo": "SEO Optimized",
+      "multilingual": "Multilingual Ready",
+      "woocommerce": "WooCommerce",
+      "responsive": "Responsive"
+    }
   },
   "blog": {
     "title": "Insights & Articles",
