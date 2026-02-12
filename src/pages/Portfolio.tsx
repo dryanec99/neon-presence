@@ -37,6 +37,10 @@ const TEMPLATE_IMAGES: Record<TemplateKey, string> = {
   startup: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=600&fit=crop',
 };
 
+const TEMPLATE_PREVIEWS: Partial<Record<TemplateKey, string>> = {
+  saas: 'https://illegalbed.s6-tastewp.com/#',
+};
+
 const TECH_BADGES: Record<TemplateKey, string[]> = {
   ecommerce: ['wordpress', 'elementor', 'gpl', 'rankmath', 'woocommerce'],
   saas: ['wordpress', 'elementor', 'gpl', 'rankmath'],
@@ -95,6 +99,7 @@ const Portfolio = () => {
     features: t(`portfolio.templates.${key}.features`, { returnObjects: true }) as string[],
     image: TEMPLATE_IMAGES[key],
     techBadges: TECH_BADGES[key],
+    previewUrl: TEMPLATE_PREVIEWS[key] || null,
   }));
 
   const filtered =
@@ -292,10 +297,15 @@ const Portfolio = () => {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-3">
-                <button className="bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 flex-1 shadow-[0_0_20px_hsl(152_100%_50%/0.4)] transition-all">
+                <a
+                  href={selected.previewUrl || '#'}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 flex-1 shadow-[0_0_20px_hsl(152_100%_50%/0.4)] transition-all ${!selected.previewUrl ? 'opacity-50 pointer-events-none' : ''}`}
+                >
                   {t('portfolio.livePreview')}
                   <ExternalLink className="w-4 h-4" />
-                </button>
+                </a>
                 <button
                   onClick={() => {
                     const subjectKey = TEMPLATE_SUBJECT_MAP[selectedTemplate!];
