@@ -650,61 +650,71 @@
     "filterSaas": "SaaS",
     "filterCorporate": "Corporate",
     "filterMarketing": "Marketing",
+    "coreFeatures": "Core Features",
+    "coreFeaturesList": ["Lifetime Updates", "Mobile-Responsive", "Multi-language Ready (EN/BG/RU)", "Speed Optimized via WP Rocket", "GPL Licensed", "SEO-Ready with RankMath"],
     "templates": {
       "ecommerce": {
-        "title": "Premium E-commerce Kit",
+        "title": "The Storefront",
+        "subtitle": "High-Conversion WooCommerce Kit",
         "category": "E-commerce",
-        "description": "High-conversion online store template with advanced product filtering, dynamic cart, and checkout flow. Built for speed and SEO.",
+        "description": "A premium WooCommerce kit engineered for maximum conversions. Advanced product filtering, dynamic cart, one-page checkout, and blazing-fast performance.",
         "features": ["WooCommerce Integration", "Dynamic Product Filtering", "One-Page Checkout", "Mobile-First Design", "Schema Markup for Products", "Speed Optimized (90+ PageSpeed)"]
       },
       "saas": {
-        "title": "Enterprise SaaS Landing Page",
+        "title": "The Executive",
+        "subtitle": "Enterprise Business Kit with Elementor Pro",
         "category": "SaaS",
-        "description": "Modern dark-mode SaaS template with interactive pricing tables, feature comparison grids, and seamless CTA flow.",
+        "description": "A modern dark-mode SaaS landing page with interactive pricing tables, feature comparison grids, and a seamless CTA flow. Built for enterprise conversions.",
         "features": ["Dark Mode Aesthetic", "Interactive Pricing Table", "Feature Comparison Grid", "Testimonial Carousel", "Lead Capture Forms", "A/B Test Ready"]
       },
       "agency": {
-        "title": "Creative Agency Portfolio",
+        "title": "The Portfolio",
+        "subtitle": "Creative Agency Minimalist Kit",
         "category": "Corporate",
-        "description": "Visual-heavy template for design studios and creative agencies. Fullscreen galleries, case study layouts, and smooth scroll animations.",
+        "description": "A visual-heavy minimalist kit for design studios and creative agencies. Fullscreen galleries, case study layouts, and smooth scroll animations.",
         "features": ["Fullscreen Image Galleries", "Case Study Layouts", "Smooth Scroll Animations", "Team Member Profiles", "Client Logo Carousel", "Video Background Sections"]
       },
       "local": {
-        "title": "Local Business Growth Kit",
+        "title": "The Local Pro",
+        "subtitle": "SEO-Optimized Kit for Bulgarian Small Businesses",
         "category": "Marketing",
-        "description": "Specifically designed for the Bulgarian market with built-in local SEO hooks, Google Maps integration, and review widgets.",
+        "description": "Specifically designed for the Bulgarian market with built-in local SEO hooks, Google Maps integration, review widgets, and click-to-call functionality.",
         "features": ["Local SEO Schema", "Google Maps Integration", "Review Aggregation Widget", "Click-to-Call Buttons", "Appointment Booking Form", "Multi-Location Support"]
       },
       "restaurant": {
-        "title": "Restaurant & Hospitality Suite",
+        "title": "The Diner",
+        "subtitle": "Restaurant & Hospitality Suite",
         "category": "E-commerce",
-        "description": "Elegant dining template with online menu, reservation system, and delivery integration. Optimized for local discovery.",
+        "description": "An elegant dining template with online menu builder, reservation system, and delivery integration. Optimized for local discovery and Google Reviews.",
         "features": ["Interactive Menu Builder", "Online Reservation System", "Delivery Integration", "Photo Gallery with Lightbox", "Events & Specials Section", "Google Reviews Widget"]
       },
       "medical": {
-        "title": "Medical & Wellness Platform",
+        "title": "The Clinic",
+        "subtitle": "Medical & Wellness Platform",
         "category": "Corporate",
-        "description": "GDPR-compliant healthcare template with appointment booking, doctor profiles, and patient portal integration.",
+        "description": "A GDPR-compliant healthcare kit with appointment booking, doctor profiles, and patient portal integration. Built for trust and compliance.",
         "features": ["GDPR-Compliant Forms", "Appointment Booking System", "Doctor/Staff Profiles", "Service Catalog", "Patient Testimonials", "Insurance Info Section"]
       },
       "realestate": {
-        "title": "Real Estate Starter Kit",
+        "title": "The Listing",
+        "subtitle": "Real Estate Starter Kit",
         "category": "Marketing",
-        "description": "Property listing template with advanced search filters, virtual tour embeds, and agent profiles. IDX-ready.",
+        "description": "A property listing kit with advanced search filters, virtual tour embeds, agent profiles, and mortgage calculator. IDX-ready and SEO-optimized.",
         "features": ["Property Listing Grid", "Advanced Search Filters", "Virtual Tour Embeds", "Agent Profile Pages", "Mortgage Calculator", "Neighborhood Guides"]
       },
       "startup": {
-        "title": "Startup Launch Page",
+        "title": "The Launchpad",
+        "subtitle": "Startup Launch Page Kit",
         "category": "SaaS",
-        "description": "Conversion-focused landing page for product launches. Waitlist forms, feature reveals, and social proof sections.",
+        "description": "A conversion-focused landing page for product launches. Waitlist forms, animated feature reveals, social proof counters, and investor-ready sections.",
         "features": ["Waitlist / Email Capture", "Animated Feature Reveals", "Social Proof Counter", "Product Screenshot Showcase", "Investor Section", "Press Kit Download"]
       }
     },
     "techBadges": {
       "wordpress": "WordPress",
       "elementor": "Elementor Pro",
-      "seo": "SEO Optimized",
-      "multilingual": "Multilingual Ready",
+      "gpl": "GPL Licensed",
+      "rankmath": "RankMath SEO",
       "woocommerce": "WooCommerce",
       "responsive": "Responsive"
     }

@@ -109,7 +109,9 @@
   }
 
   /* Bulgarian language specific styling */
-  :lang(bg) {
+  :lang(bg),
+  [lang="bg"],
+  [lang="bg"] * {
     font-feature-settings: 'locl' 1;
   }
 

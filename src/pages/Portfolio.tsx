@@ -38,14 +38,14 @@ const TEMPLATE_IMAGES: Record<TemplateKey, string> = {
 };
 
 const TECH_BADGES: Record<TemplateKey, string[]> = {
-  ecommerce: ['wordpress', 'elementor', 'woocommerce', 'seo', 'responsive'],
-  saas: ['wordpress', 'elementor', 'seo', 'responsive', 'multilingual'],
-  agency: ['wordpress', 'elementor', 'seo', 'responsive'],
-  local: ['wordpress', 'elementor', 'seo', 'multilingual', 'responsive'],
-  restaurant: ['wordpress', 'elementor', 'woocommerce', 'seo', 'responsive'],
-  medical: ['wordpress', 'elementor', 'seo', 'multilingual', 'responsive'],
-  realestate: ['wordpress', 'elementor', 'seo', 'responsive'],
-  startup: ['wordpress', 'elementor', 'seo', 'responsive', 'multilingual'],
+  ecommerce: ['wordpress', 'elementor', 'gpl', 'rankmath', 'woocommerce'],
+  saas: ['wordpress', 'elementor', 'gpl', 'rankmath'],
+  agency: ['wordpress', 'elementor', 'gpl', 'rankmath'],
+  local: ['wordpress', 'elementor', 'gpl', 'rankmath'],
+  restaurant: ['wordpress', 'elementor', 'gpl', 'rankmath', 'woocommerce'],
+  medical: ['wordpress', 'elementor', 'gpl', 'rankmath'],
+  realestate: ['wordpress', 'elementor', 'gpl', 'rankmath'],
+  startup: ['wordpress', 'elementor', 'gpl', 'rankmath'],
 };
 
 const FILTER_CATEGORIES = ['All', 'E-commerce', 'SaaS', 'Corporate', 'Marketing'] as const;
@@ -72,9 +72,12 @@ const Portfolio = () => {
 
   const getLocalizedPath = (path: string) => `/${currentLang}${path ? `/${path}` : ''}`;
 
+  const coreFeatures = t('portfolio.coreFeaturesList', { returnObjects: true }) as string[];
+
   const templates = TEMPLATE_KEYS.map((key) => ({
     key,
     title: t(`portfolio.templates.${key}.title`),
+    subtitle: t(`portfolio.templates.${key}.subtitle`),
     category: t(`portfolio.templates.${key}.category`),
     description: t(`portfolio.templates.${key}.description`),
     features: t(`portfolio.templates.${key}.features`, { returnObjects: true }) as string[],
@@ -186,9 +189,12 @@ const Portfolio = () => {
                       <span className="text-primary text-xs font-medium mb-1 uppercase tracking-wider">
                         {tpl.category}
                       </span>
-                      <h3 className="text-lg md:text-xl font-bold text-foreground mb-1 group-hover:text-primary transition-colors">
+                      <h3 className="text-lg md:text-xl font-bold text-foreground mb-0.5 group-hover:text-primary transition-colors">
                         {tpl.title}
                       </h3>
+                      <p className="text-primary/70 text-xs font-medium mb-1">
+                        {tpl.subtitle}
+                      </p>
                       <p className="text-muted-foreground text-sm line-clamp-2">
                         {tpl.description}
                       </p>
@@ -225,6 +231,7 @@ const Portfolio = () => {
                   ))}
                 </div>
                 <DialogTitle className="text-2xl font-bold">{selected.title}</DialogTitle>
+                <p className="text-primary/80 text-sm font-medium">{selected.subtitle}</p>
                 <DialogDescription className="text-muted-foreground text-sm mt-1">
                   {selected.description}
                 </DialogDescription>
@@ -239,7 +246,23 @@ const Portfolio = () => {
                 />
               </div>
 
-              {/* Features List */}
+              {/* Core Features */}
+              <div className="mb-4">
+                <h4 className="text-sm font-semibold text-foreground mb-3 uppercase tracking-wider">
+                  {t('portfolio.coreFeatures')}
+                </h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {Array.isArray(coreFeatures) &&
+                    coreFeatures.map((feat, i) => (
+                      <div key={i} className="flex items-start gap-2">
+                        <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                        <span className="text-sm text-muted-foreground">{feat}</span>
+                      </div>
+                    ))}
+                </div>
+              </div>
+
+              {/* Template-Specific Features */}
               <div className="mb-6">
                 <h4 className="text-sm font-semibold text-foreground mb-3 uppercase tracking-wider">
                   {t('portfolio.features')}
