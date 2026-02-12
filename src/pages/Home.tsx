@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Globe, Search, Megaphone, Code, Smartphone, ShoppingCart } from 'lucide-react';
+import { ArrowRight, Globe, Search, Megaphone, Code, Smartphone, ShoppingCart, Zap } from 'lucide-react';
 import { type LanguageCode } from '@/i18n';
 import SEOHead from '@/components/SEOHead';
 
@@ -123,6 +123,31 @@ const Home = () => {
                 <div className="text-sm text-muted-foreground">{t(stat.labelKey)}</div>
               </div>
             ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* AI Delivery Banner */}
+      <section className="py-16 md:py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 pointer-events-none" />
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl mx-auto text-center"
+          >
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+              <Zap className="w-4 h-4" />
+              {t('aiDelivery.badge')}
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+              <span className="text-gradient">{t('aiDelivery.title')}</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              {t('aiDelivery.subtitle')}
+            </p>
           </motion.div>
         </div>
       </section>

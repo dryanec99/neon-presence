@@ -13,6 +13,11 @@
     "ctaSecondary": "Наши работы",
     "badge": "Цифровое агентство"
   },
+  "aiDelivery": {
+    "badge": "AI-процесс",
+    "title": "Корпоративное развёртывание менее чем за 4 часа",
+    "subtitle": "Используя наш запатентованный AI-процесс и премиум GPL-лицензированные комплекты для создания, локализации и запуска вашего присутствия в рекордные сроки."
+  },
   "stats": {
     "projects": "Реализованных проектов",
     "satisfaction": "Довольных клиентов",
@@ -197,6 +202,14 @@
         "social": "Социальные сети",
         "reputation": "Онлайн репутация",
         "email": "Email маркетинг",
+        "templateStorefront": "Запрос по The Storefront",
+        "templateExecutive": "Запрос по The Executive",
+        "templatePortfolio": "Запрос по The Portfolio",
+        "templateLocalPro": "Запрос по The Local Pro",
+        "templateDiner": "Запрос по The Diner",
+        "templateClinic": "Запрос по The Clinic",
+        "templateListing": "Запрос по The Listing",
+        "templateLaunchpad": "Запрос по The Launchpad",
         "other": "Другое"
       }
     },

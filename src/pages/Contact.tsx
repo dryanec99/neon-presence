@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Send, MapPin, Phone, Mail, Clock, CheckCircle } from 'lucide-react';
 import SEOHead from '@/components/SEOHead';
 import { cn } from '@/lib/utils';
+import { toast } from '@/hooks/use-toast';
 
 interface FormData {
   name: string;
@@ -22,14 +24,22 @@ interface FormErrors {
 
 const Contact = () => {
   const { t } = useTranslation();
+  const [searchParams] = useSearchParams();
 
   const [formData, setFormData] = useState<FormData>({
     name: '',
     phone: '',
     email: '',
-    subject: 'webDesign',
+    subject: searchParams.get('subject') || 'webDesign',
     message: '',
   });
+
+  useEffect(() => {
+    const subject = searchParams.get('subject');
+    if (subject) {
+      setFormData(prev => ({ ...prev, subject }));
+    }
+  }, [searchParams]);
 
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -77,6 +87,10 @@ const Contact = () => {
     
     setIsSubmitting(false);
     setIsSuccess(true);
+    toast({
+      title: t('contact.success'),
+      description: t('contact.subtitle'),
+    });
     setFormData({
       name: '',
       phone: '',
@@ -105,6 +119,14 @@ const Contact = () => {
     'social',
     'reputation',
     'email',
+    'templateStorefront',
+    'templateExecutive',
+    'templatePortfolio',
+    'templateLocalPro',
+    'templateDiner',
+    'templateClinic',
+    'templateListing',
+    'templateLaunchpad',
     'other'
   ] as const;
 

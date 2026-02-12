@@ -13,6 +13,11 @@
     "ctaSecondary": "View Our Work",
     "badge": "Digital Agency"
   },
+  "aiDelivery": {
+    "badge": "AI-Native Workflow",
+    "title": "Enterprise-Grade Deployment in Under 4 Hours",
+    "subtitle": "Using our proprietary AI-native workflow and premium GPL-licensed kits to build, localize, and launch your presence in record time."
+  },
   "stats": {
     "projects": "Projects Delivered",
     "satisfaction": "Client Satisfaction",
@@ -753,6 +758,14 @@
         "social": "Social Networks",
         "reputation": "Online Reputation",
         "email": "Email Marketing",
+        "templateStorefront": "The Storefront Template Inquiry",
+        "templateExecutive": "The Executive Template Inquiry",
+        "templatePortfolio": "The Portfolio Template Inquiry",
+        "templateLocalPro": "The Local Pro Template Inquiry",
+        "templateDiner": "The Diner Template Inquiry",
+        "templateClinic": "The Clinic Template Inquiry",
+        "templateListing": "The Listing Template Inquiry",
+        "templateLaunchpad": "The Launchpad Template Inquiry",
         "other": "Other"
       }
     },

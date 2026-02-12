@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ExternalLink, X, Check } from 'lucide-react';
 import { type LanguageCode } from '@/i18n';
@@ -67,10 +67,22 @@ const BENTO_SIZES: Record<number, string> = {
 const Portfolio = () => {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language as LanguageCode;
+  const navigate = useNavigate();
   const [activeFilter, setActiveFilter] = useState('All');
   const [selectedTemplate, setSelectedTemplate] = useState<TemplateKey | null>(null);
 
   const getLocalizedPath = (path: string) => `/${currentLang}${path ? `/${path}` : ''}`;
+
+  const TEMPLATE_SUBJECT_MAP: Record<TemplateKey, string> = {
+    ecommerce: 'templateStorefront',
+    saas: 'templateExecutive',
+    agency: 'templatePortfolio',
+    local: 'templateLocalPro',
+    restaurant: 'templateDiner',
+    medical: 'templateClinic',
+    realestate: 'templateListing',
+    startup: 'templateLaunchpad',
+  };
 
   const coreFeatures = t('portfolio.coreFeaturesList', { returnObjects: true }) as string[];
 
@@ -280,18 +292,21 @@ const Portfolio = () => {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-3">
-                <button className="btn-primary px-6 py-3 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 flex-1">
+                <button className="bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 flex-1 shadow-[0_0_20px_hsl(152_100%_50%/0.4)] transition-all">
                   {t('portfolio.livePreview')}
                   <ExternalLink className="w-4 h-4" />
                 </button>
-                <Link
-                  to={getLocalizedPath('contact')}
+                <button
+                  onClick={() => {
+                    const subjectKey = TEMPLATE_SUBJECT_MAP[selectedTemplate!];
+                    setSelectedTemplate(null);
+                    navigate(`${getLocalizedPath('contact')}?subject=${subjectKey}`);
+                  }}
                   className="btn-outline px-6 py-3 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 flex-1"
-                  onClick={() => setSelectedTemplate(null)}
                 >
                   {t('portfolio.requestQuote')}
                   <ArrowRight className="w-4 h-4" />
-                </Link>
+                </button>
               </div>
             </>
           )}
