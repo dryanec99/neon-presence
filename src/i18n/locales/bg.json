@@ -13,6 +13,11 @@
     "ctaSecondary": "Вижте нашите проекти",
     "badge": "Дигитална агенция"
   },
+  "aiDelivery": {
+    "badge": "AI-базиран процес",
+    "title": "Корпоративно внедряване за по-малко от 4 часа",
+    "subtitle": "Използвайки нашия патентован AI процес и премиум GPL-лицензирани комплекти за изграждане, локализиране и стартиране на вашето присъствие с рекордна скорост."
+  },
   "stats": {
     "projects": "Реализирани проекти",
     "satisfaction": "Доволни клиенти",
@@ -753,6 +758,14 @@
         "social": "Социални мрежи",
         "reputation": "Онлайн репутация",
         "email": "Имейл маркетинг",
+        "templateStorefront": "Запитване за The Storefront",
+        "templateExecutive": "Запитване за The Executive",
+        "templatePortfolio": "Запитване за The Portfolio",
+        "templateLocalPro": "Запитване за The Local Pro",
+        "templateDiner": "Запитване за The Diner",
+        "templateClinic": "Запитване за The Clinic",
+        "templateListing": "Запитване за The Listing",
+        "templateLaunchpad": "Запитване за The Launchpad",
         "other": "Друго"
       }
     },
