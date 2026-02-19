@@ -303,6 +303,16 @@
       opacity: 0;
     }
   }
+
+  /* Marquee scrolling animation */
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
 }
 
 /* Noise overlay - premium grain texture */

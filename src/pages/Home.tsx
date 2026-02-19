@@ -1,14 +1,13 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Globe, Search, Megaphone, Code, Smartphone, ShoppingCart, Zap } from 'lucide-react';
+import { ArrowRight, Globe, Search, Megaphone, Code, Smartphone, ShoppingCart, Zap, Star, ChevronRight } from 'lucide-react';
 import { type LanguageCode } from '@/i18n';
 import SEOHead from '@/components/SEOHead';
 import TextReveal from '@/components/motion/TextReveal';
 import StaggerChildren from '@/components/motion/StaggerChildren';
 import MagneticButton from '@/components/motion/MagneticButton';
 import MouseGlowCard from '@/components/motion/MouseGlowCard';
-import RippleButton from '@/components/motion/RippleButton';
 
 const Home = () => {
   const { t, i18n } = useTranslation();
@@ -37,77 +36,153 @@ const Home = () => {
     { value: '24/7', labelKey: 'stats.support' },
   ];
 
+  const clients = [
+    'FemmeFlora', 'DailyMarket', 'SmilePro', 'Nexus Digital',
+    'TechForge', 'AuraStudio', 'VeloShop', 'MindBridge',
+  ];
+
+  const testimonials = [
+    {
+      name: 'Elena Kostadinova',
+      role: 'CEO, FemmeFlora',
+      text: 'MiForgiX Dev delivered our e-commerce store in 3 days. The quality is exceptional — we went from zero to €50k/month in sales.',
+      rating: 5,
+    },
+    {
+      name: 'Ivan Petrov',
+      role: 'Director, Nexus Digital',
+      text: 'The team rebuilt our agency site and our leads tripled within 2 months. The animation quality rivals Vercel itself.',
+      rating: 5,
+    },
+    {
+      name: 'Maria Stefanova',
+      role: 'Founder, SmilePro Clinic',
+      text: 'Incredibly fast delivery. Our new site loads in under 1 second and Google loves it. Top-tier professionalism.',
+      rating: 5,
+    },
+  ];
+
   return (
     <>
       <SEOHead 
-        title={`MiForgiX Dev - ${t('hero.badge')}`}
+        title={`MiForgiX Dev - Powerful Web Solutions`}
         description={t('hero.subtitle')}
       />
 
-      {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-        <div className="absolute inset-0 bg-hero-glow pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
-        
-        <div className="container mx-auto px-4 py-20 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ type: 'spring', damping: 25, stiffness: 180 }}
-            >
-              <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-                {t('hero.badge')}
-              </span>
-            </motion.div>
+      {/* Hero Section — Cinematic Full-Screen */}
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        {/* Layered ambient background */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,hsl(152_100%_50%/0.08),transparent)]" />
+          <div className="absolute top-1/3 -left-32 w-[700px] h-[700px] rounded-full bg-primary/[0.04] blur-[120px] animate-float" />
+          <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-primary/[0.03] blur-[100px] animate-float" style={{ animationDelay: '-3s' }} />
+          {/* Grid lines */}
+          <div className="absolute inset-0 opacity-[0.03]" style={{
+            backgroundImage: 'linear-gradient(hsl(0 0% 100%) 1px, transparent 1px), linear-gradient(90deg, hsl(0 0% 100%) 1px, transparent 1px)',
+            backgroundSize: '80px 80px',
+          }} />
+        </div>
 
-            <TextReveal as="h1" className="font-bold leading-tight mb-6" delay={0.1}>
-              <span className="text-foreground">{t('hero.title').split(' ').slice(0, -2).join(' ')} </span>
-              <span className="text-gradient">{t('hero.title').split(' ').slice(-2).join(' ')}</span>
-            </TextReveal>
-
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ type: 'spring', damping: 25, stiffness: 180, delay: 0.25 }}
-              className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10"
-            >
-              {t('hero.subtitle')}
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ type: 'spring', damping: 25, stiffness: 180, delay: 0.35 }}
-              className="flex flex-col sm:flex-row items-center justify-center gap-4"
-            >
-              <MagneticButton>
-                <Link
-                  to={getLocalizedPath('contact')}
-                  className="btn-primary px-8 py-4 rounded-xl text-base font-semibold flex items-center gap-2 group"
-                >
-                  {t('hero.cta')}
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </MagneticButton>
-              <Link
-                to={getLocalizedPath('portfolio')}
-                className="btn-outline px-8 py-4 rounded-xl text-base font-semibold"
+        <div className="container mx-auto px-4 py-32 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left: Text */}
+            <div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ type: 'spring', damping: 25, stiffness: 180 }}
+                className="flex items-center gap-3 mb-8"
               >
-                {t('hero.ctaSecondary')}
-              </Link>
-            </motion.div>
+                <div className="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 text-primary text-sm font-mono">
+                  <span className="w-2 h-2 rounded-full bg-primary animate-pulse inline-block" />
+                  {t('hero.badge')} — Available Now
+                </div>
+              </motion.div>
+
+              <div className="mb-6">
+                <TextReveal as="h1" className="font-black leading-[1.05] mb-2" delay={0.05}>
+                  <span className="text-foreground">Powerful Web</span>
+                </TextReveal>
+                <TextReveal as="h1" className="font-black leading-[1.05] mb-2" delay={0.12}>
+                  <span className="text-gradient">Solutions</span>
+                </TextReveal>
+                <TextReveal as="h1" className="font-black leading-[1.05]" delay={0.19}>
+                  <span className="text-foreground/60">for Your Business.</span>
+                </TextReveal>
+              </div>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ type: 'spring', damping: 25, stiffness: 180, delay: 0.3 }}
+                className="text-lg text-muted-foreground max-w-xl mb-10 leading-relaxed"
+              >
+                {t('hero.subtitle')}
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ type: 'spring', damping: 25, stiffness: 180, delay: 0.4 }}
+                className="flex flex-col sm:flex-row gap-4"
+              >
+                <MagneticButton>
+                  <Link
+                    to={getLocalizedPath('contact')}
+                    className="btn-primary px-8 py-4 rounded-xl text-base font-semibold flex items-center gap-2 group animate-pulse-glow"
+                  >
+                    {t('hero.cta')}
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </MagneticButton>
+                <Link
+                  to={getLocalizedPath('portfolio')}
+                  className="btn-outline px-8 py-4 rounded-xl text-base font-semibold flex items-center gap-2 group"
+                >
+                  {t('hero.ctaSecondary')}
+                  <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </motion.div>
+            </div>
+
+            {/* Right: Stats bento */}
+            <div className="hidden lg:grid grid-cols-2 gap-4">
+              {stats.map((stat, i) => (
+                <motion.div
+                  key={stat.labelKey}
+                  initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ type: 'spring', damping: 20, stiffness: 160, delay: 0.3 + i * 0.08 }}
+                  className="bento-item text-center"
+                >
+                  <div className="text-4xl font-black text-primary mb-1">{stat.value}</div>
+                  <div className="text-sm text-muted-foreground">{t(stat.labelKey)}</div>
+                </motion.div>
+              ))}
+            </div>
           </div>
 
-          {/* Stats */}
-          <StaggerChildren className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-primary mb-1">{stat.value}</div>
-                <div className="text-sm text-muted-foreground">{t(stat.labelKey)}</div>
+          {/* Mobile stats row */}
+          <StaggerChildren className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 lg:hidden">
+            {stats.map((stat) => (
+              <div key={stat.labelKey} className="text-center">
+                <div className="text-3xl font-black text-primary mb-1">{stat.value}</div>
+                <div className="text-xs text-muted-foreground">{t(stat.labelKey)}</div>
               </div>
             ))}
           </StaggerChildren>
+        </div>
+      </section>
+
+      {/* Client Marquee Strip */}
+      <section className="py-12 border-y border-border overflow-hidden relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background z-10 pointer-events-none" />
+        <div className="flex gap-12 animate-marquee whitespace-nowrap">
+          {[...clients, ...clients].map((client, i) => (
+            <span key={i} className="text-muted-foreground/50 text-sm font-medium tracking-widest uppercase shrink-0 hover:text-primary transition-colors cursor-default">
+              {client}
+            </span>
+          ))}
         </div>
       </section>
 
@@ -121,7 +196,7 @@ const Home = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ type: 'spring', damping: 20, stiffness: 200 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6 border border-primary/20"
             >
               <Zap className="w-4 h-4" />
               {t('aiDelivery.badge')}
@@ -174,6 +249,9 @@ const Home = () => {
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     {t(`services.categories.${category.key}.description`)}
                   </p>
+                  <div className="mt-4 flex items-center gap-1 text-primary/70 text-sm font-medium group-hover:gap-2 transition-all">
+                    Learn more <ArrowRight className="w-3 h-3" />
+                  </div>
                 </Link>
               </MouseGlowCard>
             ))}
@@ -200,6 +278,50 @@ const Home = () => {
                   <p className="text-muted-foreground text-sm">
                     {t(`services.items.${service.key}.description`)}
                   </p>
+                </div>
+              </MouseGlowCard>
+            ))}
+          </StaggerChildren>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-20 md:py-32 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_40%_at_50%_50%,hsl(152_100%_50%/0.04),transparent)] pointer-events-none" />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-16">
+            <TextReveal as="h2" className="font-bold mb-4">Trusted by Real Businesses</TextReveal>
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.15 }}
+              className="text-muted-foreground max-w-xl mx-auto"
+            >
+              Don't take our word for it — here's what our clients say
+            </motion.p>
+          </div>
+          <StaggerChildren className="grid md:grid-cols-3 gap-6">
+            {testimonials.map((testimonial, i) => (
+              <MouseGlowCard key={i} className="rounded-2xl">
+                <div className="bento-item h-full flex flex-col">
+                  <div className="flex gap-1 mb-4">
+                    {Array.from({ length: testimonial.rating }).map((_, j) => (
+                      <Star key={j} className="w-4 h-4 fill-primary text-primary" />
+                    ))}
+                  </div>
+                  <p className="text-muted-foreground text-sm leading-relaxed flex-1 mb-6">
+                    "{testimonial.text}"
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-sm">
+                      {testimonial.name.charAt(0)}
+                    </div>
+                    <div>
+                      <div className="text-sm font-semibold text-foreground">{testimonial.name}</div>
+                      <div className="text-xs text-muted-foreground">{testimonial.role}</div>
+                    </div>
+                  </div>
                 </div>
               </MouseGlowCard>
             ))}
