@@ -120,7 +120,7 @@ const Header = () => {
             {/* CTA Button */}
             <Link
               to={getLocalizedPath('contact')}
-              className="btn-primary px-5 py-2.5 rounded-lg text-sm"
+              className="btn-primary px-5 py-2.5 rounded-lg text-sm animate-pulse-glow"
             >
               {t('hero.cta')}
             </Link>
