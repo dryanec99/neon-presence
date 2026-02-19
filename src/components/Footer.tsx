@@ -39,9 +39,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <Link to={getLocalizedPath('')} className="inline-flex items-center gap-2 text-2xl font-bold mb-4">
-              <span className="text-primary">Web</span>
-              <span className="text-foreground">Builder</span>
+            <Link to={getLocalizedPath('')} className="inline-flex items-center gap-2 text-2xl font-bold mb-4 tracking-tight">
+              <span className="text-primary">MiForgiX</span>
+              <span className="text-foreground/80 font-light text-lg">DEV</span>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">
               {t('footer.description')}
@@ -104,7 +104,7 @@ const Footer = () => {
                   className="flex items-center gap-2 text-muted-foreground hover:text-primary text-sm transition-colors"
                 >
                   <Mail className="w-4 h-4" />
-                  hello@webbuilder.bg
+            hello@miforgixdev.com
                 </a>
               </li>
               <li>
@@ -123,7 +123,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} WebBuilder. {t('footer.rights')}
+            © {new Date().getFullYear()} MiForgiX Dev. {t('footer.rights')}
           </p>
           <div className="flex items-center gap-6 text-sm text-muted-foreground">
             <a href="#" className="hover:text-primary transition-colors">{t('footer.privacy')}</a>

@@ -40,7 +40,7 @@ const Home = () => {
   return (
     <>
       <SEOHead 
-        title={`WebBuilder - ${t('hero.badge')}`}
+        title={`MiForgiX Dev - ${t('hero.badge')}`}
         description={t('hero.subtitle')}
       />
 
