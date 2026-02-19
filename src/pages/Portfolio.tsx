@@ -53,7 +53,7 @@ const FILTER_KEYS: Record<string, string> = {
 
 const BENTO_SIZES: Record<number, string> = {
   0: 'md:col-span-2 md:row-span-2',
-  1: 'md:col-span-2 md:row-span-2',
+  3: 'md:col-span-2 md:row-span-2',
 };
 
 const TEMPLATE_SUBJECT_MAP: Record<TemplateKey, string> = {
@@ -104,6 +104,12 @@ const Portfolio = () => {
         description={t('portfolio.subtitle')}
       />
 
+      {/* Ambient Glow */}
+      <div className="fixed inset-0 pointer-events-none z-0" aria-hidden="true">
+        <div className="absolute top-1/4 left-1/3 w-[600px] h-[600px] rounded-full bg-primary/[0.04] blur-[120px] animate-float" />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-primary/[0.03] blur-[100px] animate-float" style={{ animationDelay: '-3s' }} />
+      </div>
+
       {/* Hero */}
       <section className="py-20 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-hero-glow pointer-events-none" />
@@ -148,7 +154,7 @@ const Portfolio = () => {
       {/* Bento Grid */}
       <section className="py-8 md:py-16">
         <div className="container mx-auto px-4">
-          <StaggerChildren className="grid grid-cols-1 md:grid-cols-4 gap-4 lg:gap-6 auto-rows-[280px]">
+          <StaggerChildren className="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[280px]">
             <AnimatePresence mode="popLayout">
               {filtered.map((tpl, index) => (
                 <MouseGlowCard
@@ -156,7 +162,13 @@ const Portfolio = () => {
                   className={`group cursor-pointer rounded-2xl ${BENTO_SIZES[index] || ''}`}
                 >
                   <div
-                    className="bento-item p-0 overflow-hidden h-full flex flex-col relative"
+                    className="overflow-hidden h-full flex flex-col relative rounded-2xl transition-all duration-300"
+                    style={{
+                      background: 'hsl(0 0% 12% / 0.4)',
+                      backdropFilter: 'blur(16px)',
+                      WebkitBackdropFilter: 'blur(16px)',
+                      border: '1px solid hsl(0 0% 100% / 0.1)',
+                    }}
                     onClick={() => setSelectedTemplate(tpl.key as TemplateKey)}
                   >
                     <div className="absolute inset-0">
