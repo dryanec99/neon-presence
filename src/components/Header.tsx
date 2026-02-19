@@ -45,7 +45,7 @@ const Header = () => {
   const currentLanguage = languages.find(l => l.code === currentLang);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-50 glass">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
@@ -96,7 +96,7 @@ const Header = () => {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className="absolute right-0 top-full mt-2 py-2 bg-card border border-border rounded-lg shadow-elevated min-w-[140px] z-50"
+                    className="absolute right-0 top-full mt-2 py-2 glass rounded-lg shadow-elevated min-w-[140px] z-50"
                   >
                     {languages.map((lang) => (
                       <button

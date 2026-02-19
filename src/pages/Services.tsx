@@ -9,6 +9,10 @@ import {
 } from 'lucide-react';
 import { type LanguageCode } from '@/i18n';
 import SEOHead from '@/components/SEOHead';
+import TextReveal from '@/components/motion/TextReveal';
+import StaggerChildren from '@/components/motion/StaggerChildren';
+import MouseGlowCard from '@/components/motion/MouseGlowCard';
+import MagneticButton from '@/components/motion/MagneticButton';
 
 const Services = () => {
   const { t, i18n } = useTranslation();
@@ -61,21 +65,20 @@ const Services = () => {
       {/* Hero */}
       <section className="py-20 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-hero-glow pointer-events-none" />
-        
         <div className="container mx-auto px-4 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto text-center"
-          >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+          <div className="max-w-3xl mx-auto text-center">
+            <TextReveal as="h1" className="font-bold mb-6">
               {t('services.title')}
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground">
+            </TextReveal>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="text-lg md:text-xl text-muted-foreground"
+            >
               {t('services.subtitle')}
-            </p>
-          </motion.div>
+            </motion.p>
+          </div>
         </div>
       </section>
 
@@ -83,24 +86,30 @@ const Services = () => {
       <section className="py-12 md:py-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 pointer-events-none" />
         <div className="container mx-auto px-4 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto text-center"
-          >
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <motion.span
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ type: 'spring', damping: 20, stiffness: 200 }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4"
+            >
               <Zap className="w-4 h-4" />
               {t('aiDelivery.badge')}
-            </span>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3">
+            </motion.span>
+            <TextReveal as="h2" className="font-bold mb-3">
               <span className="text-gradient">{t('aiDelivery.title')}</span>
-            </h2>
-            <p className="text-muted-foreground max-w-xl mx-auto">
+            </TextReveal>
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-muted-foreground max-w-xl mx-auto"
+            >
               {t('aiDelivery.subtitle')}
-            </p>
-          </motion.div>
+            </motion.p>
+          </div>
         </div>
       </section>
 
@@ -115,7 +124,7 @@ const Services = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              transition={{ type: 'spring', damping: 25, stiffness: 180 }}
               className="flex items-center gap-4 mb-12"
             >
               <div className={`w-14 h-14 rounded-xl bg-${group.color}/10 flex items-center justify-center`}>
@@ -131,21 +140,15 @@ const Services = () => {
               </div>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {group.services.map((service, index) => {
+            <StaggerChildren className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {group.services.map((service) => {
                 const slugMap: Record<string, string> = {
                   webDesign: 'web-design', ecommerce: 'ecommerce', mobileApps: 'mobile-apps',
                   googleAds: 'google-ads', seoOptimization: 'seo', googleMyBusiness: 'google-my-business',
                   socialNetworks: 'social-networks', onlineReputation: 'online-reputation', emailMarketing: 'email-marketing',
                 };
                 return (
-                  <motion.div
-                    key={service.key}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                  >
+                  <MouseGlowCard key={service.key} className="rounded-2xl">
                     <Link
                       to={getLocalizedPath(`services/${slugMap[service.key]}`)}
                       className="bento-item group cursor-pointer block h-full"
@@ -160,10 +163,10 @@ const Services = () => {
                         {t(`services.items.${service.key}.description`)}
                       </p>
                     </Link>
-                  </motion.div>
+                  </MouseGlowCard>
                 );
               })}
-            </div>
+            </StaggerChildren>
           </div>
         </section>
       ))}
@@ -171,25 +174,35 @@ const Services = () => {
       {/* CTA */}
       <section className="py-20 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
-        
         <div className="container mx-auto px-4 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto text-center"
-          >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">{t('cta.title')}</h2>
-            <p className="text-lg text-muted-foreground mb-10">{t('cta.subtitle')}</p>
-            <Link
-              to={getLocalizedPath('contact')}
-              className="btn-primary px-10 py-4 rounded-xl text-base font-semibold inline-flex items-center gap-2 group"
+          <div className="max-w-3xl mx-auto text-center">
+            <TextReveal as="h2" className="font-bold mb-6">{t('cta.title')}</TextReveal>
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.15 }}
+              className="text-lg text-muted-foreground mb-10"
             >
-              {t('cta.button')}
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </motion.div>
+              {t('cta.subtitle')}
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ type: 'spring', damping: 25, stiffness: 180, delay: 0.25 }}
+            >
+              <MagneticButton>
+                <Link
+                  to={getLocalizedPath('contact')}
+                  className="btn-primary px-10 py-4 rounded-xl text-base font-semibold inline-flex items-center gap-2 group"
+                >
+                  {t('cta.button')}
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </MagneticButton>
+            </motion.div>
+          </div>
         </div>
       </section>
     </>
