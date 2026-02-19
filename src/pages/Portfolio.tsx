@@ -2,9 +2,10 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, ExternalLink, X, Check } from 'lucide-react';
+import { ArrowRight, ExternalLink, Check } from 'lucide-react';
 import { type LanguageCode } from '@/i18n';
 import SEOHead from '@/components/SEOHead';
+import PreviewModal from '@/components/PreviewModal';
 import {
   Dialog,
   DialogContent,
@@ -13,56 +14,39 @@ import {
   DialogDescription,
 } from '@/components/ui/dialog';
 
-const TEMPLATE_KEYS = [
-  'ecommerce',
-  'saas',
-  'agency',
-  'local',
-  'restaurant',
-  'medical',
-  'realestate',
-  'startup',
-] as const;
-
+const TEMPLATE_KEYS = ['femmeflora', 'dailymarket', 'smilepro', 'nexus'] as const;
 type TemplateKey = (typeof TEMPLATE_KEYS)[number];
 
 const TEMPLATE_IMAGES: Record<TemplateKey, string> = {
-  ecommerce: 'https://images.unsplash.com/photo-1661956602116-aa6865609028?w=800&h=600&fit=crop',
-  saas: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
-  agency: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=600&fit=crop',
-  local: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop',
-  restaurant: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop',
-  medical: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=600&fit=crop',
-  realestate: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop',
-  startup: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=600&fit=crop',
+  femmeflora: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&h=600&fit=crop',
+  dailymarket: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop',
+  smilepro: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&h=600&fit=crop',
+  nexus: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
 };
 
-const TEMPLATE_PREVIEWS: Partial<Record<TemplateKey, string>> = {
-  saas: 'https://illegalbed.s6-tastewp.com/#',
+const TEMPLATE_PREVIEWS: Record<TemplateKey, string> = {
+  femmeflora: 'https://musical-raindrop-acf78e.netlify.app',
+  dailymarket: 'https://snazzy-scone-01c792.netlify.app',
+  smilepro: 'https://peppy-arithmetic-db87b8.netlify.app',
+  nexus: 'https://roaring-gnome-eb42de.netlify.app',
 };
 
 const TECH_BADGES: Record<TemplateKey, string[]> = {
-  ecommerce: ['wordpress', 'elementor', 'gpl', 'rankmath', 'woocommerce'],
-  saas: ['wordpress', 'elementor', 'gpl', 'rankmath'],
-  agency: ['wordpress', 'elementor', 'gpl', 'rankmath'],
-  local: ['wordpress', 'elementor', 'gpl', 'rankmath'],
-  restaurant: ['wordpress', 'elementor', 'gpl', 'rankmath', 'woocommerce'],
-  medical: ['wordpress', 'elementor', 'gpl', 'rankmath'],
-  realestate: ['wordpress', 'elementor', 'gpl', 'rankmath'],
-  startup: ['wordpress', 'elementor', 'gpl', 'rankmath'],
+  femmeflora: ['woocommerce', 'elementor', 'staticEngine'],
+  dailymarket: ['ecommerce', 'astraKit', 'seoReady'],
+  smilepro: ['medical', 'leadGen', 'staticFast'],
+  nexus: ['agency', 'highEndUI', 'staticPowered'],
 };
 
-const FILTER_CATEGORIES = ['All', 'E-commerce', 'SaaS', 'Corporate', 'Marketing'] as const;
+const FILTER_CATEGORIES = ['All', 'E-commerce', 'Healthcare', 'Agency'] as const;
 
 const FILTER_KEYS: Record<string, string> = {
   All: 'filterAll',
   'E-commerce': 'filterEcommerce',
-  SaaS: 'filterSaas',
-  Corporate: 'filterCorporate',
-  Marketing: 'filterMarketing',
+  Healthcare: 'filterHealthcare',
+  Agency: 'filterAgency',
 };
 
-// Bento size: first two are large (flagship), rest are small
 const BENTO_SIZES: Record<number, string> = {
   0: 'md:col-span-2 md:row-span-2',
   1: 'md:col-span-2 md:row-span-2',
@@ -74,18 +58,16 @@ const Portfolio = () => {
   const navigate = useNavigate();
   const [activeFilter, setActiveFilter] = useState('All');
   const [selectedTemplate, setSelectedTemplate] = useState<TemplateKey | null>(null);
+  const [previewUrl, setPreviewUrl] = useState<string | null>(null);
+  const [previewTitle, setPreviewTitle] = useState('');
 
   const getLocalizedPath = (path: string) => `/${currentLang}${path ? `/${path}` : ''}`;
 
   const TEMPLATE_SUBJECT_MAP: Record<TemplateKey, string> = {
-    ecommerce: 'templateStorefront',
-    saas: 'templateExecutive',
-    agency: 'templatePortfolio',
-    local: 'templateLocalPro',
-    restaurant: 'templateDiner',
-    medical: 'templateClinic',
-    realestate: 'templateListing',
-    startup: 'templateLaunchpad',
+    femmeflora: 'templateFemmeFlora',
+    dailymarket: 'templateDailyMarket',
+    smilepro: 'templateSmilePro',
+    nexus: 'templateNexus',
   };
 
   const coreFeatures = t('portfolio.coreFeaturesList', { returnObjects: true }) as string[];
@@ -99,7 +81,7 @@ const Portfolio = () => {
     features: t(`portfolio.templates.${key}.features`, { returnObjects: true }) as string[],
     image: TEMPLATE_IMAGES[key],
     techBadges: TECH_BADGES[key],
-    previewUrl: TEMPLATE_PREVIEWS[key] || null,
+    previewUrl: TEMPLATE_PREVIEWS[key],
   }));
 
   const filtered =
@@ -179,7 +161,6 @@ const Portfolio = () => {
                   onClick={() => setSelectedTemplate(tpl.key as TemplateKey)}
                 >
                   <div className="bento-item p-0 overflow-hidden h-full flex flex-col relative">
-                    {/* Image */}
                     <div className="absolute inset-0">
                       <img
                         src={tpl.image}
@@ -189,12 +170,9 @@ const Portfolio = () => {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[hsl(0_0%_4%/0.95)] via-[hsl(0_0%_4%/0.5)] to-transparent" />
                     </div>
-
-                    {/* Content */}
                     <div className="relative z-10 flex flex-col justify-end h-full p-5 md:p-6">
-                      {/* Tech badges */}
                       <div className="flex flex-wrap gap-1.5 mb-3">
-                        {tpl.techBadges.slice(0, 3).map((badge) => (
+                        {tpl.techBadges.map((badge) => (
                           <span
                             key={badge}
                             className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-primary/15 text-primary border border-primary/30"
@@ -215,8 +193,6 @@ const Portfolio = () => {
                       <p className="text-muted-foreground text-sm line-clamp-2">
                         {tpl.description}
                       </p>
-
-                      {/* Hover overlay action */}
                       <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center shadow-[0_0_20px_hsl(152_100%_50%/0.5)]">
                           <ExternalLink className="w-4 h-4 text-primary-foreground" />
@@ -254,7 +230,6 @@ const Portfolio = () => {
                 </DialogDescription>
               </DialogHeader>
 
-              {/* Preview Image */}
               <div className="rounded-xl overflow-hidden border border-border my-4">
                 <img
                   src={selected.image}
@@ -279,7 +254,7 @@ const Portfolio = () => {
                 </div>
               </div>
 
-              {/* Template-Specific Features */}
+              {/* Template Features */}
               <div className="mb-6">
                 <h4 className="text-sm font-semibold text-foreground mb-3 uppercase tracking-wider">
                   {t('portfolio.features')}
@@ -297,15 +272,17 @@ const Portfolio = () => {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-3">
-                <a
-                  href={selected.previewUrl || '#'}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 flex-1 shadow-[0_0_20px_hsl(152_100%_50%/0.4)] transition-all ${!selected.previewUrl ? 'opacity-50 pointer-events-none' : ''}`}
+                <button
+                  onClick={() => {
+                    setSelectedTemplate(null);
+                    setPreviewTitle(selected.title);
+                    setPreviewUrl(selected.previewUrl);
+                  }}
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 flex-1 shadow-[0_0_20px_hsl(152_100%_50%/0.4)] transition-all"
                 >
                   {t('portfolio.livePreview')}
                   <ExternalLink className="w-4 h-4" />
-                </a>
+                </button>
                 <button
                   onClick={() => {
                     const subjectKey = TEMPLATE_SUBJECT_MAP[selectedTemplate!];
@@ -322,6 +299,14 @@ const Portfolio = () => {
           )}
         </DialogContent>
       </Dialog>
+
+      {/* Fullscreen Preview Modal */}
+      <PreviewModal
+        url={previewUrl || ''}
+        title={previewTitle}
+        open={!!previewUrl}
+        onClose={() => setPreviewUrl(null)}
+      />
 
       {/* CTA */}
       <section className="py-20 md:py-32 relative overflow-hidden">
