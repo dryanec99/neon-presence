@@ -30,15 +30,11 @@ const StaggerChildren = ({ children, className = '', staggerDelay = 0.05 }: Stag
     <div ref={ref} className={className}>
       {Children.map(children, (child, i) => {
         if (!isValidElement(child)) return child;
-        return (
-          <motion.div
-            key={i}
-            custom={i}
-            initial="hidden"
-            animate={isInView ? 'visible' : 'hidden'}
-            variants={{
-              hidden: { opacity: 0, y: 40, scale: 0.95 },
-              visible: {
+        // Clone the child directly instead of wrapping in a div to preserve grid item classes (col-span, row-span)
+        return cloneElement(child as React.ReactElement<any>, {
+          initial: { opacity: 0, y: 40, scale: 0.95 },
+          animate: isInView
+            ? {
                 opacity: 1,
                 y: 0,
                 scale: 1,
@@ -48,12 +44,9 @@ const StaggerChildren = ({ children, className = '', staggerDelay = 0.05 }: Stag
                   stiffness: 180,
                   delay: i * staggerDelay,
                 },
-              },
-            }}
-          >
-            {child}
-          </motion.div>
-        );
+              }
+            : { opacity: 0, y: 40, scale: 0.95 },
+        });
       })}
     </div>
   );
