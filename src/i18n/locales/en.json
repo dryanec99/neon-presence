@@ -641,10 +641,10 @@
     }
   },
   "portfolio": {
-    "title": "Template Showcase",
-    "subtitle": "Premium WordPress kits built with Elementor Pro — designed to convert, optimized to rank.",
+    "title": "Our Work",
+    "subtitle": "Live projects powered by our AI-Native workflow — deployed in under 4 hours.",
     "viewProject": "View Details",
-    "viewAll": "View All Templates",
+    "viewAll": "View All Projects",
     "livePreview": "Live Preview",
     "close": "Close",
     "features": "Key Features",
@@ -652,76 +652,53 @@
     "requestQuote": "Request a Quote",
     "filterAll": "All",
     "filterEcommerce": "E-commerce",
-    "filterSaas": "SaaS",
-    "filterCorporate": "Corporate",
-    "filterMarketing": "Marketing",
+    "filterHealthcare": "Healthcare",
+    "filterAgency": "Agency",
     "coreFeatures": "Core Features",
-    "coreFeaturesList": ["Lifetime Updates", "Mobile-Responsive", "Multi-language Ready (EN/BG/RU)", "Speed Optimized via WP Rocket", "GPL Licensed", "SEO-Ready with RankMath"],
+    "coreFeaturesList": ["Lifetime Updates", "Mobile-Responsive", "Multi-language Ready (EN/BG/RU)", "Speed Optimized", "Static-Fast Architecture", "SEO-Ready"],
     "templates": {
-      "ecommerce": {
-        "title": "The Storefront",
-        "subtitle": "High-Conversion WooCommerce Kit",
+      "femmeflora": {
+        "title": "Femme Flora",
+        "subtitle": "Makeover & Health/Beauty Store",
         "category": "E-commerce",
-        "description": "A premium WooCommerce kit engineered for maximum conversions. Advanced product filtering, dynamic cart, one-page checkout, and blazing-fast performance.",
-        "features": ["WooCommerce Integration", "Dynamic Product Filtering", "One-Page Checkout", "Mobile-First Design", "Schema Markup for Products", "Speed Optimized (90+ PageSpeed)"]
+        "description": "High-conversion E-commerce solution for female-centric beauty and fashion brands. Powered by WooCommerce with a blazing-fast static engine.",
+        "features": ["WooCommerce Integration", "Beauty Product Catalog", "One-Page Checkout", "Mobile-First Design", "Product Schema Markup", "Speed Optimized (90+ PageSpeed)"]
       },
-      "saas": {
-        "title": "The Executive",
-        "subtitle": "Enterprise Business Kit with Elementor Pro",
-        "category": "SaaS",
-        "description": "Premium corporate solution delivered in under 4 hours using our AI-Native workflow. Includes high-performance blocks and full SEO optimization.",
-        "features": ["Dark Mode Aesthetic", "Interactive Pricing Table", "Feature Comparison Grid", "Testimonial Carousel", "Lead Capture Forms", "A/B Test Ready"]
-      },
-      "agency": {
-        "title": "The Portfolio",
-        "subtitle": "Creative Agency Minimalist Kit",
-        "category": "Corporate",
-        "description": "A visual-heavy minimalist kit for design studios and creative agencies. Fullscreen galleries, case study layouts, and smooth scroll animations.",
-        "features": ["Fullscreen Image Galleries", "Case Study Layouts", "Smooth Scroll Animations", "Team Member Profiles", "Client Logo Carousel", "Video Background Sections"]
-      },
-      "local": {
-        "title": "The Local Pro",
-        "subtitle": "SEO-Optimized Kit for Bulgarian Small Businesses",
-        "category": "Marketing",
-        "description": "Specifically designed for the Bulgarian market with built-in local SEO hooks, Google Maps integration, review widgets, and click-to-call functionality.",
-        "features": ["Local SEO Schema", "Google Maps Integration", "Review Aggregation Widget", "Click-to-Call Buttons", "Appointment Booking Form", "Multi-Location Support"]
-      },
-      "restaurant": {
-        "title": "The Diner",
-        "subtitle": "Restaurant & Hospitality Suite",
+      "dailymarket": {
+        "title": "Daily Marketplace",
+        "subtitle": "General Shopping Platform",
         "category": "E-commerce",
-        "description": "An elegant dining template with online menu builder, reservation system, and delivery integration. Optimized for local discovery and Google Reviews.",
-        "features": ["Interactive Menu Builder", "Online Reservation System", "Delivery Integration", "Photo Gallery with Lightbox", "Events & Specials Section", "Google Reviews Widget"]
+        "description": "A versatile retail template optimized for fast browsing and secure checkout. Built with Astra Kit for maximum flexibility and performance.",
+        "features": ["Dynamic Product Filtering", "Secure Checkout Flow", "Wishlist & Compare", "Multi-Category Support", "SEO-Optimized Structure", "Fast Loading Architecture"]
       },
-      "medical": {
-        "title": "The Clinic",
-        "subtitle": "Medical & Wellness Platform",
-        "category": "Corporate",
-        "description": "A GDPR-compliant healthcare kit with appointment booking, doctor profiles, and patient portal integration. Built for trust and compliance.",
-        "features": ["GDPR-Compliant Forms", "Appointment Booking System", "Doctor/Staff Profiles", "Service Catalog", "Patient Testimonials", "Insurance Info Section"]
+      "smilepro": {
+        "title": "SmilePro Dental",
+        "subtitle": "Healthcare Clinic Platform",
+        "category": "Healthcare",
+        "description": "Professional clinic platform with appointment hooks and medical service grids. Designed for trust, compliance, and lead generation.",
+        "features": ["Appointment Booking System", "Medical Service Grid", "Doctor Profiles", "Patient Testimonials", "GDPR-Compliant Forms", "Local SEO Optimized"]
       },
-      "realestate": {
-        "title": "The Listing",
-        "subtitle": "Real Estate Starter Kit",
-        "category": "Marketing",
-        "description": "A property listing kit with advanced search filters, virtual tour embeds, agent profiles, and mortgage calculator. IDX-ready and SEO-optimized.",
-        "features": ["Property Listing Grid", "Advanced Search Filters", "Virtual Tour Embeds", "Agent Profile Pages", "Mortgage Calculator", "Neighborhood Guides"]
-      },
-      "startup": {
-        "title": "The Launchpad",
-        "subtitle": "Startup Launch Page Kit",
-        "category": "SaaS",
-        "description": "A conversion-focused landing page for product launches. Waitlist forms, animated feature reveals, social proof counters, and investor-ready sections.",
-        "features": ["Waitlist / Email Capture", "Animated Feature Reveals", "Social Proof Counter", "Product Screenshot Showcase", "Investor Section", "Press Kit Download"]
+      "nexus": {
+        "title": "Nexus Digital",
+        "subtitle": "Premium Digital Agency",
+        "category": "Agency",
+        "description": "Premium corporate agency layout with interactive portfolio and bento grids. High-end UI designed to impress enterprise clients.",
+        "features": ["Interactive Portfolio Grid", "Bento Layout Sections", "Team Member Profiles", "Case Study Pages", "Lead Capture Forms", "Smooth Scroll Animations"]
       }
     },
     "techBadges": {
-      "wordpress": "WordPress",
-      "elementor": "Elementor Pro",
-      "gpl": "GPL Licensed",
-      "rankmath": "RankMath SEO",
       "woocommerce": "WooCommerce",
-      "responsive": "Responsive"
+      "elementor": "Elementor Pro",
+      "staticEngine": "Static Engine",
+      "ecommerce": "E-commerce",
+      "astraKit": "Astra Kit",
+      "seoReady": "SEO Ready",
+      "medical": "Medical",
+      "leadGen": "Lead Gen",
+      "staticFast": "Static-Fast",
+      "agency": "Agency",
+      "highEndUI": "High-End UI",
+      "staticPowered": "Static Powered"
     }
   },
   "blog": {
@@ -758,14 +735,10 @@
         "social": "Social Networks",
         "reputation": "Online Reputation",
         "email": "Email Marketing",
-        "templateStorefront": "The Storefront Template Inquiry",
-        "templateExecutive": "The Executive Template Inquiry",
-        "templatePortfolio": "The Portfolio Template Inquiry",
-        "templateLocalPro": "The Local Pro Template Inquiry",
-        "templateDiner": "The Diner Template Inquiry",
-        "templateClinic": "The Clinic Template Inquiry",
-        "templateListing": "The Listing Template Inquiry",
-        "templateLaunchpad": "The Launchpad Template Inquiry",
+        "templateFemmeFlora": "Femme Flora Project Inquiry",
+        "templateDailyMarket": "Daily Marketplace Project Inquiry",
+        "templateSmilePro": "SmilePro Dental Project Inquiry",
+        "templateNexus": "Nexus Digital Project Inquiry",
         "other": "Other"
       }
     },
