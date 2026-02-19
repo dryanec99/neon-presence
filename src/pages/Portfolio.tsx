@@ -100,7 +100,7 @@ const Portfolio = () => {
   return (
     <>
       <SEOHead
-        title={`${t('portfolio.title')} - WebBuilder`}
+        title={`${t('portfolio.title')} - MiForgiX Dev`}
         description={t('portfolio.subtitle')}
       />
 
