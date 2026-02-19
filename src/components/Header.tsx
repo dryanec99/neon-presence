@@ -51,10 +51,10 @@ const Header = () => {
           {/* Logo */}
           <Link 
             to={getLocalizedPath('')} 
-            className="flex items-center gap-2 text-xl md:text-2xl font-bold"
+            className="flex items-center gap-2 text-xl md:text-2xl font-bold tracking-tight"
           >
-            <span className="text-primary">Web</span>
-            <span className="text-foreground">Builder</span>
+            <span className="text-primary">MiForgiX</span>
+            <span className="text-foreground/80 font-light text-lg">DEV</span>
           </Link>
 
           {/* Desktop Navigation */}
