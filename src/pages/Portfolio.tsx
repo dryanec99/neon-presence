@@ -6,6 +6,10 @@ import { ArrowRight, ExternalLink, Check } from 'lucide-react';
 import { type LanguageCode } from '@/i18n';
 import SEOHead from '@/components/SEOHead';
 import PreviewModal from '@/components/PreviewModal';
+import TextReveal from '@/components/motion/TextReveal';
+import StaggerChildren from '@/components/motion/StaggerChildren';
+import MouseGlowCard from '@/components/motion/MouseGlowCard';
+import MagneticButton from '@/components/motion/MagneticButton';
 import {
   Dialog,
   DialogContent,
@@ -52,6 +56,13 @@ const BENTO_SIZES: Record<number, string> = {
   1: 'md:col-span-2 md:row-span-2',
 };
 
+const TEMPLATE_SUBJECT_MAP: Record<TemplateKey, string> = {
+  femmeflora: 'templateFemmeFlora',
+  dailymarket: 'templateDailyMarket',
+  smilepro: 'templateSmilePro',
+  nexus: 'templateNexus',
+};
+
 const Portfolio = () => {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language as LanguageCode;
@@ -62,13 +73,6 @@ const Portfolio = () => {
   const [previewTitle, setPreviewTitle] = useState('');
 
   const getLocalizedPath = (path: string) => `/${currentLang}${path ? `/${path}` : ''}`;
-
-  const TEMPLATE_SUBJECT_MAP: Record<TemplateKey, string> = {
-    femmeflora: 'templateFemmeFlora',
-    dailymarket: 'templateDailyMarket',
-    smilepro: 'templateSmilePro',
-    nexus: 'templateNexus',
-  };
 
   const coreFeatures = t('portfolio.coreFeaturesList', { returnObjects: true }) as string[];
 
@@ -104,19 +108,19 @@ const Portfolio = () => {
       <section className="py-20 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-hero-glow pointer-events-none" />
         <div className="container mx-auto px-4 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto text-center"
-          >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+          <div className="max-w-3xl mx-auto text-center">
+            <TextReveal as="h1" className="font-bold mb-6">
               {t('portfolio.title')}
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground">
+            </TextReveal>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="text-lg md:text-xl text-muted-foreground"
+            >
               {t('portfolio.subtitle')}
-            </p>
-          </motion.div>
+            </motion.p>
+          </div>
         </div>
       </section>
 
@@ -144,23 +148,17 @@ const Portfolio = () => {
       {/* Bento Grid */}
       <section className="py-8 md:py-16">
         <div className="container mx-auto px-4">
-          <motion.div
-            layout
-            className="grid grid-cols-1 md:grid-cols-4 gap-4 lg:gap-6 auto-rows-[280px]"
-          >
+          <StaggerChildren className="grid grid-cols-1 md:grid-cols-4 gap-4 lg:gap-6 auto-rows-[280px]">
             <AnimatePresence mode="popLayout">
               {filtered.map((tpl, index) => (
-                <motion.article
+                <MouseGlowCard
                   key={tpl.key}
-                  layout
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
-                  className={`group cursor-pointer ${BENTO_SIZES[index] || ''}`}
-                  onClick={() => setSelectedTemplate(tpl.key as TemplateKey)}
+                  className={`group cursor-pointer rounded-2xl ${BENTO_SIZES[index] || ''}`}
                 >
-                  <div className="bento-item p-0 overflow-hidden h-full flex flex-col relative">
+                  <div
+                    className="bento-item p-0 overflow-hidden h-full flex flex-col relative"
+                    onClick={() => setSelectedTemplate(tpl.key as TemplateKey)}
+                  >
                     <div className="absolute inset-0">
                       <img
                         src={tpl.image}
@@ -200,16 +198,16 @@ const Portfolio = () => {
                       </div>
                     </div>
                   </div>
-                </motion.article>
+                </MouseGlowCard>
               ))}
             </AnimatePresence>
-          </motion.div>
+          </StaggerChildren>
         </div>
       </section>
 
       {/* Detail Modal */}
       <Dialog open={!!selectedTemplate} onOpenChange={() => setSelectedTemplate(null)}>
-        <DialogContent className="max-w-2xl bg-card border-border max-h-[90vh] overflow-y-auto">
+        <DialogContent className="max-w-2xl glass border-[hsl(0_0%_100%/0.1)] max-h-[90vh] overflow-y-auto">
           {selected && (
             <>
               <DialogHeader>
@@ -272,17 +270,19 @@ const Portfolio = () => {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-3">
-                <button
-                  onClick={() => {
-                    setSelectedTemplate(null);
-                    setPreviewTitle(selected.title);
-                    setPreviewUrl(selected.previewUrl);
-                  }}
-                  className="bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 flex-1 shadow-[0_0_20px_hsl(152_100%_50%/0.4)] transition-all"
-                >
-                  {t('portfolio.livePreview')}
-                  <ExternalLink className="w-4 h-4" />
-                </button>
+                <MagneticButton className="flex-1">
+                  <button
+                    onClick={() => {
+                      setSelectedTemplate(null);
+                      setPreviewTitle(selected.title);
+                      setPreviewUrl(selected.previewUrl);
+                    }}
+                    className="w-full bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 shadow-[0_0_20px_hsl(152_100%_50%/0.4)] transition-all"
+                  >
+                    {t('portfolio.livePreview')}
+                    <ExternalLink className="w-4 h-4" />
+                  </button>
+                </MagneticButton>
                 <button
                   onClick={() => {
                     const subjectKey = TEMPLATE_SUBJECT_MAP[selectedTemplate!];
@@ -312,25 +312,36 @@ const Portfolio = () => {
       <section className="py-20 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
         <div className="container mx-auto px-4 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto text-center"
-          >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+          <div className="max-w-3xl mx-auto text-center">
+            <TextReveal as="h2" className="font-bold mb-6">
               {t('cta.title')}
-            </h2>
-            <p className="text-lg text-muted-foreground mb-10">{t('cta.subtitle')}</p>
-            <Link
-              to={getLocalizedPath('contact')}
-              className="btn-primary px-10 py-4 rounded-xl text-base font-semibold inline-flex items-center gap-2 group"
+            </TextReveal>
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.15 }}
+              className="text-lg text-muted-foreground mb-10"
             >
-              {t('cta.button')}
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </motion.div>
+              {t('cta.subtitle')}
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ type: 'spring', damping: 25, stiffness: 180, delay: 0.25 }}
+            >
+              <MagneticButton>
+                <Link
+                  to={getLocalizedPath('contact')}
+                  className="btn-primary px-10 py-4 rounded-xl text-base font-semibold inline-flex items-center gap-2 group"
+                >
+                  {t('cta.button')}
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </MagneticButton>
+            </motion.div>
+          </div>
         </div>
       </section>
     </>

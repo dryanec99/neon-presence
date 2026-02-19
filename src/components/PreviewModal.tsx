@@ -34,7 +34,7 @@ const PreviewModal = ({ url, title, open, onClose }: PreviewModalProps) => {
           className="fixed inset-0 z-50 bg-background/95 backdrop-blur-sm flex flex-col"
         >
           {/* Control Bar */}
-          <div className="flex items-center justify-between px-4 md:px-6 py-3 border-b border-border bg-card/80 backdrop-blur-sm">
+          <div className="flex items-center justify-between px-4 md:px-6 py-3 border-b border-border glass">
             <h3 className="text-sm font-semibold text-foreground truncate max-w-[200px] md:max-w-none">
               {title}
             </h3>
