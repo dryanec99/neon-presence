@@ -1,0 +1,767 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Construction complète de votre présence en ligne",
+    "subtitle": "Nous créons des sites web, applications et stratégies numériques performants qui convertissent les visiteurs en clients.",
+    "cta": "Commencer",
+    "ctaSecondary": "Voir nos réalisations",
+    "badge": "Agence Digitale"
+  },
+  "aiDelivery": {
+    "badge": "Processus AI-Natif",
+    "title": "Déploiement professionnel en moins de 4 heures",
+    "subtitle": "Grâce à notre processus AI-natif propriétaire et nos kits premium sous licence GPL pour créer, localiser et lancer votre présence en un temps record."
+  },
+  "stats": {
+    "projects": "Projets réalisés",
+    "satisfaction": "Satisfaction client",
+    "experience": "Années d'expérience",
+    "support": "Support"
+  },
+  "services": {
+    "title": "Nos services",
+    "subtitle": "Tout ce dont vous avez besoin pour dominer le paysage numérique",
+    "categories": {
+      "presence": {
+        "title": "Création de présence",
+        "description": "Développement de sites web, Boutique en ligne, Applications mobiles"
+      },
+      "seo": {
+        "title": "Positionnement & SEO",
+        "description": "Google Ads, Optimisation SEO, Google My Business"
+      },
+      "marketing": {
+        "title": "Engagement d'audience",
+        "description": "Réseaux sociaux, Réputation en ligne, Marketing par e-mail"
+      }
+    },
+    "items": {
+      "webDesign": {
+        "title": "Développement de sites web",
+        "description": "Sites web personnalisés et réactifs qui capturent l'essence de votre marque"
+      },
+      "webDev": {
+        "title": "Développement web",
+        "description": "Solutions évolutives construites avec des technologies modernes"
+      },
+      "ecommerce": {
+        "title": "Boutique en ligne",
+        "description": "Boutiques e-commerce optimisées pour les conversions et les ventes"
+      },
+      "mobileApps": {
+        "title": "Applications mobiles",
+        "description": "Applications mobiles natives et multiplateformes"
+      },
+      "googleAds": {
+        "title": "Google Ads",
+        "description": "Campagnes publicitaires ciblées pour un ROI maximal"
+      },
+      "seoOptimization": {
+        "title": "Optimisation SEO",
+        "description": "Améliorez votre classement et votre trafic organique"
+      },
+      "googleMyBusiness": {
+        "title": "Google My Business",
+        "description": "Optimisation de la présence locale pour plus de clients"
+      },
+      "socialNetworks": {
+        "title": "Réseaux sociaux",
+        "description": "Stratégie, création de contenu et gestion de communauté"
+      },
+      "onlineReputation": {
+        "title": "Réputation en ligne",
+        "description": "Gérez et améliorez l'image en ligne de votre marque"
+      },
+      "emailMarketing": {
+        "title": "Marketing par e-mail",
+        "description": "Campagnes e-mail automatisées pour l'engagement"
+      }
+    }
+  },
+  "serviceDetail": {
+    "popular": "Le plus populaire",
+    "getStarted": "Commencer",
+    "faqTitle": "Questions fréquentes",
+    "formTitle": "Demander un devis",
+    "formSubtitle": "Parlez-nous de votre projet et nous vous répondrons sous 24 heures.",
+    "webDesign": {
+      "title": "Développement de sites web",
+      "description": "Nous créons des sites web personnalisés et performants adaptés à votre marque. Des pages d'atterrissage aux sites d'entreprise complexes, nous livrons des designs réactifs qui convertissent.",
+      "featuresTitle": "Ce qui est inclus",
+      "features": {
+        "0": "Design réactif personnalisé pour tous les appareils",
+        "1": "Structure et contenu optimisés pour le SEO",
+        "2": "Chargement rapide avec des technologies modernes",
+        "3": "Intégration d'un système de gestion de contenu",
+        "4": "Certificat SSL et configuration de sécurité",
+        "5": "Analyse et suivi des performances"
+      },
+      "pricingTitle": "Forfaits site web",
+      "pricingSubtitle": "Choisissez le plan adapté à vos besoins",
+      "pricing": {
+        "basic": {
+          "name": "Page d'atterrissage",
+          "price": "€499",
+          "period": "unique",
+          "features": {
+            "0": "Design réactif d'une page",
+            "1": "Intégration du formulaire de contact",
+            "2": "Configuration SEO de base",
+            "3": "Optimisation mobile",
+            "4": "1 tour de révisions"
+          }
+        },
+        "standard": {
+          "name": "Site professionnel",
+          "price": "€1 299",
+          "period": "unique",
+          "features": {
+            "0": "Jusqu'à 10 pages",
+            "1": "Design et branding personnalisés",
+            "2": "Intégration CMS",
+            "3": "Optimisation SEO avancée",
+            "4": "Fonctionnalité blog",
+            "5": "3 tours de révisions"
+          }
+        },
+        "premium": {
+          "name": "Solution entreprise",
+          "price": "€2 999+",
+          "period": "unique",
+          "features": {
+            "0": "Pages illimitées",
+            "1": "Fonctionnalités et intégrations personnalisées",
+            "2": "Support multilingue",
+            "3": "Animations et interactions avancées",
+            "4": "Support prioritaire pendant 6 mois",
+            "5": "Révisions illimitées"
+          }
+        }
+      },
+      "faq": {
+        "0": { "q": "Combien de temps faut-il pour créer un site web ?", "a": "Selon la complexité, une page d'atterrissage prend 1-2 semaines, un site professionnel 3-5 semaines, et les solutions entreprise 6-12 semaines." },
+        "1": { "q": "Fournissez-vous l'hébergement ?", "a": "Nous vous aidons à configurer l'hébergement avec des fournisseurs fiables et pouvons le gérer dans le cadre d'un plan de maintenance." },
+        "2": { "q": "Puis-je mettre à jour le contenu moi-même ?", "a": "Oui ! Nous intégrons un CMS convivial pour que vous puissiez facilement mettre à jour textes, images et articles de blog." },
+        "3": { "q": "Le site est-il adapté aux mobiles ?", "a": "Absolument. Tous nos sites sont entièrement réactifs et testés sur différents appareils et navigateurs." }
+      }
+    },
+    "ecommerce": {
+      "title": "Boutique en ligne",
+      "description": "Lancez une boutique e-commerce puissante optimisée pour les conversions. Nous créons des boutiques en ligne sécurisées, rapides et évolutives.",
+      "featuresTitle": "Ce qui est inclus",
+      "features": {
+        "0": "Catalogue produits avec filtrage avancé",
+        "1": "Intégration de passerelle de paiement sécurisée",
+        "2": "Système de gestion des stocks",
+        "3": "Suivi des commandes et notifications",
+        "4": "Comptes clients et listes de souhaits",
+        "5": "Configuration livraison et taxes"
+      },
+      "pricingTitle": "Forfaits e-commerce",
+      "pricingSubtitle": "Commencez à vendre en ligne en toute confiance",
+      "pricing": {
+        "basic": {
+          "name": "Boutique starter",
+          "price": "€999",
+          "period": "unique",
+          "features": {
+            "0": "Jusqu'à 50 produits",
+            "1": "Configuration passerelle de paiement",
+            "2": "Filtrage produits de base",
+            "3": "Gestion des commandes",
+            "4": "Design réactif mobile"
+          }
+        },
+        "standard": {
+          "name": "Boutique professionnelle",
+          "price": "€2 499",
+          "period": "unique",
+          "features": {
+            "0": "Jusqu'à 500 produits",
+            "1": "Multiples méthodes de paiement",
+            "2": "Filtrage et recherche avancés",
+            "3": "Comptes clients",
+            "4": "Système de remises et coupons",
+            "5": "Gestion des stocks"
+          }
+        },
+        "premium": {
+          "name": "Commerce entreprise",
+          "price": "€4 999+",
+          "period": "unique",
+          "features": {
+            "0": "Produits illimités",
+            "1": "Support multi-devises",
+            "2": "Intégrations ERP/CRM",
+            "3": "Tableau de bord analytique avancé",
+            "4": "Processus de commande personnalisé",
+            "5": "Support dédié"
+          }
+        }
+      },
+      "faq": {
+        "0": { "q": "Quelles passerelles de paiement supportez-vous ?", "a": "Nous intégrons Stripe, PayPal et des fournisseurs locaux selon votre marché." },
+        "1": { "q": "Puis-je importer des produits d'une autre plateforme ?", "a": "Oui, nous pouvons migrer vos produits, catégories et données clients depuis la plupart des plateformes." },
+        "2": { "q": "Offrez-vous un support continu ?", "a": "Nous proposons des plans de maintenance incluant mises à jour, correctifs de sécurité et support technique." },
+        "3": { "q": "La boutique est-elle optimisée pour le SEO ?", "a": "Oui, nous implémentons les schemas produits, méta-tags, sitemaps et chargement rapide pour un classement optimal." }
+      }
+    },
+    "mobileApps": {
+      "title": "Applications mobiles",
+      "description": "Créez des applications mobiles natives et multiplateformes qui enchantent les utilisateurs. Du concept à l'App Store, nous gérons tout le processus.",
+      "featuresTitle": "Ce qui est inclus",
+      "features": {
+        "0": "Développement iOS et Android",
+        "1": "Design UI/UX et prototypage",
+        "2": "Notifications push",
+        "3": "Intégrations API",
+        "4": "Soumission et optimisation App Store",
+        "5": "Monitoring des performances"
+      },
+      "pricingTitle": "Forfaits applications",
+      "pricingSubtitle": "Donnez vie à votre idée d'application",
+      "pricing": {
+        "basic": {
+          "name": "App MVP",
+          "price": "€3 999",
+          "period": "unique",
+          "features": {
+            "0": "Développement des fonctionnalités principales",
+            "1": "Une plateforme (iOS ou Android)",
+            "2": "Design UI de base",
+            "3": "Authentification utilisateur",
+            "4": "Soumission App Store"
+          }
+        },
+        "standard": {
+          "name": "App multiplateforme",
+          "price": "€7 999",
+          "period": "unique",
+          "features": {
+            "0": "iOS + Android (React Native)",
+            "1": "Design UI/UX personnalisé",
+            "2": "Notifications push",
+            "3": "Intégrations API",
+            "4": "Tableau de bord admin",
+            "5": "3 mois de support"
+          }
+        },
+        "premium": {
+          "name": "App entreprise",
+          "price": "€14 999+",
+          "period": "unique",
+          "features": {
+            "0": "Ensemble de fonctionnalités complexes",
+            "1": "iOS + Android natif",
+            "2": "Infrastructure backend",
+            "3": "Fonctionnalités temps réel",
+            "4": "Analytique avancée",
+            "5": "12 mois de support"
+          }
+        }
+      },
+      "faq": {
+        "0": { "q": "Combien de temps prend le développement d'une app ?", "a": "Un MVP prend généralement 2-3 mois, une app multiplateforme 4-6 mois, et les apps entreprise 6-12 mois." },
+        "1": { "q": "Gérez-vous la soumission App Store ?", "a": "Oui, nous gérons tout le processus pour l'Apple App Store et le Google Play Store." },
+        "2": { "q": "Pouvez-vous mettre à jour mon app existante ?", "a": "Absolument. Nous pouvons redessiner, ajouter des fonctionnalités ou optimiser votre application mobile." },
+        "3": { "q": "Quelles technologies utilisez-vous ?", "a": "Nous utilisons React Native pour le multiplateforme et Swift/Kotlin pour le développement natif." }
+      }
+    },
+    "googleAds": {
+      "title": "Google Ads",
+      "description": "Maximisez votre ROI avec des campagnes Google Ads ciblées. Nous créons, gérons et optimisons des campagnes qui génèrent du trafic qualifié.",
+      "featuresTitle": "Ce qui est inclus",
+      "features": {
+        "0": "Recherche de mots-clés et stratégie",
+        "1": "Création de textes publicitaires et tests A/B",
+        "2": "Optimisation des pages d'atterrissage",
+        "3": "Configuration du suivi des conversions",
+        "4": "Gestion et optimisation des enchères",
+        "5": "Rapports de performance mensuels"
+      },
+      "pricingTitle": "Forfaits Google Ads",
+      "pricingSubtitle": "Investissez dans la croissance avec une publicité basée sur les données",
+      "pricing": {
+        "basic": {
+          "name": "Starter",
+          "price": "€299",
+          "period": "/mois",
+          "features": {
+            "0": "Gestion budget pub jusqu'à €1 000",
+            "1": "1 campagne",
+            "2": "Recherche de mots-clés",
+            "3": "Rapport mensuel",
+            "4": "Optimisation de base"
+          }
+        },
+        "standard": {
+          "name": "Croissance",
+          "price": "€599",
+          "period": "/mois",
+          "features": {
+            "0": "Gestion budget pub jusqu'à €5 000",
+            "1": "Campagnes multiples",
+            "2": "Tests A/B",
+            "3": "Suivi des conversions",
+            "4": "Optimisation bimensuelle",
+            "5": "Analytique détaillée"
+          }
+        },
+        "premium": {
+          "name": "Scale",
+          "price": "€1 199",
+          "period": "/mois",
+          "features": {
+            "0": "Gestion budget pub illimité",
+            "1": "Stratégie de campagne complète",
+            "2": "Remarketing avancé",
+            "3": "Création de pages d'atterrissage",
+            "4": "Optimisation hebdomadaire",
+            "5": "Gestionnaire de compte dédié"
+          }
+        }
+      },
+      "faq": {
+        "0": { "q": "À quelle vitesse verrai-je des résultats ?", "a": "Google Ads génère du trafic immédiatement. L'optimisation pour le meilleur ROI prend généralement 2-4 semaines." },
+        "1": { "q": "Le budget publicitaire est-il inclus ?", "a": "Non, les prix listés sont pour la gestion. Le budget pub est un budget séparé que vous contrôlez." },
+        "2": { "q": "Pouvez-vous gérer mes campagnes existantes ?", "a": "Oui, nous pouvons auditer et optimiser vos campagnes Google Ads actuelles." },
+        "3": { "q": "Fournissez-vous des rapports ?", "a": "Oui, vous recevez des rapports détaillés avec métriques, insights et recommandations." }
+      }
+    },
+    "seoOptimization": {
+      "title": "Optimisation SEO",
+      "description": "Grimpez au sommet des résultats de recherche avec nos stratégies SEO complètes. Nous combinons excellence technique et optimisation de contenu pour une croissance organique durable.",
+      "featuresTitle": "Ce qui est inclus",
+      "features": {
+        "0": "Audit SEO technique et corrections",
+        "1": "Optimisation on-page",
+        "2": "Stratégie et mapping de mots-clés",
+        "3": "Création et optimisation de contenu",
+        "4": "Stratégie de link building",
+        "5": "Rapports de classement mensuels"
+      },
+      "pricingTitle": "Forfaits SEO",
+      "pricingSubtitle": "Croissance organique à long terme pour votre entreprise",
+      "pricing": {
+        "basic": {
+          "name": "SEO Essentiels",
+          "price": "€399",
+          "period": "/mois",
+          "features": {
+            "0": "Audit SEO technique",
+            "1": "Optimisation on-page (10 pages)",
+            "2": "Suivi de mots-clés (20 mots-clés)",
+            "3": "Rapport mensuel",
+            "4": "Configuration Google Search Console"
+          }
+        },
+        "standard": {
+          "name": "SEO Croissance",
+          "price": "€799",
+          "period": "/mois",
+          "features": {
+            "0": "Optimisation technique complète",
+            "1": "Stratégie et création de contenu",
+            "2": "Suivi de mots-clés (50 mots-clés)",
+            "3": "Link building (5 liens/mois)",
+            "4": "Analyse concurrentielle",
+            "5": "Rapports bimensuels"
+          }
+        },
+        "premium": {
+          "name": "SEO Domination",
+          "price": "€1 499",
+          "period": "/mois",
+          "features": {
+            "0": "Optimisation niveau entreprise",
+            "1": "Stratégie de marketing de contenu",
+            "2": "Suivi de mots-clés illimité",
+            "3": "Link building premium",
+            "4": "SEO international",
+            "5": "Appels stratégiques hebdomadaires"
+          }
+        }
+      },
+      "faq": {
+        "0": { "q": "Combien de temps faut-il pour voir des résultats SEO ?", "a": "Le SEO est une stratégie à long terme. Attendez-vous à des améliorations initiales en 3-6 mois avec des résultats significatifs en 6-12 mois." },
+        "1": { "q": "Garantissez-vous la première page ?", "a": "Nous ne garantissons pas de positions spécifiques, mais nous utilisons des stratégies éprouvées pour maximiser votre visibilité." },
+        "2": { "q": "Que comprend le SEO technique ?", "a": "Optimisation de la vitesse, mobile-friendliness, crawlabilité, données structurées, HTTPS et correction des liens cassés." },
+        "3": { "q": "Créez-vous du contenu ?", "a": "Oui, nos plans Croissance et Domination incluent la création de contenu professionnel optimisé pour vos mots-clés cibles." }
+      }
+    },
+    "googleMyBusiness": {
+      "title": "Google My Business",
+      "description": "Dominez la recherche locale et attirez les clients proches. Nous optimisons votre profil Google Business pour augmenter la visibilité et les avis.",
+      "featuresTitle": "Ce qui est inclus",
+      "features": {
+        "0": "Création et optimisation de profil",
+        "1": "Gestion de photos et vidéos",
+        "2": "Stratégie de gestion des avis",
+        "3": "Optimisation SEO local",
+        "4": "Optimisation Google Maps",
+        "5": "Rapports d'insights et analytique"
+      },
+      "pricingTitle": "Forfaits GMB",
+      "pricingSubtitle": "Soyez trouvé par les clients près de chez vous",
+      "pricing": {
+        "basic": {
+          "name": "Local Start",
+          "price": "€149",
+          "period": "/mois",
+          "features": {
+            "0": "Configuration et vérification du profil",
+            "1": "Optimisation de base",
+            "2": "Upload de photos (5/mois)",
+            "3": "Monitoring des avis",
+            "4": "Rapport mensuel"
+          }
+        },
+        "standard": {
+          "name": "Local Croissance",
+          "price": "€299",
+          "period": "/mois",
+          "features": {
+            "0": "Optimisation avancée du profil",
+            "1": "Publications et mises à jour hebdomadaires",
+            "2": "Gestion des réponses aux avis",
+            "3": "Création de citations locales",
+            "4": "Analyse concurrentielle",
+            "5": "Rapports bimensuels"
+          }
+        },
+        "premium": {
+          "name": "Local Domination",
+          "price": "€499",
+          "period": "/mois",
+          "features": {
+            "0": "Optimisation multi-établissements",
+            "1": "Stratégie SEO local complète",
+            "2": "Gestion proactive des avis",
+            "3": "Publication de contenu local",
+            "4": "Rapports hebdomadaires",
+            "5": "Gestionnaire de compte dédié"
+          }
+        }
+      },
+      "faq": {
+        "0": { "q": "Combien de temps pour apparaître dans la recherche locale ?", "a": "La vérification du profil prend 1-2 semaines. Les améliorations de visibilité commencent en 2-4 semaines." },
+        "1": { "q": "Pouvez-vous gérer plusieurs établissements ?", "a": "Oui, notre plan Domination inclut la gestion multi-établissements." },
+        "2": { "q": "Comment gérez-vous les avis négatifs ?", "a": "Nous répondons professionnellement et travaillons sur des stratégies pour augmenter les avis positifs." },
+        "3": { "q": "Avez-vous besoin d'accès à mon compte ?", "a": "Oui, nous aurons besoin d'un accès gestionnaire pour optimiser votre profil efficacement." }
+      }
+    },
+    "socialNetworks": {
+      "title": "Réseaux sociaux",
+      "description": "Développez votre présence sur les réseaux sociaux avec des stratégies engageantes. Nous créons du contenu, gérons les communautés et augmentons votre audience.",
+      "featuresTitle": "Ce qui est inclus",
+      "features": {
+        "0": "Stratégie de contenu pour les réseaux sociaux",
+        "1": "Création de contenu et design",
+        "2": "Gestion de communauté",
+        "3": "Publicité sur les réseaux sociaux",
+        "4": "Analytique et rapports",
+        "5": "Gestion de la réputation de marque"
+      },
+      "pricingTitle": "Forfaits réseaux sociaux",
+      "pricingSubtitle": "Développez votre audience et engagez votre communauté",
+      "pricing": {
+        "basic": {
+          "name": "Social Starter",
+          "price": "€349",
+          "period": "/mois",
+          "features": {
+            "0": "2 plateformes",
+            "1": "8 publications/mois",
+            "2": "Design de contenu de base",
+            "3": "Gestion de communauté",
+            "4": "Rapport mensuel"
+          }
+        },
+        "standard": {
+          "name": "Social Croissance",
+          "price": "€699",
+          "period": "/mois",
+          "features": {
+            "0": "4 plateformes",
+            "1": "20 publications/mois",
+            "2": "Design de contenu professionnel",
+            "3": "Engagement communautaire",
+            "4": "Publicités sponsorisées",
+            "5": "Rapports bimensuels"
+          }
+        },
+        "premium": {
+          "name": "Social Domination",
+          "price": "€1 299",
+          "period": "/mois",
+          "features": {
+            "0": "Toutes les plateformes",
+            "1": "Publications quotidiennes",
+            "2": "Contenu vidéo inclus",
+            "3": "Campagnes d'influence",
+            "4": "Gestion publicitaire avancée",
+            "5": "Gestionnaire dédié"
+          }
+        }
+      },
+      "faq": {
+        "0": { "q": "Sur quelles plateformes travaillez-vous ?", "a": "Nous gérons Facebook, Instagram, LinkedIn, Twitter/X, TikTok et YouTube." },
+        "1": { "q": "Créez-vous le contenu ?", "a": "Oui, nos forfaits incluent la création de contenu visuel, la rédaction et la planification." },
+        "2": { "q": "Puis-je approuver le contenu avant publication ?", "a": "Absolument. Nous fournissons un calendrier de contenu pour votre approbation avant chaque cycle de publication." },
+        "3": { "q": "Gérez-vous la publicité payante ?", "a": "Oui, nos plans Croissance et Domination incluent la gestion de campagnes publicitaires sponsorisées." }
+      }
+    },
+    "onlineReputation": {
+      "title": "Réputation en ligne",
+      "description": "Protégez et améliorez l'image en ligne de votre marque. Nous surveillons, gérons et améliorons votre réputation numérique sur toutes les plateformes.",
+      "featuresTitle": "Ce qui est inclus",
+      "features": {
+        "0": "Monitoring de la réputation de marque",
+        "1": "Gestion et réponse aux avis",
+        "2": "Stratégie de relations publiques numériques",
+        "3": "Gestion de contenu négatif",
+        "4": "Création de contenu positif de marque",
+        "5": "Rapports de sentiment mensuels"
+      },
+      "pricingTitle": "Forfaits réputation",
+      "pricingSubtitle": "Protégez la réputation en ligne de votre marque",
+      "pricing": {
+        "basic": {
+          "name": "Monitoring",
+          "price": "€249",
+          "period": "/mois",
+          "features": {
+            "0": "Monitoring basique de la marque",
+            "1": "Alertes d'avis",
+            "2": "Rapport mensuel de réputation",
+            "3": "Modèles de réponse aux avis",
+            "4": "Audit de présence en ligne"
+          }
+        },
+        "standard": {
+          "name": "Protection",
+          "price": "€599",
+          "period": "/mois",
+          "features": {
+            "0": "Monitoring avancé de la marque",
+            "1": "Gestion proactive des avis",
+            "2": "Suppression de contenu négatif",
+            "3": "Stratégie de contenu positif",
+            "4": "Monitoring des réseaux sociaux",
+            "5": "Rapports bimensuels"
+          }
+        },
+        "premium": {
+          "name": "Rétablissement complet",
+          "price": "€1 499",
+          "period": "/mois",
+          "features": {
+            "0": "Campagne de réputation complète",
+            "1": "Création de contenu de marque",
+            "2": "Optimisation des résultats de recherche",
+            "3": "Stratégie de relations publiques",
+            "4": "Gestion de crise",
+            "5": "Gestionnaire dédié"
+          }
+        }
+      },
+      "faq": {
+        "0": { "q": "Pouvez-vous supprimer les avis négatifs ?", "a": "Nous pouvons demander la suppression des avis qui violent les politiques des plateformes et mettre en place des stratégies pour promouvoir les avis positifs." },
+        "1": { "q": "Combien de temps pour améliorer la réputation ?", "a": "Les améliorations initiales sont visibles en 1-2 mois. Les changements significatifs prennent généralement 3-6 mois." },
+        "2": { "q": "Surveillez-vous les réseaux sociaux ?", "a": "Oui, nous surveillons les mentions de marque, commentaires et avis sur toutes les principales plateformes." },
+        "3": { "q": "Offrez-vous la gestion de crise ?", "a": "Oui, notre plan Rétablissement inclut des protocoles de gestion de crise avec des temps de réponse rapides." }
+      }
+    },
+    "emailMarketing": {
+      "title": "Marketing par e-mail",
+      "description": "Engagez votre audience avec des campagnes e-mail automatisées ciblées. Nous concevons, construisons et optimisons des séquences e-mail qui convertissent.",
+      "featuresTitle": "Ce qui est inclus",
+      "features": {
+        "0": "Stratégie et planification de campagne",
+        "1": "Design et développement d'e-mails",
+        "2": "Configuration d'automatisation",
+        "3": "Segmentation de liste et personnalisation",
+        "4": "Tests A/B",
+        "5": "Analytique et rapports de performance"
+      },
+      "pricingTitle": "Forfaits e-mail marketing",
+      "pricingSubtitle": "Transformez les abonnés en clients fidèles",
+      "pricing": {
+        "basic": {
+          "name": "Email Starter",
+          "price": "€199",
+          "period": "/mois",
+          "features": {
+            "0": "Configuration de plateforme e-mail",
+            "1": "2 campagnes/mois",
+            "2": "Design d'e-mail de base",
+            "3": "Segmentation de liste",
+            "4": "Rapport mensuel"
+          }
+        },
+        "standard": {
+          "name": "Email Croissance",
+          "price": "€449",
+          "period": "/mois",
+          "features": {
+            "0": "4 campagnes/mois",
+            "1": "Design d'e-mail personnalisé",
+            "2": "Séquences d'automatisation",
+            "3": "Tests A/B",
+            "4": "Segmentation avancée",
+            "5": "Rapports bimensuels"
+          }
+        },
+        "premium": {
+          "name": "Email Pro",
+          "price": "€899",
+          "period": "/mois",
+          "features": {
+            "0": "Campagnes illimitées",
+            "1": "Automatisation et flux avancés",
+            "2": "Contenu dynamique",
+            "3": "Intégration CRM",
+            "4": "Analytique avancée",
+            "5": "Gestionnaire dédié"
+          }
+        }
+      },
+      "faq": {
+        "0": { "q": "Quelle plateforme e-mail utilisez-vous ?", "a": "Nous travaillons avec Mailchimp, SendGrid, ActiveCampaign et d'autres selon vos besoins." },
+        "1": { "q": "Pouvez-vous migrer ma liste existante ?", "a": "Oui, nous pouvons migrer vos abonnés tout en respectant le RGPD et les bonnes pratiques." },
+        "2": { "q": "Quel taux d'ouverture puis-je espérer ?", "a": "Les moyennes du secteur sont de 20-25%, mais nos campagnes optimisées atteignent souvent 30-40%." },
+        "3": { "q": "Gérez-vous le design des e-mails ?", "a": "Oui, nous créons des designs d'e-mails personnalisés et responsive qui s'alignent avec votre marque." }
+      }
+    }
+  },
+  "portfolio": {
+    "title": "Nos réalisations",
+    "subtitle": "Projets réels propulsés par notre processus AI-Natif — déployés en moins de 4 heures.",
+    "viewProject": "Voir les détails",
+    "viewAll": "Voir tous les projets",
+    "livePreview": "Aperçu en direct",
+    "close": "Fermer",
+    "features": "Fonctionnalités clés",
+    "techStack": "Technologies",
+    "requestQuote": "Demander un devis",
+    "filterAll": "Tous",
+    "filterEcommerce": "E-commerce",
+    "filterHealthcare": "Santé",
+    "filterAgency": "Agence",
+    "coreFeatures": "Caractéristiques principales",
+    "coreFeaturesList": ["Mises à jour à vie", "Réactif mobile", "Support multilingue (EN/BG/RU/FR)", "Optimisé pour la vitesse", "Architecture Static-Fast", "Prêt pour le SEO"],
+    "templates": {
+      "femmeflora": {
+        "title": "DNK",
+        "subtitle": "Marque premium et identité digitale",
+        "category": "E-commerce",
+        "description": "Vitrine numérique audacieuse à haute conversion pour la marque DNK. Propulsée par WooCommerce avec un moteur statique ultra-rapide et une identité visuelle percutante.",
+        "features": ["Intégration WooCommerce", "Catalogue centré sur la marque", "Commande en une page", "Design Mobile-First", "Balisage Schema produits", "Vitesse optimisée (90+ PageSpeed)"]
+      },
+      "dailymarket": {
+        "title": "Femme Wardrobe",
+        "subtitle": "Vêtements premium et e-commerce",
+        "category": "E-commerce",
+        "description": "Une expérience e-commerce premium élégante conçue pour les marques de mode avant-gardistes. Collections curatées, paiement fluide et présentation visuelle époustouflante.",
+        "features": ["Filtrage de collections curatées", "Processus de paiement sécurisé", "Liste de souhaits et comparaison", "Support catégories mode", "Structure optimisée SEO", "Architecture rapide"]
+      },
+      "smilepro": {
+        "title": "SmilePro Dental",
+        "subtitle": "Plateforme de clinique de santé",
+        "category": "Healthcare",
+        "description": "Plateforme clinique professionnelle avec système de rendez-vous et grilles de services médicaux. Conçue pour la confiance et la génération de leads.",
+        "features": ["Système de prise de rendez-vous", "Grille de services médicaux", "Profils des médecins", "Témoignages patients", "Formulaires conformes RGPD", "SEO local optimisé"]
+      },
+      "nexus": {
+        "title": "NEXUS Digital",
+        "subtitle": "Agence digitale premium",
+        "category": "Agency",
+        "description": "Layout d'agence corporate premium avec portfolio interactif et grilles bento. UI haut de gamme conçue pour impressionner les clients entreprise.",
+        "features": ["Grille portfolio interactive", "Sections Bento Layout", "Profils d'équipe", "Pages de cas d'étude", "Formulaires de capture de leads", "Animations de scroll fluides"]
+      }
+    },
+    "techBadges": {
+      "woocommerce": "WooCommerce",
+      "elementor": "Elementor Pro",
+      "staticEngine": "Moteur statique",
+      "ecommerce": "E-commerce",
+      "astraKit": "Astra Kit",
+      "seoReady": "Prêt SEO",
+      "medical": "Médical",
+      "leadGen": "Génération de leads",
+      "staticFast": "Static-Fast",
+      "agency": "Agence",
+      "highEndUI": "UI haut de gamme",
+      "staticPowered": "Static Powered"
+    }
+  },
+  "blog": {
+    "title": "Insights et articles",
+    "subtitle": "Dernières réflexions sur la stratégie numérique et la technologie",
+    "readMore": "Lire la suite",
+    "viewAll": "Voir tous les articles"
+  },
+  "contact": {
+    "title": "Travaillons ensemble",
+    "subtitle": "Prêt à lancer votre projet ? Contactez-nous.",
+    "info": {
+      "address": "Adresse",
+      "phone": "Téléphone",
+      "email": "E-mail",
+      "workingHours": "Heures d'ouverture",
+      "workingHoursValue": "Lun-Ven : 9h00 - 18h00"
+    },
+    "form": {
+      "name": "Votre nom",
+      "phone": "Numéro de téléphone",
+      "email": "Adresse e-mail",
+      "subject": "Sujet",
+      "message": "Votre message",
+      "submit": "Envoyer le message",
+      "sendAnother": "Envoyer un autre message",
+      "subjects": {
+        "webDesign": "Développement de site web",
+        "ecommerce": "Boutique en ligne",
+        "appDev": "Application mobile",
+        "googleAds": "Google Ads",
+        "seo": "Optimisation SEO",
+        "gmb": "Google My Business",
+        "social": "Réseaux sociaux",
+        "reputation": "Réputation en ligne",
+        "email": "Marketing par e-mail",
+        "templateFemmeFlora": "Demande projet DNK",
+        "templateDailyMarket": "Demande projet Femme Wardrobe",
+        "templateSmilePro": "Demande projet SmilePro Dental",
+        "templateNexus": "Demande projet NEXUS Digital",
+        "other": "Autre"
+      }
+    },
+    "validation": {
+      "nameRequired": "Le nom est requis",
+      "emailInvalid": "Veuillez entrer un e-mail valide",
+      "phoneInvalid": "Veuillez entrer un numéro de téléphone valide",
+      "messageRequired": "Le message est requis"
+    },
+    "success": "Merci ! Nous vous contacterons bientôt."
+  },
+  "footer": {
+    "description": "Votre partenaire en transformation numérique. Nous créons des expériences qui comptent.",
+    "quickLinks": "Liens rapides",
+    "services": "Services",
+    "connect": "Contact",
+    "rights": "Tous droits réservés.",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions d'utilisation"
+  },
+  "cta": {
+    "title": "Prêt à transformer votre présence numérique ?",
+    "subtitle": "Discutons de la façon dont nous pouvons vous aider à atteindre vos objectifs.",
+    "button": "Lancez votre projet"
+  }
+}

@@ -658,18 +658,18 @@
     "coreFeaturesList": ["Lifetime Updates", "Mobile-Responsive", "Multi-language Ready (EN/BG/RU)", "Speed Optimized", "Static-Fast Architecture", "SEO-Ready"],
     "templates": {
       "femmeflora": {
-        "title": "Femme Flora",
-        "subtitle": "Makeover & Health/Beauty Store",
+        "title": "DNK",
+        "subtitle": "Premium Brand & Digital Identity",
         "category": "E-commerce",
-        "description": "High-conversion E-commerce solution for female-centric beauty and fashion brands. Powered by WooCommerce with a blazing-fast static engine.",
-        "features": ["WooCommerce Integration", "Beauty Product Catalog", "One-Page Checkout", "Mobile-First Design", "Product Schema Markup", "Speed Optimized (90+ PageSpeed)"]
+        "description": "Bold, high-conversion digital storefront built for the DNK brand. Powered by WooCommerce with a blazing-fast static engine and striking visual identity.",
+        "features": ["WooCommerce Integration", "Brand-Centric Catalog", "One-Page Checkout", "Mobile-First Design", "Product Schema Markup", "Speed Optimized (90+ PageSpeed)"]
       },
       "dailymarket": {
-        "title": "Daily Marketplace",
-        "subtitle": "General Shopping Platform",
+        "title": "Femme Wardrobe",
+        "subtitle": "Premium Clothing & E-commerce",
         "category": "E-commerce",
-        "description": "A versatile retail template optimized for fast browsing and secure checkout. Built with Astra Kit for maximum flexibility and performance.",
-        "features": ["Dynamic Product Filtering", "Secure Checkout Flow", "Wishlist & Compare", "Multi-Category Support", "SEO-Optimized Structure", "Fast Loading Architecture"]
+        "description": "An elegant premium clothing e-commerce experience designed for fashion-forward brands. Curated collections, seamless checkout, and stunning visual presentation.",
+        "features": ["Curated Collection Filtering", "Secure Checkout Flow", "Wishlist & Compare", "Fashion Category Support", "SEO-Optimized Structure", "Fast Loading Architecture"]
       },
       "smilepro": {
         "title": "SmilePro Dental",
@@ -679,7 +679,7 @@
         "features": ["Appointment Booking System", "Medical Service Grid", "Doctor Profiles", "Patient Testimonials", "GDPR-Compliant Forms", "Local SEO Optimized"]
       },
       "nexus": {
-        "title": "Nexus Digital",
+        "title": "NEXUS Digital",
         "subtitle": "Premium Digital Agency",
         "category": "Agency",
         "description": "Premium corporate agency layout with interactive portfolio and bento grids. High-end UI designed to impress enterprise clients.",
@@ -735,8 +735,8 @@
         "social": "Social Networks",
         "reputation": "Online Reputation",
         "email": "Email Marketing",
-        "templateFemmeFlora": "Femme Flora Project Inquiry",
-        "templateDailyMarket": "Daily Marketplace Project Inquiry",
+        "templateFemmeFlora": "DNK Project Inquiry",
+        "templateDailyMarket": "Femme Wardrobe Project Inquiry",
         "templateSmilePro": "SmilePro Dental Project Inquiry",
         "templateNexus": "Nexus Digital Project Inquiry",
         "other": "Other"

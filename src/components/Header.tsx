@@ -24,7 +24,7 @@ const Header = () => {
   ];
 
   const handleLanguageChange = (langCode: LanguageCode) => {
-    const currentPath = location.pathname.replace(/^\/(en|bg|ru)/, '') || '/';
+    const currentPath = location.pathname.replace(/^\/(en|bg|ru|fr)/, '') || '/';
     i18n.changeLanguage(langCode);
     navigate(`/${langCode}${currentPath === '/' ? '' : currentPath}`);
     setIsLangOpen(false);
