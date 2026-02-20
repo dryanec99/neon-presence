@@ -5,11 +5,13 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import en from './locales/en.json';
 import bg from './locales/bg.json';
 import ru from './locales/ru.json';
+import fr from './locales/fr.json';
 
 export const languages = [
   { code: 'en', name: 'English', nativeName: 'English' },
   { code: 'bg', name: 'Bulgarian', nativeName: 'Български' },
   { code: 'ru', name: 'Russian', nativeName: 'Русский' },
+  { code: 'fr', name: 'French', nativeName: 'Français' },
 ] as const;
 
 export type LanguageCode = typeof languages[number]['code'];
@@ -18,6 +20,7 @@ const resources = {
   en: { translation: en },
   bg: { translation: bg },
   ru: { translation: ru },
+  fr: { translation: fr },
 };
 
 i18n
@@ -26,7 +29,7 @@ i18n
   .init({
     resources,
     fallbackLng: 'en',
-    supportedLngs: ['en', 'bg', 'ru'],
+    supportedLngs: ['en', 'bg', 'ru', 'fr'],
     detection: {
       order: ['path', 'localStorage', 'navigator'],
       lookupFromPathIndex: 0,

@@ -33,9 +33,9 @@ export const SEOHead = ({ title, description }: SEOHeadProps) => {
     }
 
     // Generate hreflang tags
-    const languages = ['en', 'bg', 'ru'];
+    const languages = ['en', 'bg', 'ru', 'fr'];
     const baseUrl = window.location.origin;
-    const pathWithoutLang = location.pathname.replace(/^\/(en|bg|ru)/, '') || '/';
+    const pathWithoutLang = location.pathname.replace(/^\/(en|bg|ru|fr)/, '') || '/';
 
     // Remove existing hreflang tags
     document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(el => el.remove());

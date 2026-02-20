@@ -24,7 +24,7 @@ const LanguageRoute = ({ children }: { children: React.ReactNode }) => {
   
   useEffect(() => {
     const path = window.location.pathname;
-    const langMatch = path.match(/^\/(en|bg|ru)/);
+    const langMatch = path.match(/^\/(en|bg|ru|fr)/);
     if (langMatch && langMatch[1] !== i18n.language) {
       i18n.changeLanguage(langMatch[1]);
     }
