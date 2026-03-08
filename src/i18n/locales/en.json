@@ -708,7 +708,9 @@
         "subtitle": "Healthcare Clinic Platform",
         "category": "Healthcare",
         "description": "Professional clinic platform with appointment hooks and medical service grids. Designed for trust, compliance, and lead generation.",
-        "features": ["Appointment Booking System", "Medical Service Grid", "Doctor Profiles", "Patient Testimonials", "GDPR-Compliant Forms", "Local SEO Optimized"]
+        "features": ["Appointment Booking System", "Medical Service Grid", "Doctor Profiles", "Patient Testimonials", "GDPR-Compliant Forms", "Local SEO Optimized"],
+        "challenge": "A dental clinic losing patients to competitors with better online visibility and appointment systems.",
+        "solution": "A trust-focused medical platform with GDPR-compliant lead capture, online booking, and local SEO domination."
       },
       "nexus": {
         "title": "NEXUS Digital",
