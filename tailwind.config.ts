@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['"Sofia Sans"', 'system-ui', 'sans-serif'],
+        sans: ['"DM Sans"', '"Sofia Sans"', 'system-ui', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -60,17 +60,6 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // Custom semantic colors
-        neon: {
-          DEFAULT: "hsl(152 100% 50%)",
-          glow: "hsl(152 100% 50% / 0.3)",
-          subtle: "hsl(152 100% 50% / 0.1)",
-        },
-        surface: {
-          DEFAULT: "hsl(0 0% 12%)",
-          elevated: "hsl(0 0% 15%)",
-          border: "hsl(0 0% 20%)",
-        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -81,10 +70,8 @@ export default {
         "3xl": "2rem",
       },
       boxShadow: {
-        glow: "0 0 40px hsl(152 100% 50% / 0.3)",
-        "glow-lg": "0 0 60px hsl(152 100% 50% / 0.4)",
-        card: "0 4px 24px hsl(0 0% 0% / 0.4)",
-        elevated: "0 8px 32px hsl(0 0% 0% / 0.5)",
+        card: "0 2px 16px hsl(0 0% 0% / 0.06)",
+        elevated: "0 8px 32px hsl(0 0% 0% / 0.1)",
       },
       keyframes: {
         "accordion-down": {
@@ -111,10 +98,6 @@ export default {
           from: { opacity: "0", transform: "scale(0.95)" },
           to: { opacity: "1", transform: "scale(1)" },
         },
-        shimmer: {
-          from: { backgroundPosition: "200% 0" },
-          to: { backgroundPosition: "-200% 0" },
-        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -123,12 +106,6 @@ export default {
         "fade-in-left": "fade-in-left 0.6s ease-out forwards",
         "fade-in-right": "fade-in-right 0.6s ease-out forwards",
         "scale-in": "scale-in 0.4s ease-out forwards",
-        shimmer: "shimmer 8s ease-in-out infinite",
-      },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(ellipse at center, var(--tw-gradient-stops))",
-        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        "hero-glow": "radial-gradient(ellipse 80% 50% at 50% -20%, hsl(152 100% 50% / 0.15), transparent)",
       },
     },
   },

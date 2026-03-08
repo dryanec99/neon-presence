@@ -30,15 +30,11 @@ const Header = () => {
     setIsLangOpen(false);
   };
 
-  const getLocalizedPath = (path: string) => {
-    return `/${currentLang}${path ? `/${path}` : ''}`;
-  };
+  const getLocalizedPath = (path: string) => `/${currentLang}${path ? `/${path}` : ''}`;
 
   const isActive = (path: string) => {
     const localizedPath = getLocalizedPath(path);
-    if (path === '') {
-      return location.pathname === localizedPath || location.pathname === `/${currentLang}`;
-    }
+    if (path === '') return location.pathname === localizedPath || location.pathname === `/${currentLang}`;
     return location.pathname.startsWith(localizedPath);
   };
 
@@ -48,16 +44,11 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 glass">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
-          <Link 
-            to={getLocalizedPath('')} 
-            className="flex items-center gap-2 text-xl md:text-2xl font-bold tracking-tight"
-          >
+          <Link to={getLocalizedPath('')} className="flex items-center gap-2 text-xl md:text-2xl font-bold tracking-tight">
             <span className="text-primary">MiForgiX</span>
-            <span className="text-foreground/80 font-light text-lg">DEV</span>
+            <span className="text-foreground/70 font-light text-lg">DEV</span>
           </Link>
 
-          {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
             {navItems.map((item) => (
               <Link
@@ -65,9 +56,7 @@ const Header = () => {
                 to={getLocalizedPath(item.path)}
                 className={cn(
                   "relative text-sm font-medium transition-colors link-hover",
-                  isActive(item.path) 
-                    ? "text-primary" 
-                    : "text-muted-foreground hover:text-foreground"
+                  isActive(item.path) ? "text-primary" : "text-muted-foreground hover:text-foreground"
                 )}
               >
                 {t(`nav.${item.key}`)}
@@ -75,28 +64,22 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Right side: Language Switcher + CTA */}
           <div className="hidden lg:flex items-center gap-4">
-            {/* Language Switcher */}
             <div className="relative">
               <button
                 onClick={() => setIsLangOpen(!isLangOpen)}
                 className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-secondary"
               >
                 {currentLanguage?.nativeName}
-                <ChevronDown className={cn(
-                  "w-4 h-4 transition-transform",
-                  isLangOpen && "rotate-180"
-                )} />
+                <ChevronDown className={cn("w-4 h-4 transition-transform", isLangOpen && "rotate-180")} />
               </button>
-
               <AnimatePresence>
                 {isLangOpen && (
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className="absolute right-0 top-full mt-2 py-2 glass rounded-lg shadow-elevated min-w-[140px] z-50"
+                    className="absolute right-0 top-full mt-2 py-2 bg-card border-2 border-border rounded-lg shadow-elevated min-w-[140px] z-50"
                   >
                     {languages.map((lang) => (
                       <button
@@ -104,9 +87,7 @@ const Header = () => {
                         onClick={() => handleLanguageChange(lang.code)}
                         className={cn(
                           "w-full px-4 py-2 text-left text-sm transition-colors",
-                          lang.code === currentLang
-                            ? "text-primary bg-primary/10"
-                            : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+                          lang.code === currentLang ? "text-primary bg-primary/10" : "text-muted-foreground hover:text-foreground hover:bg-secondary"
                         )}
                       >
                         {lang.nativeName}
@@ -117,35 +98,20 @@ const Header = () => {
               </AnimatePresence>
             </div>
 
-            {/* CTA Button */}
-            <Link
-              to={getLocalizedPath('contact')}
-              className="btn-primary px-5 py-2.5 rounded-lg text-sm animate-pulse-glow"
-            >
-              {t('hero.cta')}
+            <Link to={getLocalizedPath('quote')} className="btn-primary px-5 py-2.5 rounded-lg text-sm">
+              Plan Your Project
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 text-foreground"
-            aria-label="Toggle menu"
-          >
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="lg:hidden p-2 text-foreground" aria-label="Toggle menu">
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden border-t border-border bg-background"
-          >
+          <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} className="lg:hidden border-t-2 border-border bg-background">
             <nav className="container mx-auto px-4 py-4 flex flex-col gap-2">
               {navItems.map((item) => (
                 <Link
@@ -154,31 +120,22 @@ const Header = () => {
                   onClick={() => setIsMenuOpen(false)}
                   className={cn(
                     "px-4 py-3 rounded-lg text-base font-medium transition-colors",
-                    isActive(item.path)
-                      ? "text-primary bg-primary/10"
-                      : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+                    isActive(item.path) ? "text-primary bg-primary/10" : "text-muted-foreground hover:text-foreground hover:bg-secondary"
                   )}
                 >
                   {t(`nav.${item.key}`)}
                 </Link>
               ))}
-
-              {/* Mobile Language Switcher */}
-              <div className="mt-4 pt-4 border-t border-border">
+              <div className="mt-4 pt-4 border-t-2 border-border">
                 <p className="px-4 text-xs text-muted-foreground mb-2">Language</p>
                 <div className="flex gap-2 px-4">
                   {languages.map((lang) => (
                     <button
                       key={lang.code}
-                      onClick={() => {
-                        handleLanguageChange(lang.code);
-                        setIsMenuOpen(false);
-                      }}
+                      onClick={() => { handleLanguageChange(lang.code); setIsMenuOpen(false); }}
                       className={cn(
                         "px-3 py-2 rounded-lg text-sm font-medium transition-colors",
-                        lang.code === currentLang
-                          ? "bg-primary text-primary-foreground"
-                          : "bg-secondary text-muted-foreground hover:text-foreground"
+                        lang.code === currentLang ? "bg-primary text-primary-foreground" : "bg-secondary text-muted-foreground hover:text-foreground"
                       )}
                     >
                       {lang.nativeName}
@@ -186,14 +143,8 @@ const Header = () => {
                   ))}
                 </div>
               </div>
-
-              {/* Mobile CTA */}
-              <Link
-                to={getLocalizedPath('contact')}
-                onClick={() => setIsMenuOpen(false)}
-                className="mt-4 btn-primary px-5 py-3 rounded-lg text-center text-sm"
-              >
-                {t('hero.cta')}
+              <Link to={getLocalizedPath('quote')} onClick={() => setIsMenuOpen(false)} className="mt-4 btn-primary px-5 py-3 rounded-lg text-center text-sm">
+                Plan Your Project
               </Link>
             </nav>
           </motion.div>
