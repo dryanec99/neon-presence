@@ -72,7 +72,7 @@ const Header = () => {
                 onClick={() => setIsLangOpen(!isLangOpen)}
                 className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-secondary"
               >
-                {currentLanguage?.nativeName}
+                {currentLanguage?.flag} {currentLanguage?.nativeName}
                 <ChevronDown className={cn("w-4 h-4 transition-transform", isLangOpen && "rotate-180")} />
               </button>
               <AnimatePresence>
