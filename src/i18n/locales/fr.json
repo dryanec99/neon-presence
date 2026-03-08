@@ -708,7 +708,9 @@
         "subtitle": "Plateforme de clinique de santé",
         "category": "Healthcare",
         "description": "Plateforme clinique professionnelle avec système de rendez-vous et grilles de services médicaux. Conçue pour la confiance et la génération de leads.",
-        "features": ["Système de prise de rendez-vous", "Grille de services médicaux", "Profils des médecins", "Témoignages patients", "Formulaires conformes RGPD", "SEO local optimisé"]
+        "features": ["Système de prise de rendez-vous", "Grille de services médicaux", "Profils des médecins", "Témoignages patients", "Formulaires conformes RGPD", "SEO local optimisé"],
+        "challenge": "Une clinique dentaire perdant des patients face à des concurrents mieux présents en ligne.",
+        "solution": "Une plateforme axée sur la confiance avec capture RGPD, réservation en ligne et domination SEO locale."
       },
       "nexus": {
         "title": "NEXUS Digital",
