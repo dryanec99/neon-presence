@@ -690,7 +690,9 @@
         "subtitle": "Premium Brand & Digital Identity",
         "category": "E-commerce",
         "description": "Bold, high-conversion digital storefront built for the DNK brand. Powered by WooCommerce with a blazing-fast static engine and striking visual identity.",
-        "features": ["WooCommerce Integration", "Brand-Centric Catalog", "One-Page Checkout", "Mobile-First Design", "Product Schema Markup", "Speed Optimized (90+ PageSpeed)"]
+        "features": ["WooCommerce Integration", "Brand-Centric Catalog", "One-Page Checkout", "Mobile-First Design", "Product Schema Markup", "Speed Optimized (90+ PageSpeed)"],
+        "challenge": "A high-end fashion brand struggling with mobile bounce rates and slow checkout transitions.",
+        "solution": "A headless commerce engine featuring a minimalist UI, sub-500ms page loads, and a high-conversion checkout flow."
       },
       "dailymarket": {
         "title": "Femme Wardrobe",
