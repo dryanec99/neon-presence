@@ -690,7 +690,9 @@
         "subtitle": "Marque premium et identité digitale",
         "category": "E-commerce",
         "description": "Vitrine numérique audacieuse à haute conversion pour la marque DNK. Propulsée par WooCommerce avec un moteur statique ultra-rapide et une identité visuelle percutante.",
-        "features": ["Intégration WooCommerce", "Catalogue centré sur la marque", "Commande en une page", "Design Mobile-First", "Balisage Schema produits", "Vitesse optimisée (90+ PageSpeed)"]
+        "features": ["Intégration WooCommerce", "Catalogue centré sur la marque", "Commande en une page", "Design Mobile-First", "Balisage Schema produits", "Vitesse optimisée (90+ PageSpeed)"],
+        "challenge": "Une marque de mode haut de gamme confrontée à des taux de rebond mobiles élevés et des transitions de paiement lentes.",
+        "solution": "Un moteur headless commerce avec UI minimaliste, chargement sous 500ms et checkout haute conversion."
       },
       "dailymarket": {
         "title": "Femme Wardrobe",
