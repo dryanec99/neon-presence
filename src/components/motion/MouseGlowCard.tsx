@@ -29,10 +29,10 @@ const MouseGlowCard = ({ children, className = '' }: MouseGlowCardProps) => {
       className={`relative overflow-hidden ${className}`}
     >
       <div
-        className="pointer-events-none absolute -inset-px rounded-[inherit] transition-opacity duration-300"
+        className="pointer-events-none absolute -inset-px rounded-[inherit] transition-opacity duration-500"
         style={{
           opacity: glowPos.opacity,
-          background: `radial-gradient(400px circle at ${glowPos.x}px ${glowPos.y}px, hsl(262 100% 62% / 0.08), transparent 60%)`,
+          background: `radial-gradient(500px circle at ${glowPos.x}px ${glowPos.y}px, hsl(239 84% 67% / 0.08), transparent 50%)`,
         }}
       />
       {children}

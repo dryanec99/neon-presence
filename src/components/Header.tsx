@@ -126,7 +126,7 @@ const Header = () => {
                   {t(`nav.${item.key}`)}
                 </Link>
               ))}
-              <div className="mt-4 pt-4 border-t-2 border-border">
+              <div className="mt-4 pt-4 border-t border-border">
                 <p className="px-4 text-xs text-muted-foreground mb-2">Language</p>
                 <div className="flex gap-2 px-4">
                   {languages.map((lang) => (
