@@ -106,22 +106,33 @@ const Quote = () => {
   if (isSuccess) {
     return (
       <>
-        <SEOHead title="Thank You — MiForgiX Dev" description="Your project inquiry has been received." />
+        <SEOHead title="Discovery Initiated — MiForgiX Dev" description="Your project inquiry has been received." />
         <section className="min-h-screen flex items-center justify-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             className="max-w-lg mx-auto text-center px-4"
           >
-            <div className="w-20 h-20 rounded-full bg-primary/15 flex items-center justify-center mx-auto mb-8">
-              <Check className="w-10 h-10 text-primary" />
-            </div>
-            <h1 className="text-3xl font-bold mb-4 text-foreground">Project Inquiry Received</h1>
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ type: 'spring', damping: 12, stiffness: 200, delay: 0.2 }}
+              className="w-20 h-20 rounded-full bg-primary/15 flex items-center justify-center mx-auto mb-8"
+            >
+              <motion.div
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ delay: 0.5, duration: 0.4 }}
+              >
+                <Check className="w-10 h-10 text-primary" />
+              </motion.div>
+            </motion.div>
+            <h1 className="text-3xl font-bold mb-4 text-foreground">{t('quote.successTitle')}</h1>
             <p className="text-muted-foreground mb-8">
-              Thank you, {form.name}! We'll review your project details and get back to you within 24 hours with a tailored proposal.
+              {t('quote.successMessage')}
             </p>
-            <a href="/" className="btn-primary px-8 py-3 rounded-xl text-sm font-semibold inline-flex items-center gap-2">
-              Back to Home <ArrowRight className="w-4 h-4" />
+            <a href={`/${currentLang}`} className="btn-primary px-8 py-3 rounded-xl text-sm font-semibold inline-flex items-center gap-2">
+              {t('quote.successButton')} <ArrowRight className="w-4 h-4" />
             </a>
           </motion.div>
         </section>
