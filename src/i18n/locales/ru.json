@@ -108,7 +108,7 @@
     }
   },
   "portfolio": {
-    "title": "Наши работы",
+    "title": "Портфолио",
     "subtitle": "Реальные проекты на базе нашего AI-Native процесса — развёрнуты менее чем за 4 часа.",
     "viewProject": "Подробнее",
     "viewAll": "Все проекты",
@@ -116,7 +116,7 @@
     "close": "Закрыть",
     "features": "Ключевые функции",
     "techStack": "Технологии",
-    "requestQuote": "Запросить цену",
+    "requestQuote": "Начать проект",
     "filterAll": "Все",
     "filterEcommerce": "Электронная торговля",
     "filterHealthcare": "Здравоохранение",
