@@ -46,19 +46,19 @@ const Home = () => {
     {
       name: 'Elena Kostadinova',
       role: 'CEO, FemmeFlora',
-      text: 'MiForgiX Dev delivered our e-commerce store in 3 days. The quality is exceptional — we went from zero to €50k/month in sales.',
+      textKey: 'home.testimonial1',
       rating: 5,
     },
     {
       name: 'Ivan Petrov',
       role: 'Director, Nexus Digital',
-      text: 'The team rebuilt our agency site and our leads tripled within 2 months. The animation quality rivals Vercel itself.',
+      textKey: 'home.testimonial2',
       rating: 5,
     },
     {
       name: 'Maria Stefanova',
       role: 'Founder, SmilePro Clinic',
-      text: 'Incredibly fast delivery. Our new site loads in under 1 second and Google loves it. Top-tier professionalism.',
+      textKey: 'home.testimonial3',
       rating: 5,
     },
   ];
