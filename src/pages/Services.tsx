@@ -41,10 +41,10 @@ const Services = () => {
   ];
 
   const processSteps = [
-    { num: '01', title: 'Discovery', desc: 'We audit your current digital presence and define clear goals.' },
-    { num: '02', title: 'Strategy', desc: 'We design a custom roadmap tailored to your market and audience.' },
-    { num: '03', title: 'Execution', desc: 'Our AI-native workflow delivers production-grade output in record time.' },
-    { num: '04', title: 'Growth', desc: 'We monitor, iterate and scale. Your success is our metric.' },
+    { num: '01', title: t('home.step01Title'), desc: t('home.step01Desc') },
+    { num: '02', title: t('home.step02Title'), desc: t('home.step02Desc') },
+    { num: '03', title: t('home.step03Title'), desc: t('home.step03Desc') },
+    { num: '04', title: t('services.processStep04Title') || 'Growth', desc: t('services.processStep04Desc') || 'We monitor, iterate and scale. Your success is our metric.' },
   ];
 
   return (
