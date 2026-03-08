@@ -717,7 +717,9 @@
         "subtitle": "Agence digitale premium",
         "category": "Agency",
         "description": "Layout d'agence corporate premium avec portfolio interactif et grilles bento. UI haut de gamme conçue pour impressionner les clients entreprise.",
-        "features": ["Grille portfolio interactive", "Sections Bento Layout", "Profils d'équipe", "Pages de cas d'étude", "Formulaires de capture de leads", "Animations de scroll fluides"]
+        "features": ["Grille portfolio interactive", "Sections Bento Layout", "Profils d'équipe", "Pages de cas d'étude", "Formulaires de capture de leads", "Animations de scroll fluides"],
+        "challenge": "Une agence historique nécessitant une refonte complète pour attirer les clients Fortune 500.",
+        "solution": "Une plateforme Tech-Noir axée sur la performance, la physique du mouvement et la typographie haut de gamme."
       }
     },
     "techBadges": {
