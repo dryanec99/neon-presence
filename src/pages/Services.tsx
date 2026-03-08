@@ -162,14 +162,14 @@ const Services = () => {
       <section className="py-20 md:py-32 relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-14">
-            <TextReveal as="h2" className="font-bold mb-4">How We <span className="text-primary">Work</span></TextReveal>
+            <TextReveal as="h2" className="font-bold mb-4">{t('services.processTitle') || 'How We'} <span className="text-primary">{t('services.processHighlight') || 'Work'}</span></TextReveal>
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               className="text-muted-foreground max-w-xl mx-auto"
             >
-              A proven 4-step system that turns ideas into high-performing digital products.
+              {t('services.processSubtitle') || 'A proven 4-step system that turns ideas into high-performing digital products.'}
             </motion.p>
           </div>
 
