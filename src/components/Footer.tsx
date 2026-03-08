@@ -118,6 +118,25 @@ const Footer = () => {
             </div>
           </div>
 
+          {/* Review Options — internal only */}
+          <div className="mt-12 pt-6 border-t border-dashed border-primary/30">
+            <p className="text-xs font-semibold text-primary uppercase tracking-widest mb-3">⚡ CEO Review — Intake Options</p>
+            <div className="flex flex-wrap gap-3">
+              <Link
+                to={getLocalizedPath('request-form')}
+                className="px-4 py-2 rounded-lg border-2 border-primary/40 bg-primary/5 text-primary text-sm font-semibold hover:bg-primary/10 transition-colors"
+              >
+                Option 1: Classic Request
+              </Link>
+              <Link
+                to={getLocalizedPath('blueprint')}
+                className="px-4 py-2 rounded-lg border-2 border-primary/40 bg-primary/5 text-primary text-sm font-semibold hover:bg-primary/10 transition-colors"
+              >
+                Option 2: Project Blueprint
+              </Link>
+            </div>
+          </div>
+
           <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-muted-foreground text-sm">© {new Date().getFullYear()} MiForgiX Dev. {t('footer.rights')}</p>
             <div className="flex items-center gap-6 text-sm text-muted-foreground">
