@@ -699,7 +699,9 @@
         "subtitle": "Premium Clothing & E-commerce",
         "category": "E-commerce",
         "description": "An elegant premium clothing e-commerce experience designed for fashion-forward brands. Curated collections, seamless checkout, and stunning visual presentation.",
-        "features": ["Curated Collection Filtering", "Secure Checkout Flow", "Wishlist & Compare", "Fashion Category Support", "SEO-Optimized Structure", "Fast Loading Architecture"]
+        "features": ["Curated Collection Filtering", "Secure Checkout Flow", "Wishlist & Compare", "Fashion Category Support", "SEO-Optimized Structure", "Fast Loading Architecture"],
+        "challenge": "The client needed a digital flagship that felt as premium as their physical atelier.",
+        "solution": "A visually immersive e-commerce experience using high-fidelity motion design and integrated inventory management."
       },
       "smilepro": {
         "title": "SmilePro Dental",
