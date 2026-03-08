@@ -38,7 +38,7 @@ serve(async (req) => {
         Authorization: `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "MiForgiX Dev <onboarding@resend.dev>",
+        from: "MiForgiX Dev <noreply@miforgixdev.com>",
         to: ["homer_bart@abv.bg"],
         subject: `New Quote: ${projectType} — ${name}`,
         html: htmlBody,
