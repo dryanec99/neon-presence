@@ -717,7 +717,9 @@
         "subtitle": "Premium Digital Agency",
         "category": "Agency",
         "description": "Premium corporate agency layout with interactive portfolio and bento grids. High-end UI designed to impress enterprise clients.",
-        "features": ["Interactive Portfolio Grid", "Bento Layout Sections", "Team Member Profiles", "Case Study Pages", "Lead Capture Forms", "Smooth Scroll Animations"]
+        "features": ["Interactive Portfolio Grid", "Bento Layout Sections", "Team Member Profiles", "Case Study Pages", "Lead Capture Forms", "Smooth Scroll Animations"],
+        "challenge": "A legacy agency needing a complete digital identity reset to attract Fortune 500 clients.",
+        "solution": "A Tech-Noir inspired platform focused on performance, motion physics, and high-end typography."
       }
     },
     "techBadges": {
