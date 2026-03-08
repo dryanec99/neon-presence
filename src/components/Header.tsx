@@ -136,11 +136,11 @@ const Header = () => {
                       key={lang.code}
                       onClick={() => { handleLanguageChange(lang.code); setIsMenuOpen(false); }}
                       className={cn(
-                        "px-3 py-2 rounded-lg text-sm font-medium transition-colors",
+                        "px-3 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1",
                         lang.code === currentLang ? "bg-primary text-primary-foreground" : "bg-secondary text-muted-foreground hover:text-foreground"
                       )}
                     >
-                      {lang.nativeName}
+                      <span>{lang.flag}</span> {lang.nativeName}
                     </button>
                   ))}
                 </div>
