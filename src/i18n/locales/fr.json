@@ -20,7 +20,7 @@
     "step01Title": "Analyse et stratégie",
     "step01Desc": "Nous auditons votre présence numérique, définissons des objectifs clairs et créons une feuille de route personnalisée.",
     "step02Title": "Développement et intégration",
-    "step02Desc": "Notre processus AI-natif produit du code production-grade avec des frameworks modernes.",
+    "step02Desc": "Notre équipe d'experts produit du code production-grade avec des frameworks modernes et des pratiques d'ingénierie éprouvées.",
     "step03Title": "Assurance qualité et lancement",
     "step03Desc": "Tests rigoureux, optimisation des performances et déploiement fluide.",
     "trustedBy": "La confiance de",
@@ -40,9 +40,9 @@
     "badge": "Agence Digitale"
   },
   "aiDelivery": {
-    "badge": "Processus AI-Natif",
-    "title": "Déploiement professionnel en moins de 4 heures",
-    "subtitle": "Grâce à notre processus AI-natif propriétaire et nos kits premium sous licence GPL pour créer, localiser et lancer votre présence en un temps record."
+    "badge": "Livraison rapide",
+    "title": "Déploiement professionnel en un temps record",
+    "subtitle": "Grâce à notre processus propriétaire et nos kits de développement premium pour créer, localiser et lancer votre présence numérique à une vitesse inégalée."
   },
   "stats": {
     "projects": "Projets réalisés",
@@ -53,6 +53,16 @@
   "services": {
     "title": "Compétences clés",
     "subtitle": "Tout ce dont vous avez besoin pour dominer le paysage numérique",
+    "specializedLabel": "services spécialisés",
+    "bentoTitle": "Tout ce dont vous avez besoin pour",
+    "bentoHighlight": "dominer en ligne",
+    "bentoSubtitle": "De la conception au déploiement en passant par la croissance — nous gérons l'ensemble de la chaîne numérique.",
+    "viewPricing": "Voir les tarifs et détails",
+    "processTitle": "Comment nous",
+    "processHighlight": "travaillons",
+    "processSubtitle": "Un système éprouvé en 4 étapes qui transforme les idées en produits numériques performants.",
+    "processStep04Title": "Croissance",
+    "processStep04Desc": "Nous surveillons, itérons et mettons à l'échelle. Votre succès est notre métrique.",
     "categories": {
       "presence": {
         "title": "Création de présence",
@@ -668,7 +678,7 @@
   },
   "portfolio": {
     "title": "Le Portfolio",
-    "subtitle": "Projets réels propulsés par notre processus AI-Natif — déployés en moins de 4 heures.",
+    "subtitle": "Projets réels conçus avec précision — déployés à une vitesse inégalée.",
     "viewProject": "Voir les détails",
     "viewAll": "Voir tous les projets",
     "livePreview": "Aperçu en direct",

@@ -41,10 +41,10 @@ const Services = () => {
   ];
 
   const processSteps = [
-    { num: '01', title: 'Discovery', desc: 'We audit your current digital presence and define clear goals.' },
-    { num: '02', title: 'Strategy', desc: 'We design a custom roadmap tailored to your market and audience.' },
-    { num: '03', title: 'Execution', desc: 'Our AI-native workflow delivers production-grade output in record time.' },
-    { num: '04', title: 'Growth', desc: 'We monitor, iterate and scale. Your success is our metric.' },
+    { num: '01', title: t('home.step01Title'), desc: t('home.step01Desc') },
+    { num: '02', title: t('home.step02Title'), desc: t('home.step02Desc') },
+    { num: '03', title: t('home.step03Title'), desc: t('home.step03Desc') },
+    { num: '04', title: t('services.processStep04Title') || 'Growth', desc: t('services.processStep04Desc') || 'We monitor, iterate and scale. Your success is our metric.' },
   ];
 
   return (
@@ -65,7 +65,7 @@ const Services = () => {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 border-primary/30 bg-primary/5 text-primary text-sm font-semibold mb-8"
             >
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse inline-block" />
-              9 Specialized Services
+              9 {t('services.specializedLabel') || 'Specialized Services'}
             </motion.div>
             <TextReveal as="h1" className="font-black mb-6">
               {t('services.title')}
@@ -101,7 +101,7 @@ const Services = () => {
                 to={getLocalizedPath('quote')}
                 className="btn-primary px-6 py-3 rounded-xl text-sm font-semibold flex items-center gap-2 group shrink-0"
               >
-                Start Your Project
+                {t('nav.planProject')}
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </MagneticButton>
@@ -113,14 +113,14 @@ const Services = () => {
       <section className="py-20 md:py-32">
         <div className="container mx-auto px-4">
           <div className="text-center mb-14">
-            <TextReveal as="h2" className="font-bold mb-4">Everything You Need to <span className="text-primary">Dominate Online</span></TextReveal>
+            <TextReveal as="h2" className="font-bold mb-4">{t('services.bentoTitle') || 'Everything You Need to'} <span className="text-primary">{t('services.bentoHighlight') || 'Dominate Online'}</span></TextReveal>
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               className="text-muted-foreground max-w-xl mx-auto"
             >
-              From design to deployment to growth — we handle the full digital stack.
+              {t('services.bentoSubtitle') || 'From design to deployment to growth — we handle the full digital stack.'}
             </motion.p>
           </div>
 
@@ -148,7 +148,7 @@ const Services = () => {
                     {t(`services.items.${service.key}.description`)}
                   </p>
                   <div className="mt-5 flex items-center gap-1.5 text-primary/70 text-sm font-medium group-hover:gap-3 transition-all">
-                    View pricing & details
+                    {t('services.viewPricing') || 'View pricing & details'}
                     <ExternalLink className="w-3.5 h-3.5" />
                   </div>
                 </Link>
@@ -162,14 +162,14 @@ const Services = () => {
       <section className="py-20 md:py-32 relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-14">
-            <TextReveal as="h2" className="font-bold mb-4">How We <span className="text-primary">Work</span></TextReveal>
+            <TextReveal as="h2" className="font-bold mb-4">{t('services.processTitle') || 'How We'} <span className="text-primary">{t('services.processHighlight') || 'Work'}</span></TextReveal>
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               className="text-muted-foreground max-w-xl mx-auto"
             >
-              A proven 4-step system that turns ideas into high-performing digital products.
+              {t('services.processSubtitle') || 'A proven 4-step system that turns ideas into high-performing digital products.'}
             </motion.p>
           </div>
 
@@ -212,7 +212,7 @@ const Services = () => {
                   to={getLocalizedPath('quote')}
                   className="btn-primary px-10 py-4 rounded-xl text-base font-semibold inline-flex items-center gap-2 group"
                 >
-                  Plan Your Project
+                  {t('nav.planProject')}
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </MagneticButton>

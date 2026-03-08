@@ -20,7 +20,7 @@
     "step01Title": "Analysis & Strategy",
     "step01Desc": "We audit your current digital presence, define clear goals, and create a custom roadmap.",
     "step02Title": "Development & Integration",
-    "step02Desc": "Our AI-native workflow delivers production-grade code with modern frameworks.",
+    "step02Desc": "Our expert team delivers production-grade code with modern frameworks and proven engineering practices.",
     "step03Title": "Quality Assurance & Launch",
     "step03Desc": "Rigorous testing, performance optimization, and seamless deployment.",
     "trustedBy": "Trusted by",
@@ -40,9 +40,9 @@
     "badge": "Digital Studio"
   },
   "aiDelivery": {
-    "badge": "AI-Native Workflow",
-    "title": "Enterprise-Grade Deployment in Under 4 Hours",
-    "subtitle": "Using our proprietary AI-native workflow and premium GPL-licensed kits to build, localize, and launch your presence in record time."
+    "badge": "Rapid Delivery",
+    "title": "Enterprise-Grade Deployment in Record Time",
+    "subtitle": "Using our proprietary workflow and premium development kits to build, localize, and launch your digital presence with unmatched speed."
   },
   "stats": {
     "projects": "Projects Delivered",
@@ -53,6 +53,16 @@
   "services": {
     "title": "Core Capabilities",
     "subtitle": "Everything you need to dominate the digital landscape",
+    "specializedLabel": "Specialized Services",
+    "bentoTitle": "Everything You Need to",
+    "bentoHighlight": "Dominate Online",
+    "bentoSubtitle": "From design to deployment to growth — we handle the full digital stack.",
+    "viewPricing": "View pricing & details",
+    "processTitle": "How We",
+    "processHighlight": "Work",
+    "processSubtitle": "A proven 4-step system that turns ideas into high-performing digital products.",
+    "processStep04Title": "Growth",
+    "processStep04Desc": "We monitor, iterate and scale. Your success is our metric.",
     "categories": {
       "presence": {
         "title": "Building Presence",
@@ -668,7 +678,7 @@
   },
   "portfolio": {
     "title": "The Portfolio",
-    "subtitle": "Live projects powered by our AI-Native workflow — deployed in under 4 hours.",
+    "subtitle": "Live projects engineered with precision — deployed with unmatched speed.",
     "viewProject": "View Details",
     "viewAll": "View All Projects",
     "livePreview": "Live Preview",
