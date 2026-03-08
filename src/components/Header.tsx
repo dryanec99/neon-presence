@@ -129,7 +129,7 @@ const Header = () => {
                 </Link>
               ))}
               <div className="mt-4 pt-4 border-t border-border">
-                <p className="px-4 text-xs text-muted-foreground mb-2">Language</p>
+                <p className="px-4 text-xs text-muted-foreground mb-2">{t('nav.language')}</p>
                 <div className="flex gap-2 px-4">
                   {languages.map((lang) => (
                     <button
