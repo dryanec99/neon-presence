@@ -1,11 +1,11 @@
 {
   "nav": {
     "home": "Accueil",
-    "services": "Services",
+    "services": "Compétences",
     "portfolio": "Portfolio",
-    "blog": "Blog",
+    "blog": "Insights",
     "contact": "Contact",
-    "planProject": "Planifier un projet",
+    "planProject": "Lancer un projet",
     "language": "Langue"
   },
   "home": {
