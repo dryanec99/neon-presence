@@ -664,7 +664,7 @@
     }
   },
   "portfolio": {
-    "title": "Our Work",
+    "title": "The Portfolio",
     "subtitle": "Live projects powered by our AI-Native workflow — deployed in under 4 hours.",
     "viewProject": "View Details",
     "viewAll": "View All Projects",
@@ -672,7 +672,7 @@
     "close": "Close",
     "features": "Key Features",
     "techStack": "Tech Stack",
-    "requestQuote": "Request a Quote",
+    "requestQuote": "Initiate Discovery",
     "filterAll": "All",
     "filterEcommerce": "E-commerce",
     "filterHealthcare": "Healthcare",
