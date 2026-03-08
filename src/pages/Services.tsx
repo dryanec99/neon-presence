@@ -101,7 +101,7 @@ const Services = () => {
                 to={getLocalizedPath('quote')}
                 className="btn-primary px-6 py-3 rounded-xl text-sm font-semibold flex items-center gap-2 group shrink-0"
               >
-                Start Your Project
+                {t('nav.planProject')}
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </MagneticButton>
