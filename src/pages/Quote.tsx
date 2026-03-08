@@ -349,7 +349,7 @@ Email: ${form.email}
       </section>
 
       {/* Tech Marquee */}
-      <section className="py-14 border-y-2 border-border overflow-hidden relative">
+      <section className="py-14 border-y border-border overflow-hidden relative">
         <div className="container mx-auto px-4 mb-6 text-center">
           <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-widest">Integrated Technologies</h3>
         </div>
