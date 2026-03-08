@@ -273,7 +273,7 @@ const Home = () => {
                     {t(`services.categories.${category.key}.description`)}
                   </p>
                   <div className="mt-4 flex items-center gap-1 text-primary/70 text-sm font-medium group-hover:gap-2 transition-all">
-                    Learn more <ArrowRight className="w-3 h-3" />
+                    {t('home.learnMore')} <ArrowRight className="w-3 h-3" />
                   </div>
                 </Link>
               </MouseGlowCard>
