@@ -69,25 +69,26 @@ const Quote = () => {
     const projectLabel = PROJECT_TYPES.find(p => p.id === form.projectType)?.label || form.projectType;
     const reqLabels = form.requirements.map(r => REQUIREMENTS.find(req => req.id === r)?.label || r).join(', ');
 
-    const emailBody = `
-New Project Inquiry — MiForgiX Dev
+    try {
+      const { data, error } = await supabase.functions.invoke('send-quote', {
+        body: {
+          projectType: projectLabel,
+          requirements: reqLabels,
+          vision: form.vision,
+          name: form.name,
+          company: form.company,
+          email: form.email,
+        },
+      });
 
-Project Type: ${projectLabel}
-Requirements: ${reqLabels}
-Vision: ${form.vision}
-
-Contact:
-Name: ${form.name}
-Company: ${form.company || 'N/A'}
-Email: ${form.email}
-    `.trim();
-
-    // Ready for backend email integration to homer_bart@abv.bg
-    console.log('Quote submission for homer_bart@abv.bg:', emailBody);
-
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    setIsSubmitting(false);
-    setIsSuccess(true);
+      if (error) throw error;
+      setIsSuccess(true);
+    } catch (err) {
+      console.error('Quote submission error:', err);
+      alert('Something went wrong sending your inquiry. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const methodologySteps = [
