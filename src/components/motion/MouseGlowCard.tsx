@@ -32,7 +32,7 @@ const MouseGlowCard = ({ children, className = '' }: MouseGlowCardProps) => {
         className="pointer-events-none absolute -inset-px rounded-[inherit] transition-opacity duration-300"
         style={{
           opacity: glowPos.opacity,
-          background: `radial-gradient(400px circle at ${glowPos.x}px ${glowPos.y}px, hsl(152 100% 50% / 0.12), transparent 60%)`,
+          background: `radial-gradient(400px circle at ${glowPos.x}px ${glowPos.y}px, hsl(262 100% 62% / 0.08), transparent 60%)`,
         }}
       />
       {children}

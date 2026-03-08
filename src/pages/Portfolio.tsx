@@ -11,11 +11,7 @@ import StaggerChildren from '@/components/motion/StaggerChildren';
 import MouseGlowCard from '@/components/motion/MouseGlowCard';
 import MagneticButton from '@/components/motion/MagneticButton';
 import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
+  Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription,
 } from '@/components/ui/dialog';
 
 const TEMPLATE_KEYS = ['femmeflora', 'dailymarket', 'smilepro', 'nexus'] as const;
@@ -43,24 +39,14 @@ const TECH_BADGES: Record<TemplateKey, string[]> = {
 };
 
 const FILTER_CATEGORIES = ['All', 'E-commerce', 'Healthcare', 'Agency'] as const;
-
 const FILTER_KEYS: Record<string, string> = {
-  All: 'filterAll',
-  'E-commerce': 'filterEcommerce',
-  Healthcare: 'filterHealthcare',
-  Agency: 'filterAgency',
+  All: 'filterAll', 'E-commerce': 'filterEcommerce', Healthcare: 'filterHealthcare', Agency: 'filterAgency',
 };
 
-const BENTO_SIZES: Record<number, string> = {
-  0: 'md:col-span-2 md:row-span-2',
-  3: 'md:col-span-2 md:row-span-2',
-};
+const BENTO_SIZES: Record<number, string> = { 0: 'md:col-span-2 md:row-span-2', 3: 'md:col-span-2 md:row-span-2' };
 
 const TEMPLATE_SUBJECT_MAP: Record<TemplateKey, string> = {
-  femmeflora: 'templateFemmeFlora',
-  dailymarket: 'templateDailyMarket',
-  smilepro: 'templateSmilePro',
-  nexus: 'templateNexus',
+  femmeflora: 'templateFemmeFlora', dailymarket: 'templateDailyMarket', smilepro: 'templateSmilePro', nexus: 'templateNexus',
 };
 
 const Portfolio = () => {
@@ -73,7 +59,6 @@ const Portfolio = () => {
   const [previewTitle, setPreviewTitle] = useState('');
 
   const getLocalizedPath = (path: string) => `/${currentLang}${path ? `/${path}` : ''}`;
-
   const coreFeatures = t('portfolio.coreFeaturesList', { returnObjects: true }) as string[];
 
   const templates = TEMPLATE_KEYS.map((key) => ({
@@ -88,49 +73,26 @@ const Portfolio = () => {
     previewUrl: TEMPLATE_PREVIEWS[key],
   }));
 
-  const filtered =
-    activeFilter === 'All'
-      ? templates
-      : templates.filter((tpl) => tpl.category === activeFilter);
-
-  const selected = selectedTemplate
-    ? templates.find((tpl) => tpl.key === selectedTemplate)
-    : null;
+  const filtered = activeFilter === 'All' ? templates : templates.filter((tpl) => tpl.category === activeFilter);
+  const selected = selectedTemplate ? templates.find((tpl) => tpl.key === selectedTemplate) : null;
 
   return (
     <>
-      <SEOHead
-        title={`${t('portfolio.title')} - MiForgiX Dev`}
-        description={t('portfolio.subtitle')}
-      />
-
-      {/* Ambient Glow */}
-      <div className="fixed inset-0 pointer-events-none z-0" aria-hidden="true">
-        <div className="absolute top-1/4 left-1/3 w-[600px] h-[600px] rounded-full bg-primary/[0.04] blur-[120px] animate-float" />
-        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-primary/[0.03] blur-[100px] animate-float" style={{ animationDelay: '-3s' }} />
-      </div>
+      <SEOHead title={`${t('portfolio.title')} - MiForgiX Dev`} description={t('portfolio.subtitle')} />
 
       {/* Hero */}
       <section className="py-20 md:py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-hero-glow pointer-events-none" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <TextReveal as="h1" className="font-bold mb-6">
-              {t('portfolio.title')}
-            </TextReveal>
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              className="text-lg md:text-xl text-muted-foreground"
-            >
+            <TextReveal as="h1" className="font-bold mb-6">{t('portfolio.title')}</TextReveal>
+            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} className="text-lg md:text-xl text-muted-foreground">
               {t('portfolio.subtitle')}
             </motion.p>
           </div>
         </div>
       </section>
 
-      {/* Filter Bar */}
+      {/* Filters */}
       <section className="pb-8">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-center gap-2">
@@ -138,10 +100,10 @@ const Portfolio = () => {
               <button
                 key={cat}
                 onClick={() => setActiveFilter(cat)}
-                className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                className={`px-5 py-2 rounded-full text-sm font-medium border-2 transition-all duration-300 ${
                   activeFilter === cat
-                    ? 'bg-primary text-primary-foreground shadow-[0_0_20px_hsl(152_100%_50%/0.4)]'
-                    : 'bg-secondary text-muted-foreground hover:text-foreground hover:bg-secondary/80'
+                    ? 'bg-primary text-primary-foreground border-primary'
+                    : 'bg-card text-muted-foreground border-border hover:text-foreground hover:border-primary/30'
                 }`}
               >
                 {t(`portfolio.${FILTER_KEYS[cat]}`)}
@@ -157,54 +119,29 @@ const Portfolio = () => {
           <StaggerChildren className="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[280px]">
             <AnimatePresence mode="popLayout">
               {filtered.map((tpl, index) => (
-                <MouseGlowCard
-                  key={tpl.key}
-                  className={`group cursor-pointer rounded-2xl ${BENTO_SIZES[index] || ''}`}
-                >
+                <MouseGlowCard key={tpl.key} className={`group cursor-pointer rounded-2xl ${BENTO_SIZES[index] || ''}`}>
                   <div
-                    className="overflow-hidden h-full flex flex-col relative rounded-2xl transition-all duration-300"
-                    style={{
-                      background: 'hsl(0 0% 12% / 0.4)',
-                      backdropFilter: 'blur(16px)',
-                      WebkitBackdropFilter: 'blur(16px)',
-                      border: '1px solid hsl(0 0% 100% / 0.1)',
-                    }}
+                    className="overflow-hidden h-full flex flex-col relative rounded-2xl border-2 border-border transition-all duration-300 hover:border-primary/30"
                     onClick={() => setSelectedTemplate(tpl.key as TemplateKey)}
                   >
                     <div className="absolute inset-0">
-                      <img
-                        src={tpl.image}
-                        alt={tpl.title}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                        loading="lazy"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[hsl(0_0%_4%/0.95)] via-[hsl(0_0%_4%/0.5)] to-transparent" />
+                      <img src={tpl.image} alt={tpl.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[hsl(37_93%_91%/0.95)] via-[hsl(37_93%_91%/0.4)] to-transparent" />
                     </div>
                     <div className="relative z-10 flex flex-col justify-end h-full p-5 md:p-6">
                       <div className="flex flex-wrap gap-1.5 mb-3">
                         {tpl.techBadges.map((badge) => (
-                          <span
-                            key={badge}
-                            className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-primary/15 text-primary border border-primary/30"
-                          >
+                          <span key={badge} className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-primary/10 text-primary border-2 border-primary/20">
                             {t(`portfolio.techBadges.${badge}`)}
                           </span>
                         ))}
                       </div>
-                      <span className="text-primary text-xs font-medium mb-1 uppercase tracking-wider">
-                        {tpl.category}
-                      </span>
-                      <h3 className="text-lg md:text-xl font-bold text-foreground mb-0.5 group-hover:text-primary transition-colors">
-                        {tpl.title}
-                      </h3>
-                      <p className="text-primary/70 text-xs font-medium mb-1">
-                        {tpl.subtitle}
-                      </p>
-                      <p className="text-muted-foreground text-sm line-clamp-2">
-                        {tpl.description}
-                      </p>
+                      <span className="text-primary text-xs font-medium mb-1 uppercase tracking-wider">{tpl.category}</span>
+                      <h3 className="text-lg md:text-xl font-bold text-foreground mb-0.5 group-hover:text-primary transition-colors">{tpl.title}</h3>
+                      <p className="text-primary/70 text-xs font-medium mb-1">{tpl.subtitle}</p>
+                      <p className="text-muted-foreground text-sm line-clamp-2">{tpl.description}</p>
                       <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center shadow-[0_0_20px_hsl(152_100%_50%/0.5)]">
+                        <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center shadow-elevated">
                           <ExternalLink className="w-4 h-4 text-primary-foreground" />
                         </div>
                       </div>
@@ -219,92 +156,60 @@ const Portfolio = () => {
 
       {/* Detail Modal */}
       <Dialog open={!!selectedTemplate} onOpenChange={() => setSelectedTemplate(null)}>
-        <DialogContent className="max-w-2xl glass border-[hsl(0_0%_100%/0.1)] max-h-[90vh] overflow-y-auto">
+        <DialogContent className="max-w-2xl bg-card border-2 border-border max-h-[90vh] overflow-y-auto">
           {selected && (
             <>
               <DialogHeader>
                 <div className="flex flex-wrap gap-1.5 mb-2">
                   {selected.techBadges.map((badge) => (
-                    <span
-                      key={badge}
-                      className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-primary/15 text-primary border border-primary/30"
-                    >
+                    <span key={badge} className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-primary/10 text-primary border-2 border-primary/20">
                       {t(`portfolio.techBadges.${badge}`)}
                     </span>
                   ))}
                 </div>
                 <DialogTitle className="text-2xl font-bold">{selected.title}</DialogTitle>
                 <p className="text-primary/80 text-sm font-medium">{selected.subtitle}</p>
-                <DialogDescription className="text-muted-foreground text-sm mt-1">
-                  {selected.description}
-                </DialogDescription>
+                <DialogDescription className="text-muted-foreground text-sm mt-1">{selected.description}</DialogDescription>
               </DialogHeader>
-
-              <div className="rounded-xl overflow-hidden border border-border my-4">
-                <img
-                  src={selected.image}
-                  alt={selected.title}
-                  className="w-full h-48 md:h-64 object-cover"
-                />
+              <div className="rounded-xl overflow-hidden border-2 border-border my-4">
+                <img src={selected.image} alt={selected.title} className="w-full h-48 md:h-64 object-cover" />
               </div>
-
-              {/* Core Features */}
               <div className="mb-4">
-                <h4 className="text-sm font-semibold text-foreground mb-3 uppercase tracking-wider">
-                  {t('portfolio.coreFeatures')}
-                </h4>
+                <h4 className="text-sm font-semibold text-foreground mb-3 uppercase tracking-wider">{t('portfolio.coreFeatures')}</h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                  {Array.isArray(coreFeatures) &&
-                    coreFeatures.map((feat, i) => (
-                      <div key={i} className="flex items-start gap-2">
-                        <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                        <span className="text-sm text-muted-foreground">{feat}</span>
-                      </div>
-                    ))}
+                  {Array.isArray(coreFeatures) && coreFeatures.map((feat, i) => (
+                    <div key={i} className="flex items-start gap-2">
+                      <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                      <span className="text-sm text-muted-foreground">{feat}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
-
-              {/* Template Features */}
               <div className="mb-6">
-                <h4 className="text-sm font-semibold text-foreground mb-3 uppercase tracking-wider">
-                  {t('portfolio.features')}
-                </h4>
+                <h4 className="text-sm font-semibold text-foreground mb-3 uppercase tracking-wider">{t('portfolio.features')}</h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                  {Array.isArray(selected.features) &&
-                    selected.features.map((feat, i) => (
-                      <div key={i} className="flex items-start gap-2">
-                        <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                        <span className="text-sm text-muted-foreground">{feat}</span>
-                      </div>
-                    ))}
+                  {Array.isArray(selected.features) && selected.features.map((feat, i) => (
+                    <div key={i} className="flex items-start gap-2">
+                      <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                      <span className="text-sm text-muted-foreground">{feat}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
-
-              {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-3">
                 <MagneticButton className="flex-1">
                   <button
-                    onClick={() => {
-                      setSelectedTemplate(null);
-                      setPreviewTitle(selected.title);
-                      setPreviewUrl(selected.previewUrl);
-                    }}
-                    className="w-full bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 shadow-[0_0_20px_hsl(152_100%_50%/0.4)] transition-all"
+                    onClick={() => { setSelectedTemplate(null); setPreviewTitle(selected.title); setPreviewUrl(selected.previewUrl); }}
+                    className="w-full btn-primary px-6 py-3 rounded-xl text-sm font-semibold flex items-center justify-center gap-2"
                   >
-                    {t('portfolio.livePreview')}
-                    <ExternalLink className="w-4 h-4" />
+                    {t('portfolio.livePreview')} <ExternalLink className="w-4 h-4" />
                   </button>
                 </MagneticButton>
                 <button
-                  onClick={() => {
-                    const subjectKey = TEMPLATE_SUBJECT_MAP[selectedTemplate!];
-                    setSelectedTemplate(null);
-                    navigate(`${getLocalizedPath('contact')}?subject=${subjectKey}`);
-                  }}
+                  onClick={() => { setSelectedTemplate(null); navigate(`${getLocalizedPath('contact')}?subject=${TEMPLATE_SUBJECT_MAP[selectedTemplate!]}`); }}
                   className="btn-outline px-6 py-3 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 flex-1"
                 >
-                  {t('portfolio.requestQuote')}
-                  <ArrowRight className="w-4 h-4" />
+                  {t('portfolio.requestQuote')} <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
             </>
@@ -312,44 +217,20 @@ const Portfolio = () => {
         </DialogContent>
       </Dialog>
 
-      {/* Fullscreen Preview Modal */}
-      <PreviewModal
-        url={previewUrl || ''}
-        title={previewTitle}
-        open={!!previewUrl}
-        onClose={() => setPreviewUrl(null)}
-      />
+      <PreviewModal url={previewUrl || ''} title={previewTitle} open={!!previewUrl} onClose={() => setPreviewUrl(null)} />
 
       {/* CTA */}
       <section className="py-20 md:py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <TextReveal as="h2" className="font-bold mb-6">
-              {t('cta.title')}
-            </TextReveal>
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.15 }}
-              className="text-lg text-muted-foreground mb-10"
-            >
+            <TextReveal as="h2" className="font-bold mb-6">{t('cta.title')}</TextReveal>
+            <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.15 }} className="text-lg text-muted-foreground mb-10">
               {t('cta.subtitle')}
             </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ type: 'spring', damping: 25, stiffness: 180, delay: 0.25 }}
-            >
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ type: 'spring', damping: 25, stiffness: 180, delay: 0.25 }}>
               <MagneticButton>
-                <Link
-                  to={getLocalizedPath('contact')}
-                  className="btn-primary px-10 py-4 rounded-xl text-base font-semibold inline-flex items-center gap-2 group"
-                >
-                  {t('cta.button')}
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <Link to={getLocalizedPath('quote')} className="btn-primary px-10 py-4 rounded-xl text-base font-semibold inline-flex items-center gap-2 group">
+                  Plan Your Project <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </MagneticButton>
             </motion.div>

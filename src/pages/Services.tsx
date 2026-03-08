@@ -28,17 +28,16 @@ const Services = () => {
     socialNetworks: 'social-networks', onlineReputation: 'online-reputation', emailMarketing: 'email-marketing',
   };
 
-  // All 9 services in one bento grid
   const allServices = [
-    { key: 'webDesign', icon: Code, size: 'md:col-span-2', featured: true, gradient: 'from-primary/20 to-primary/5' },
-    { key: 'ecommerce', icon: ShoppingCart, size: '', featured: false, gradient: 'from-emerald-500/20 to-emerald-500/5' },
-    { key: 'mobileApps', icon: Smartphone, size: '', featured: false, gradient: 'from-blue-500/20 to-blue-500/5' },
-    { key: 'googleAds', icon: BarChart3, size: '', featured: false, gradient: 'from-orange-500/20 to-orange-500/5' },
-    { key: 'seoOptimization', icon: Search, size: 'md:col-span-2', featured: true, gradient: 'from-purple-500/20 to-purple-500/5' },
-    { key: 'googleMyBusiness', icon: MapPin, size: '', featured: false, gradient: 'from-red-500/20 to-red-500/5' },
-    { key: 'socialNetworks', icon: Users, size: '', featured: false, gradient: 'from-pink-500/20 to-pink-500/5' },
-    { key: 'onlineReputation', icon: Star, size: '', featured: false, gradient: 'from-yellow-500/20 to-yellow-500/5' },
-    { key: 'emailMarketing', icon: Mail, size: '', featured: false, gradient: 'from-cyan-500/20 to-cyan-500/5' },
+    { key: 'webDesign', icon: Code, size: 'md:col-span-2', featured: true },
+    { key: 'ecommerce', icon: ShoppingCart, size: '', featured: false },
+    { key: 'mobileApps', icon: Smartphone, size: '', featured: false },
+    { key: 'googleAds', icon: BarChart3, size: '', featured: false },
+    { key: 'seoOptimization', icon: Search, size: 'md:col-span-2', featured: true },
+    { key: 'googleMyBusiness', icon: MapPin, size: '', featured: false },
+    { key: 'socialNetworks', icon: Users, size: '', featured: false },
+    { key: 'onlineReputation', icon: Star, size: '', featured: false },
+    { key: 'emailMarketing', icon: Mail, size: '', featured: false },
   ];
 
   const processSteps = [
@@ -51,26 +50,19 @@ const Services = () => {
   return (
     <>
       <SEOHead 
-        title={`Services - MiForgiX Dev`}
+        title="Services - MiForgiX Dev"
         description={t('services.subtitle')}
       />
 
       {/* Hero */}
       <section className="py-24 md:py-36 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,hsl(152_100%_50%/0.07),transparent)]" />
-          <div className="absolute inset-0 opacity-[0.025]" style={{
-            backgroundImage: 'linear-gradient(hsl(0 0% 100%) 1px, transparent 1px), linear-gradient(90deg, hsl(0 0% 100%) 1px, transparent 1px)',
-            backgroundSize: '80px 80px',
-          }} />
-        </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ type: 'spring', damping: 25, stiffness: 180 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 text-primary text-sm font-mono mb-8"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 border-primary/30 bg-primary/5 text-primary text-sm font-semibold mb-8"
             >
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse inline-block" />
               9 Specialized Services
@@ -91,22 +83,22 @@ const Services = () => {
       </section>
 
       {/* AI Delivery Banner */}
-      <section className="py-10 md:py-14 relative overflow-hidden border-y border-border">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 pointer-events-none" />
+      <section className="py-10 md:py-14 relative overflow-hidden border-y-2 border-border">
+        <div className="absolute inset-0 bg-gradient-to-r from-accent/10 via-accent/20 to-accent/10 pointer-events-none" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 max-w-5xl mx-auto">
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center border border-primary/20">
+              <div className="w-12 h-12 rounded-xl bg-accent/30 flex items-center justify-center border-2 border-accent/40">
                 <Zap className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <div className="text-sm text-primary font-mono font-medium">{t('aiDelivery.badge')}</div>
+                <div className="text-sm text-primary font-semibold">{t('aiDelivery.badge')}</div>
                 <div className="text-foreground font-bold text-lg">{t('aiDelivery.title')}</div>
               </div>
             </div>
             <MagneticButton>
               <Link
-                to={getLocalizedPath('contact')}
+                to={getLocalizedPath('quote')}
                 className="btn-primary px-6 py-3 rounded-xl text-sm font-semibold flex items-center gap-2 group shrink-0"
               >
                 Start Your Project
@@ -117,11 +109,11 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Asymmetric Bento Grid of All Services */}
+      {/* Bento Grid */}
       <section className="py-20 md:py-32">
         <div className="container mx-auto px-4">
           <div className="text-center mb-14">
-            <TextReveal as="h2" className="font-bold mb-4">Everything You Need to Dominate Online</TextReveal>
+            <TextReveal as="h2" className="font-bold mb-4">Everything You Need to <span className="text-primary">Dominate Online</span></TextReveal>
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -140,11 +132,11 @@ const Services = () => {
                   className="bento-item group cursor-pointer flex flex-col h-full min-h-[200px]"
                 >
                   <div className="flex items-start justify-between mb-5">
-                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.gradient} flex items-center justify-center group-hover:scale-110 transition-transform`}>
+                    <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center group-hover:scale-110 transition-transform">
                       <service.icon className="w-6 h-6 text-primary" />
                     </div>
                     {service.featured && (
-                      <span className="text-[10px] font-semibold px-2 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 uppercase tracking-wider">
+                      <span className="text-[10px] font-semibold px-2 py-1 rounded-full bg-primary/10 text-primary border-2 border-primary/20 uppercase tracking-wider">
                         Popular
                       </span>
                     )}
@@ -166,12 +158,11 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="py-20 md:py-32 bg-card/50 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_40%_at_50%_50%,hsl(152_100%_50%/0.04),transparent)] pointer-events-none" />
+      {/* Process */}
+      <section className="py-20 md:py-32 relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-14">
-            <TextReveal as="h2" className="font-bold mb-4">How We Work</TextReveal>
+            <TextReveal as="h2" className="font-bold mb-4">How We <span className="text-primary">Work</span></TextReveal>
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -185,7 +176,7 @@ const Services = () => {
           <StaggerChildren className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {processSteps.map((step) => (
               <div key={step.num} className="bento-item group relative">
-                <div className="text-6xl font-black text-primary/10 group-hover:text-primary/20 transition-colors mb-4 leading-none font-mono">
+                <div className="text-6xl font-black text-primary/10 group-hover:text-primary/20 transition-colors mb-4 leading-none">
                   {step.num}
                 </div>
                 <h3 className="text-lg font-bold text-foreground mb-2">{step.title}</h3>
@@ -198,7 +189,6 @@ const Services = () => {
 
       {/* CTA */}
       <section className="py-20 md:py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <TextReveal as="h2" className="font-bold mb-6">{t('cta.title')}</TextReveal>
@@ -219,10 +209,10 @@ const Services = () => {
             >
               <MagneticButton>
                 <Link
-                  to={getLocalizedPath('contact')}
+                  to={getLocalizedPath('quote')}
                   className="btn-primary px-10 py-4 rounded-xl text-base font-semibold inline-flex items-center gap-2 group"
                 >
-                  {t('cta.button')}
+                  Plan Your Project
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </MagneticButton>
