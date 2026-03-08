@@ -121,8 +121,8 @@ const Footer = () => {
           <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-muted-foreground text-sm">© {new Date().getFullYear()} MiForgiX Dev. {t('footer.rights')}</p>
             <div className="flex items-center gap-6 text-sm text-muted-foreground">
-              <button onClick={(e) => e.preventDefault()} className="hover:text-primary transition-colors cursor-pointer">{t('footer.privacy')}</button>
-              <button onClick={(e) => e.preventDefault()} className="hover:text-primary transition-colors cursor-pointer">{t('footer.terms')}</button>
+              <a href="#" className="hover:text-primary transition-colors">{t('footer.privacy')}</a>
+              <a href="#" className="hover:text-primary transition-colors">{t('footer.terms')}</a>
             </div>
           </div>
         </div>
