@@ -27,7 +27,10 @@
     "trustedByHighlight": "vraies entreprises",
     "trustedBySubtitle": "Ne nous croyez pas sur parole — voici ce que disent nos clients",
     "integratedTech": "Technologies intégrées",
-    "learnMore": "En savoir plus"
+    "learnMore": "En savoir plus",
+    "testimonial1": "MiForgiX a livré notre flagship 3 semaines en avance. L'ingénierie est impeccable.",
+    "testimonial2": "Le meilleur investissement de l'année. Nos taux de conversion ont triplé dès le premier mois.",
+    "testimonial3": "Livraison incroyablement rapide. Notre nouveau site se charge en moins d'1 seconde."
   },
   "hero": {
     "title": "Construction complète de votre présence en ligne",
@@ -673,6 +676,8 @@
     "features": "Fonctionnalités clés",
     "techStack": "Technologies",
     "requestQuote": "Lancer un projet",
+    "theChallenge": "Le Défi",
+    "theSolution": "La Solution",
     "filterAll": "Tous",
     "filterEcommerce": "E-commerce",
     "filterHealthcare": "Santé",
@@ -685,28 +690,36 @@
         "subtitle": "Marque premium et identité digitale",
         "category": "E-commerce",
         "description": "Vitrine numérique audacieuse à haute conversion pour la marque DNK. Propulsée par WooCommerce avec un moteur statique ultra-rapide et une identité visuelle percutante.",
-        "features": ["Intégration WooCommerce", "Catalogue centré sur la marque", "Commande en une page", "Design Mobile-First", "Balisage Schema produits", "Vitesse optimisée (90+ PageSpeed)"]
+        "features": ["Intégration WooCommerce", "Catalogue centré sur la marque", "Commande en une page", "Design Mobile-First", "Balisage Schema produits", "Vitesse optimisée (90+ PageSpeed)"],
+        "challenge": "Une marque de mode haut de gamme confrontée à des taux de rebond mobiles élevés et des transitions de paiement lentes.",
+        "solution": "Un moteur headless commerce avec UI minimaliste, chargement sous 500ms et checkout haute conversion."
       },
       "dailymarket": {
         "title": "Femme Wardrobe",
         "subtitle": "Vêtements premium et e-commerce",
         "category": "E-commerce",
         "description": "Une expérience e-commerce premium élégante conçue pour les marques de mode avant-gardistes. Collections curatées, paiement fluide et présentation visuelle époustouflante.",
-        "features": ["Filtrage de collections curatées", "Processus de paiement sécurisé", "Liste de souhaits et comparaison", "Support catégories mode", "Structure optimisée SEO", "Architecture rapide"]
+        "features": ["Filtrage de collections curatées", "Processus de paiement sécurisé", "Liste de souhaits et comparaison", "Support catégories mode", "Structure optimisée SEO", "Architecture rapide"],
+        "challenge": "Le client avait besoin d'un flagship numérique aussi premium que son atelier physique.",
+        "solution": "Une expérience e-commerce visuellement immersive avec motion design et gestion intégrée des stocks."
       },
       "smilepro": {
         "title": "SmilePro Dental",
         "subtitle": "Plateforme de clinique de santé",
         "category": "Healthcare",
         "description": "Plateforme clinique professionnelle avec système de rendez-vous et grilles de services médicaux. Conçue pour la confiance et la génération de leads.",
-        "features": ["Système de prise de rendez-vous", "Grille de services médicaux", "Profils des médecins", "Témoignages patients", "Formulaires conformes RGPD", "SEO local optimisé"]
+        "features": ["Système de prise de rendez-vous", "Grille de services médicaux", "Profils des médecins", "Témoignages patients", "Formulaires conformes RGPD", "SEO local optimisé"],
+        "challenge": "Une clinique dentaire perdant des patients face à des concurrents mieux présents en ligne.",
+        "solution": "Une plateforme axée sur la confiance avec capture RGPD, réservation en ligne et domination SEO locale."
       },
       "nexus": {
         "title": "NEXUS Digital",
         "subtitle": "Agence digitale premium",
         "category": "Agency",
         "description": "Layout d'agence corporate premium avec portfolio interactif et grilles bento. UI haut de gamme conçue pour impressionner les clients entreprise.",
-        "features": ["Grille portfolio interactive", "Sections Bento Layout", "Profils d'équipe", "Pages de cas d'étude", "Formulaires de capture de leads", "Animations de scroll fluides"]
+        "features": ["Grille portfolio interactive", "Sections Bento Layout", "Profils d'équipe", "Pages de cas d'étude", "Formulaires de capture de leads", "Animations de scroll fluides"],
+        "challenge": "Une agence historique nécessitant une refonte complète pour attirer les clients Fortune 500.",
+        "solution": "Une plateforme Tech-Noir axée sur la performance, la physique du mouvement et la typographie haut de gamme."
       }
     },
     "techBadges": {

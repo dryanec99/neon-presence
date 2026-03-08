@@ -27,7 +27,10 @@
     "trustedByHighlight": "Real Businesses",
     "trustedBySubtitle": "Don't take our word for it — here's what our clients say",
     "integratedTech": "Integrated Technologies",
-    "learnMore": "Learn more"
+    "learnMore": "Learn more",
+    "testimonial1": "MiForgiX delivered our flagship 3 weeks ahead of schedule. The engineering is flawless.",
+    "testimonial2": "The best investment we made this year. Our conversion rates tripled within the first month.",
+    "testimonial3": "Incredibly fast delivery. Our new site loads in under 1 second and Google loves it. Top-tier professionalism."
   },
   "hero": {
     "title": "Complete Construction of Your Online Presence",
@@ -673,6 +676,8 @@
     "features": "Key Features",
     "techStack": "Tech Stack",
     "requestQuote": "Initiate Discovery",
+    "theChallenge": "The Challenge",
+    "theSolution": "The Solution",
     "filterAll": "All",
     "filterEcommerce": "E-commerce",
     "filterHealthcare": "Healthcare",
@@ -685,28 +690,36 @@
         "subtitle": "Premium Brand & Digital Identity",
         "category": "E-commerce",
         "description": "Bold, high-conversion digital storefront built for the DNK brand. Powered by WooCommerce with a blazing-fast static engine and striking visual identity.",
-        "features": ["WooCommerce Integration", "Brand-Centric Catalog", "One-Page Checkout", "Mobile-First Design", "Product Schema Markup", "Speed Optimized (90+ PageSpeed)"]
+        "features": ["WooCommerce Integration", "Brand-Centric Catalog", "One-Page Checkout", "Mobile-First Design", "Product Schema Markup", "Speed Optimized (90+ PageSpeed)"],
+        "challenge": "A high-end fashion brand struggling with mobile bounce rates and slow checkout transitions.",
+        "solution": "A headless commerce engine featuring a minimalist UI, sub-500ms page loads, and a high-conversion checkout flow."
       },
       "dailymarket": {
         "title": "Femme Wardrobe",
         "subtitle": "Premium Clothing & E-commerce",
         "category": "E-commerce",
         "description": "An elegant premium clothing e-commerce experience designed for fashion-forward brands. Curated collections, seamless checkout, and stunning visual presentation.",
-        "features": ["Curated Collection Filtering", "Secure Checkout Flow", "Wishlist & Compare", "Fashion Category Support", "SEO-Optimized Structure", "Fast Loading Architecture"]
+        "features": ["Curated Collection Filtering", "Secure Checkout Flow", "Wishlist & Compare", "Fashion Category Support", "SEO-Optimized Structure", "Fast Loading Architecture"],
+        "challenge": "The client needed a digital flagship that felt as premium as their physical atelier.",
+        "solution": "A visually immersive e-commerce experience using high-fidelity motion design and integrated inventory management."
       },
       "smilepro": {
         "title": "SmilePro Dental",
         "subtitle": "Healthcare Clinic Platform",
         "category": "Healthcare",
         "description": "Professional clinic platform with appointment hooks and medical service grids. Designed for trust, compliance, and lead generation.",
-        "features": ["Appointment Booking System", "Medical Service Grid", "Doctor Profiles", "Patient Testimonials", "GDPR-Compliant Forms", "Local SEO Optimized"]
+        "features": ["Appointment Booking System", "Medical Service Grid", "Doctor Profiles", "Patient Testimonials", "GDPR-Compliant Forms", "Local SEO Optimized"],
+        "challenge": "A dental clinic losing patients to competitors with better online visibility and appointment systems.",
+        "solution": "A trust-focused medical platform with GDPR-compliant lead capture, online booking, and local SEO domination."
       },
       "nexus": {
         "title": "NEXUS Digital",
         "subtitle": "Premium Digital Agency",
         "category": "Agency",
         "description": "Premium corporate agency layout with interactive portfolio and bento grids. High-end UI designed to impress enterprise clients.",
-        "features": ["Interactive Portfolio Grid", "Bento Layout Sections", "Team Member Profiles", "Case Study Pages", "Lead Capture Forms", "Smooth Scroll Animations"]
+        "features": ["Interactive Portfolio Grid", "Bento Layout Sections", "Team Member Profiles", "Case Study Pages", "Lead Capture Forms", "Smooth Scroll Animations"],
+        "challenge": "A legacy agency needing a complete digital identity reset to attract Fortune 500 clients.",
+        "solution": "A Tech-Noir inspired platform focused on performance, motion physics, and high-end typography."
       }
     },
     "techBadges": {

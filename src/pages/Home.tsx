@@ -8,6 +8,7 @@ import TextReveal from '@/components/motion/TextReveal';
 import StaggerChildren from '@/components/motion/StaggerChildren';
 import MagneticButton from '@/components/motion/MagneticButton';
 import MouseGlowCard from '@/components/motion/MouseGlowCard';
+import ScrollTimeline from '@/components/ScrollTimeline';
 
 const Home = () => {
   const { t, i18n } = useTranslation();
@@ -45,19 +46,19 @@ const Home = () => {
     {
       name: 'Elena Kostadinova',
       role: 'CEO, FemmeFlora',
-      text: 'MiForgiX Dev delivered our e-commerce store in 3 days. The quality is exceptional — we went from zero to €50k/month in sales.',
+      textKey: 'home.testimonial1',
       rating: 5,
     },
     {
       name: 'Ivan Petrov',
       role: 'Director, Nexus Digital',
-      text: 'The team rebuilt our agency site and our leads tripled within 2 months. The animation quality rivals Vercel itself.',
+      textKey: 'home.testimonial2',
       rating: 5,
     },
     {
       name: 'Maria Stefanova',
       role: 'Founder, SmilePro Clinic',
-      text: 'Incredibly fast delivery. Our new site loads in under 1 second and Google loves it. Top-tier professionalism.',
+      textKey: 'home.testimonial3',
       rating: 5,
     },
   ];
@@ -196,17 +197,7 @@ const Home = () => {
             </motion.p>
           </div>
 
-          <StaggerChildren className="grid md:grid-cols-3 gap-8">
-            {methodologySteps.map((step) => (
-              <div key={step.num} className="bento-item group relative">
-                <div className="text-6xl font-black text-accent/30 group-hover:text-accent/50 transition-colors mb-4 leading-none">
-                  {step.num}
-                </div>
-                <h3 className="text-lg font-bold text-foreground mb-2">{step.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{step.desc}</p>
-              </div>
-            ))}
-          </StaggerChildren>
+          <ScrollTimeline steps={methodologySteps} />
         </div>
       </section>
 
@@ -333,7 +324,7 @@ const Home = () => {
                     ))}
                   </div>
                   <p className="text-muted-foreground text-sm leading-relaxed flex-1 mb-6">
-                    "{testimonial.text}"
+                    "{t(testimonial.textKey)}"
                   </p>
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-primary/15 flex items-center justify-center text-primary font-bold text-sm">

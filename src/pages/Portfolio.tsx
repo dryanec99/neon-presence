@@ -68,6 +68,8 @@ const Portfolio = () => {
     category: t(`portfolio.templates.${key}.category`),
     description: t(`portfolio.templates.${key}.description`),
     features: t(`portfolio.templates.${key}.features`, { returnObjects: true }) as string[],
+    challenge: t(`portfolio.templates.${key}.challenge`),
+    solution: t(`portfolio.templates.${key}.solution`),
     image: TEMPLATE_IMAGES[key],
     techBadges: TECH_BADGES[key],
     previewUrl: TEMPLATE_PREVIEWS[key],
@@ -126,7 +128,7 @@ const Portfolio = () => {
                   >
                     <div className="absolute inset-0">
                       <img src={tpl.image} alt={tpl.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[hsl(37_93%_91%/0.95)] via-[hsl(37_93%_91%/0.4)] to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent" />
                     </div>
                     <div className="relative z-10 flex flex-col justify-end h-full p-5 md:p-6">
                       <div className="flex flex-wrap gap-1.5 mb-3">
@@ -154,9 +156,9 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Detail Modal */}
+      {/* Case Study Modal */}
       <Dialog open={!!selectedTemplate} onOpenChange={() => setSelectedTemplate(null)}>
-        <DialogContent className="max-w-2xl bg-card border-2 border-border max-h-[90vh] overflow-y-auto">
+        <DialogContent className="max-w-2xl bg-card border-2 border-primary/30 max-h-[90vh] overflow-y-auto">
           {selected && (
             <>
               <DialogHeader>
@@ -174,6 +176,19 @@ const Portfolio = () => {
               <div className="rounded-xl overflow-hidden border-2 border-border my-4">
                 <img src={selected.image} alt={selected.title} className="w-full h-48 md:h-64 object-cover" />
               </div>
+
+              {/* Case Study: Challenge & Solution */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                <div className="p-4 rounded-xl bg-destructive/5 border-2 border-destructive/15">
+                  <h4 className="text-sm font-semibold text-foreground mb-2 uppercase tracking-wider">{t('portfolio.theChallenge')}</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{selected.challenge}</p>
+                </div>
+                <div className="p-4 rounded-xl bg-primary/5 border-2 border-primary/15">
+                  <h4 className="text-sm font-semibold text-foreground mb-2 uppercase tracking-wider">{t('portfolio.theSolution')}</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{selected.solution}</p>
+                </div>
+              </div>
+
               <div className="mb-4">
                 <h4 className="text-sm font-semibold text-foreground mb-3 uppercase tracking-wider">{t('portfolio.coreFeatures')}</h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -230,7 +245,7 @@ const Portfolio = () => {
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ type: 'spring', damping: 25, stiffness: 180, delay: 0.25 }}>
               <MagneticButton>
                 <Link to={getLocalizedPath('quote')} className="btn-primary px-10 py-4 rounded-xl text-base font-semibold inline-flex items-center gap-2 group">
-                  Plan Your Project <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  {t('nav.planProject')} <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </MagneticButton>
             </motion.div>
