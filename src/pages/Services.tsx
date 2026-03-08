@@ -65,7 +65,7 @@ const Services = () => {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 border-primary/30 bg-primary/5 text-primary text-sm font-semibold mb-8"
             >
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse inline-block" />
-              9 Specialized Services
+              9 {t('services.specializedLabel') || 'Specialized Services'}
             </motion.div>
             <TextReveal as="h1" className="font-black mb-6">
               {t('services.title')}
