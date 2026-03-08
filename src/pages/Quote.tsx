@@ -326,7 +326,7 @@ Email: ${form.email}
       </section>
 
       {/* Methodology Section */}
-      <section className="py-20 md:py-28 border-t-2 border-border">
+      <section className="py-20 md:py-28 border-t border-border">
         <div className="container mx-auto px-4">
           <div className="text-center mb-14">
             <TextReveal as="h2" className="font-bold mb-4">Our <span className="text-primary">Methodology</span></TextReveal>
