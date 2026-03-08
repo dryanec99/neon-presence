@@ -774,17 +774,32 @@
     "success": "Thank you! We'll be in touch soon."
   },
   "footer": {
-    "description": "Your partner in digital transformation. We build experiences that matter.",
-    "quickLinks": "Quick Links",
-    "services": "Services",
-    "connect": "Connect",
+    "tagline": "Digital flagships engineered for the modern era.",
+    "capabilities": "Capabilities",
+    "studioTitle": "Studio",
+    "studio": {
+      "portfolio": "The Portfolio",
+      "framework": "Strategic Framework",
+      "initiate": "Initiate Discovery"
+    },
+    "connect": "Contact",
     "rights": "All rights reserved.",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service"
   },
   "cta": {
     "title": "Ready to Transform Your Digital Presence?",
-    "subtitle": "Let's discuss how we can help you achieve your goals.",
-    "button": "Start Your Project"
+    "subtitle": "Let's discuss how we can elevate your digital flagship.",
+    "button": "Initiate Discovery"
+  },
+  "notFound": {
+    "title": "Error 404: Project Not Found",
+    "description": "Even the best engineering hits a dead end sometimes. The page you're looking for doesn't exist or has been relocated.",
+    "button": "Return to Forge"
+  },
+  "quote": {
+    "successTitle": "Discovery Initiated",
+    "successMessage": "Our team will review your requirements within 24 hours and respond with a tailored strategy.",
+    "successButton": "Return to Forge"
   }
 }
