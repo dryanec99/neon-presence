@@ -88,11 +88,11 @@ const Header = () => {
                         key={lang.code}
                         onClick={() => handleLanguageChange(lang.code)}
                         className={cn(
-                          "w-full px-4 py-2 text-left text-sm transition-colors",
+                          "w-full px-4 py-2 text-left text-sm transition-colors flex items-center gap-2",
                           lang.code === currentLang ? "text-primary bg-primary/10" : "text-muted-foreground hover:text-foreground hover:bg-secondary"
                         )}
                       >
-                        {lang.nativeName}
+                        <span>{lang.flag}</span> {lang.nativeName}
                       </button>
                     ))}
                   </motion.div>
