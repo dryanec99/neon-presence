@@ -53,6 +53,16 @@
   "services": {
     "title": "Core Capabilities",
     "subtitle": "Everything you need to dominate the digital landscape",
+    "specializedLabel": "Specialized Services",
+    "bentoTitle": "Everything You Need to",
+    "bentoHighlight": "Dominate Online",
+    "bentoSubtitle": "From design to deployment to growth — we handle the full digital stack.",
+    "viewPricing": "View pricing & details",
+    "processTitle": "How We",
+    "processHighlight": "Work",
+    "processSubtitle": "A proven 4-step system that turns ideas into high-performing digital products.",
+    "processStep04Title": "Growth",
+    "processStep04Desc": "We monitor, iterate and scale. Your success is our metric.",
     "categories": {
       "presence": {
         "title": "Building Presence",

@@ -53,6 +53,16 @@
   "services": {
     "title": "Compétences clés",
     "subtitle": "Tout ce dont vous avez besoin pour dominer le paysage numérique",
+    "specializedLabel": "services spécialisés",
+    "bentoTitle": "Tout ce dont vous avez besoin pour",
+    "bentoHighlight": "dominer en ligne",
+    "bentoSubtitle": "De la conception au déploiement en passant par la croissance — nous gérons l'ensemble de la chaîne numérique.",
+    "viewPricing": "Voir les tarifs et détails",
+    "processTitle": "Comment nous",
+    "processHighlight": "travaillons",
+    "processSubtitle": "Un système éprouvé en 4 étapes qui transforme les idées en produits numériques performants.",
+    "processStep04Title": "Croissance",
+    "processStep04Desc": "Nous surveillons, itérons et mettons à l'échelle. Votre succès est notre métrique.",
     "categories": {
       "presence": {
         "title": "Création de présence",
