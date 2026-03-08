@@ -185,14 +185,14 @@ const Home = () => {
       <section className="py-20 md:py-32">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <TextReveal as="h2" className="font-bold mb-4">Our <span className="text-primary">Methodology</span></TextReveal>
+            <TextReveal as="h2" className="font-bold mb-4">{t('home.methodology')} <span className="text-primary">{t('home.methodologyHighlight')}</span></TextReveal>
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               className="text-muted-foreground max-w-xl mx-auto"
             >
-              A proven 3-step process that turns ideas into high-performing digital products.
+              {t('home.methodologySubtitle')}
             </motion.p>
           </div>
 
