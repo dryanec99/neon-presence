@@ -3,13 +3,7 @@ import { Sun, Moon } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const ThemeToggle = () => {
-  const [isDark, setIsDark] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return document.documentElement.classList.contains('dark') ||
-        (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
-    }
-    return false;
-  });
+  const [isDark, setIsDark] = useState(true);
 
   useEffect(() => {
     if (isDark) {
