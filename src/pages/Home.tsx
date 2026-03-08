@@ -354,7 +354,7 @@ const Home = () => {
       {/* Tech Marquee */}
       <section className="py-16 border-y-2 border-border overflow-hidden relative">
         <div className="container mx-auto px-4 mb-8 text-center">
-          <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-widest">Integrated Technologies</h3>
+          <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-widest">{t('home.integratedTech')}</h3>
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background z-10 pointer-events-none" />
         <div className="flex gap-16 animate-marquee whitespace-nowrap">
