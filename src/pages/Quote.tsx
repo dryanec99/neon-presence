@@ -33,6 +33,8 @@ interface FormState {
 }
 
 const Quote = () => {
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language as LanguageCode;
   const [step, setStep] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
