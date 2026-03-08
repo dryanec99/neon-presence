@@ -65,7 +65,8 @@ const Header = () => {
             ))}
           </nav>
 
-          <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-3">
+            <ThemeToggle />
             <div className="relative">
               <button
                 onClick={() => setIsLangOpen(!isLangOpen)}
@@ -80,7 +81,7 @@ const Header = () => {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className="absolute right-0 top-full mt-2 py-2 bg-card border border-border rounded-lg shadow-float min-w-[140px] z-50"
+                    className="absolute right-0 top-full mt-2 py-2 bg-card border-2 border-border rounded-xl shadow-float min-w-[140px] z-50"
                   >
                     {languages.map((lang) => (
                       <button
@@ -99,7 +100,7 @@ const Header = () => {
               </AnimatePresence>
             </div>
 
-            <Link to={getLocalizedPath('quote')} className="btn-primary px-5 py-2.5 rounded-lg text-sm">
+            <Link to={getLocalizedPath('quote')} className="btn-primary px-5 py-2.5 rounded-xl text-sm">
               Plan Your Project
             </Link>
           </div>
