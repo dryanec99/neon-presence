@@ -15,6 +15,8 @@ import Portfolio from "./pages/Portfolio";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import Quote from "./pages/Quote";
+import RequestForm from "./pages/RequestForm";
+import Blueprint from "./pages/Blueprint";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
