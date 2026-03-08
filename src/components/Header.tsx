@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { languages, type LanguageCode } from '@/i18n';
 import { cn } from '@/lib/utils';
+import ThemeToggle from './ThemeToggle';
 
 const Header = () => {
   const { t, i18n } = useTranslation();
