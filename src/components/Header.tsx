@@ -145,8 +145,8 @@ const Header = () => {
                   ))}
                 </div>
               </div>
-              <Link to={getLocalizedPath('quote')} onClick={() => setIsMenuOpen(false)} className="mt-4 btn-primary px-5 py-3 rounded-lg text-center text-sm">
-                Plan Your Project
+              <Link to={getLocalizedPath('quote')} onClick={() => setIsMenuOpen(false)} className="mt-4 btn-primary px-5 py-3 rounded-xl text-center text-sm">
+                {t('nav.planProject')}
               </Link>
             </nav>
           </motion.div>
