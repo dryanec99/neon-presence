@@ -821,8 +821,51 @@
     "button": "Retour au Forge"
   },
   "quote": {
+    "heroTitle": "Planificateur",
+    "heroHighlight": "de projet professionnel",
+    "heroSubtitle": "Parlez-nous de votre vision et nous élaborerons une stratégie et un devis sur mesure pour votre projet.",
+    "steps": ["Portée du projet", "Exigences", "Objectifs du projet", "Coordonnées"],
+    "projectTypes": {
+      "corporate": "Site web d'entreprise",
+      "ecommerce": "Plateforme e-commerce",
+      "branding": "Identité de marque",
+      "webapp": "Application web sur mesure"
+    },
+    "requirements": {
+      "multilingual": "Support multilingue",
+      "cms": "CMS / Tableau de bord admin",
+      "payments": "Intégration de paiement",
+      "seo": "Optimisation SEO"
+    },
+    "step0Title": "Quel type de projet avez-vous besoin ?",
+    "step0Subtitle": "Sélectionnez la catégorie qui décrit le mieux votre projet.",
+    "step1Title": "Quelles fonctionnalités avez-vous besoin ?",
+    "step1Subtitle": "Sélectionnez tout ce qui s'applique à votre projet.",
+    "step2Title": "Décrivez votre vision",
+    "step2Subtitle": "Parlez-nous des objectifs du projet, du public cible et de vos idées spécifiques.",
+    "step2Placeholder": "Ex. Nous avons besoin d'une plateforme e-commerce moderne ciblant le marché européen...",
+    "step3Title": "Vos coordonnées",
+    "step3Subtitle": "Nous les utiliserons pour vous envoyer une proposition personnalisée.",
+    "fullName": "Nom complet",
+    "company": "Entreprise",
+    "emailAddress": "Adresse e-mail",
+    "back": "Retour",
+    "continue": "Continuer",
+    "submitInquiry": "Envoyer la demande",
+    "characters": "caractères",
+    "errorMessage": "Une erreur s'est produite lors de l'envoi. Veuillez réessayer.",
+    "methodologyTitle": "Notre",
+    "methodologyHighlight": "méthodologie",
+    "methodologySubtitle": "Un processus éprouvé en 3 étapes qui transforme les idées en produits numériques performants.",
+    "methStep01Title": "Analyse et stratégie",
+    "methStep01Desc": "Audit de votre présence numérique, définition d'objectifs et création d'une feuille de route personnalisée.",
+    "methStep02Title": "Développement et intégration",
+    "methStep02Desc": "Notre équipe d'experts produit du code production-grade avec des frameworks modernes et des pratiques éprouvées.",
+    "methStep03Title": "Assurance qualité et lancement",
+    "methStep03Desc": "Tests rigoureux, optimisation des performances et déploiement fluide.",
+    "integratedTech": "Technologies intégrées",
     "successTitle": "Découverte initiée",
     "successMessage": "Notre équipe examinera vos exigences dans les 24 heures et répondra avec une stratégie sur mesure.",
-    "successButton": "Retour au Forge"
+    "successButton": "Retour"
   }
 }

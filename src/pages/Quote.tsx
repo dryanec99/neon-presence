@@ -7,21 +7,22 @@ import SEOHead from '@/components/SEOHead';
 import TextReveal from '@/components/motion/TextReveal';
 import { type LanguageCode } from '@/i18n';
 
-const STEPS = ['Project Scope', 'Requirements', 'Project Goals', 'Contact Information'];
+const PROJECT_TYPE_ICONS: Record<string, React.ElementType> = {
+  corporate: Building2,
+  ecommerce: ShoppingCart,
+  branding: Palette,
+  webapp: Code,
+};
 
-const PROJECT_TYPES = [
-  { id: 'corporate', label: 'Corporate Website', icon: Building2 },
-  { id: 'ecommerce', label: 'E-commerce Platform', icon: ShoppingCart },
-  { id: 'branding', label: 'Brand Identity', icon: Palette },
-  { id: 'webapp', label: 'Custom Web Application', icon: Code },
-];
+const REQUIREMENT_ICONS: Record<string, React.ElementType> = {
+  multilingual: Globe,
+  cms: LayoutDashboard,
+  payments: CreditCard,
+  seo: Search,
+};
 
-const REQUIREMENTS = [
-  { id: 'multilingual', label: 'Multilingual Support', icon: Globe },
-  { id: 'cms', label: 'CMS / Admin Dashboard', icon: LayoutDashboard },
-  { id: 'payments', label: 'Payment Integration', icon: CreditCard },
-  { id: 'seo', label: 'SEO Optimization', icon: Search },
-];
+const PROJECT_TYPE_KEYS = ['corporate', 'ecommerce', 'branding', 'webapp'] as const;
+const REQUIREMENT_KEYS = ['multilingual', 'cms', 'payments', 'seo'] as const;
 
 interface FormState {
   projectType: string;
@@ -47,6 +48,8 @@ const Quote = () => {
     email: '',
   });
 
+  const steps = t('quote.steps', { returnObjects: true }) as string[];
+
   const toggleRequirement = (id: string) => {
     setForm(prev => ({
       ...prev,
@@ -70,8 +73,8 @@ const Quote = () => {
     if (!canProceed()) return;
     setIsSubmitting(true);
 
-    const projectLabel = PROJECT_TYPES.find(p => p.id === form.projectType)?.label || form.projectType;
-    const reqLabels = form.requirements.map(r => REQUIREMENTS.find(req => req.id === r)?.label || r).join(', ');
+    const projectLabel = t(`quote.projectTypes.${form.projectType}`);
+    const reqLabels = form.requirements.map(r => t(`quote.requirements.${r}`)).join(', ');
 
     try {
       const { data, error } = await supabase.functions.invoke('send-quote', {
@@ -89,16 +92,16 @@ const Quote = () => {
       setIsSuccess(true);
     } catch (err) {
       console.error('Quote submission error:', err);
-      alert('Something went wrong sending your inquiry. Please try again.');
+      alert(t('quote.errorMessage'));
     } finally {
       setIsSubmitting(false);
     }
   };
 
   const methodologySteps = [
-    { num: '01', title: 'Analysis & Strategy', desc: 'We audit your digital presence, define clear goals, and create a custom roadmap.' },
-    { num: '02', title: 'Development & Integration', desc: 'AI-native workflow delivers production-grade code with modern frameworks.' },
-    { num: '03', title: 'Quality Assurance & Launch', desc: 'Rigorous testing, performance optimization, and seamless deployment.' },
+    { num: '01', title: t('quote.methStep01Title'), desc: t('quote.methStep01Desc') },
+    { num: '02', title: t('quote.methStep02Title'), desc: t('quote.methStep02Desc') },
+    { num: '03', title: t('quote.methStep03Title'), desc: t('quote.methStep03Desc') },
   ];
 
   const technologies = ['React', 'Tailwind', 'Supabase', 'Resend', 'PostgreSQL'];
@@ -106,7 +109,7 @@ const Quote = () => {
   if (isSuccess) {
     return (
       <>
-        <SEOHead title="Discovery Initiated — MiForgiX Dev" description="Your project inquiry has been received." />
+        <SEOHead title={`${t('quote.successTitle')} — MiForgiX Dev`} description={t('quote.successMessage')} />
         <section className="min-h-screen flex items-center justify-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -119,18 +122,10 @@ const Quote = () => {
               transition={{ type: 'spring', damping: 12, stiffness: 200, delay: 0.2 }}
               className="w-20 h-20 rounded-full bg-primary/15 flex items-center justify-center mx-auto mb-8"
             >
-              <motion.div
-                initial={{ pathLength: 0 }}
-                animate={{ pathLength: 1 }}
-                transition={{ delay: 0.5, duration: 0.4 }}
-              >
-                <Check className="w-10 h-10 text-primary" />
-              </motion.div>
+              <Check className="w-10 h-10 text-primary" />
             </motion.div>
             <h1 className="text-3xl font-bold mb-4 text-foreground">{t('quote.successTitle')}</h1>
-            <p className="text-muted-foreground mb-8">
-              {t('quote.successMessage')}
-            </p>
+            <p className="text-muted-foreground mb-8">{t('quote.successMessage')}</p>
             <a href={`/${currentLang}`} className="btn-primary px-8 py-3 rounded-xl text-sm font-semibold inline-flex items-center gap-2">
               {t('quote.successButton')} <ArrowRight className="w-4 h-4" />
             </a>
@@ -142,17 +137,17 @@ const Quote = () => {
 
   return (
     <>
-      <SEOHead title="Plan Your Project — MiForgiX Dev" description="Tell us about your project and get a tailored quote." />
+      <SEOHead title={`${t('quote.heroTitle')} ${t('quote.heroHighlight')} — MiForgiX Dev`} description={t('quote.heroSubtitle')} />
 
       {/* Hero */}
       <section className="py-20 md:py-28">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <TextReveal as="h1" className="font-bold mb-4">
-              Professional <span className="text-primary">Project Planner</span>
+              {t('quote.heroTitle')} <span className="text-primary">{t('quote.heroHighlight')}</span>
             </TextReveal>
             <p className="text-lg text-muted-foreground max-w-xl mx-auto">
-              Tell us about your vision and we'll craft a tailored strategy and quote for your project.
+              {t('quote.heroSubtitle')}
             </p>
           </div>
         </div>
@@ -162,8 +157,8 @@ const Quote = () => {
       <div className="container mx-auto px-4 mb-12">
         <div className="max-w-2xl mx-auto">
           <div className="flex items-center justify-between mb-3">
-            {STEPS.map((s, i) => (
-              <div key={s} className="flex items-center gap-2">
+            {Array.isArray(steps) && steps.map((s, i) => (
+              <div key={i} className="flex items-center gap-2">
                 <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold border-2 transition-all ${
                   i <= step ? 'bg-primary text-primary-foreground border-primary' : 'bg-card text-muted-foreground border-border'
                 }`}>
@@ -177,7 +172,7 @@ const Quote = () => {
             <motion.div
               className="h-full bg-primary rounded-full"
               initial={{ width: '0%' }}
-              animate={{ width: `${((step + 1) / STEPS.length) * 100}%` }}
+              animate={{ width: `${((step + 1) / (Array.isArray(steps) ? steps.length : 4)) * 100}%` }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
             />
           </div>
@@ -191,42 +186,46 @@ const Quote = () => {
             <AnimatePresence mode="wait">
               {step === 0 && (
                 <motion.div key="step0" initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -30 }}>
-                  <h2 className="text-2xl font-bold mb-2 text-foreground">What type of project do you need?</h2>
-                  <p className="text-muted-foreground mb-8">Select the category that best describes your project.</p>
+                  <h2 className="text-2xl font-bold mb-2 text-foreground">{t('quote.step0Title')}</h2>
+                  <p className="text-muted-foreground mb-8">{t('quote.step0Subtitle')}</p>
                   <div className="grid sm:grid-cols-2 gap-4">
-                    {PROJECT_TYPES.map(pt => (
-                      <button
-                        key={pt.id}
-                        onClick={() => setForm(prev => ({ ...prev, projectType: pt.id }))}
-                        className={`bento-item text-left flex items-start gap-4 cursor-pointer ${
-                          form.projectType === pt.id ? 'border-primary bg-primary/5' : ''
-                        }`}
-                      >
-                        <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${
-                          form.projectType === pt.id ? 'bg-primary/15' : 'bg-accent/20'
-                        }`}>
-                          <pt.icon className={`w-6 h-6 ${form.projectType === pt.id ? 'text-primary' : 'text-foreground/60'}`} />
-                        </div>
-                        <div>
-                          <h3 className="font-semibold text-foreground">{pt.label}</h3>
-                        </div>
-                      </button>
-                    ))}
+                    {PROJECT_TYPE_KEYS.map(key => {
+                      const Icon = PROJECT_TYPE_ICONS[key];
+                      return (
+                        <button
+                          key={key}
+                          onClick={() => setForm(prev => ({ ...prev, projectType: key }))}
+                          className={`bento-item text-left flex items-start gap-4 cursor-pointer ${
+                            form.projectType === key ? 'border-primary bg-primary/5' : ''
+                          }`}
+                        >
+                          <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${
+                            form.projectType === key ? 'bg-primary/15' : 'bg-accent/20'
+                          }`}>
+                            <Icon className={`w-6 h-6 ${form.projectType === key ? 'text-primary' : 'text-foreground/60'}`} />
+                          </div>
+                          <div>
+                            <h3 className="font-semibold text-foreground">{t(`quote.projectTypes.${key}`)}</h3>
+                          </div>
+                        </button>
+                      );
+                    })}
                   </div>
                 </motion.div>
               )}
 
               {step === 1 && (
                 <motion.div key="step1" initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -30 }}>
-                  <h2 className="text-2xl font-bold mb-2 text-foreground">What features do you need?</h2>
-                  <p className="text-muted-foreground mb-8">Select all that apply to your project.</p>
+                  <h2 className="text-2xl font-bold mb-2 text-foreground">{t('quote.step1Title')}</h2>
+                  <p className="text-muted-foreground mb-8">{t('quote.step1Subtitle')}</p>
                   <div className="grid sm:grid-cols-2 gap-4">
-                    {REQUIREMENTS.map(req => {
-                      const isSelected = form.requirements.includes(req.id);
+                    {REQUIREMENT_KEYS.map(key => {
+                      const Icon = REQUIREMENT_ICONS[key];
+                      const isSelected = form.requirements.includes(key);
                       return (
                         <button
-                          key={req.id}
-                          onClick={() => toggleRequirement(req.id)}
+                          key={key}
+                          onClick={() => toggleRequirement(key)}
                           className={`bento-item text-left flex items-start gap-4 cursor-pointer ${
                             isSelected ? 'border-primary bg-primary/5' : ''
                           }`}
@@ -234,10 +233,10 @@ const Quote = () => {
                           <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${
                             isSelected ? 'bg-primary/15' : 'bg-accent/20'
                           }`}>
-                            <req.icon className={`w-6 h-6 ${isSelected ? 'text-primary' : 'text-foreground/60'}`} />
+                            <Icon className={`w-6 h-6 ${isSelected ? 'text-primary' : 'text-foreground/60'}`} />
                           </div>
                           <div className="flex-1">
-                            <h3 className="font-semibold text-foreground">{req.label}</h3>
+                            <h3 className="font-semibold text-foreground">{t(`quote.requirements.${key}`)}</h3>
                           </div>
                           {isSelected && <Check className="w-5 h-5 text-primary shrink-0 mt-1" />}
                         </button>
@@ -249,55 +248,52 @@ const Quote = () => {
 
               {step === 2 && (
                 <motion.div key="step2" initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -30 }}>
-                  <h2 className="text-2xl font-bold mb-2 text-foreground">Describe your vision</h2>
-                  <p className="text-muted-foreground mb-8">Tell us about your project goals, target audience, and any specific ideas you have.</p>
+                  <h2 className="text-2xl font-bold mb-2 text-foreground">{t('quote.step2Title')}</h2>
+                  <p className="text-muted-foreground mb-8">{t('quote.step2Subtitle')}</p>
                   <textarea
                     value={form.vision}
                     onChange={e => setForm(prev => ({ ...prev, vision: e.target.value }))}
-                    placeholder="E.g., We need a modern e-commerce platform targeting millennials in Europe, with a focus on sustainable fashion..."
+                    placeholder={t('quote.step2Placeholder')}
                     rows={8}
                     className="form-input resize-none"
                     maxLength={2000}
                   />
-                  <p className="text-xs text-muted-foreground mt-2">{form.vision.length}/2000 characters</p>
+                  <p className="text-xs text-muted-foreground mt-2">{form.vision.length}/2000 {t('quote.characters')}</p>
                 </motion.div>
               )}
 
               {step === 3 && (
                 <motion.div key="step3" initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -30 }}>
-                  <h2 className="text-2xl font-bold mb-2 text-foreground">Your contact details</h2>
-                  <p className="text-muted-foreground mb-8">We'll use this to send your personalized proposal.</p>
+                  <h2 className="text-2xl font-bold mb-2 text-foreground">{t('quote.step3Title')}</h2>
+                  <p className="text-muted-foreground mb-8">{t('quote.step3Subtitle')}</p>
                   <div className="space-y-5">
                     <div>
-                      <label className="block text-sm font-medium mb-2 text-foreground">Full Name *</label>
+                      <label className="block text-sm font-medium mb-2 text-foreground">{t('quote.fullName')} *</label>
                       <input
                         type="text"
                         value={form.name}
                         onChange={e => setForm(prev => ({ ...prev, name: e.target.value }))}
                         className="form-input"
-                        placeholder="John Doe"
                         maxLength={100}
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium mb-2 text-foreground">Company</label>
+                      <label className="block text-sm font-medium mb-2 text-foreground">{t('quote.company')}</label>
                       <input
                         type="text"
                         value={form.company}
                         onChange={e => setForm(prev => ({ ...prev, company: e.target.value }))}
                         className="form-input"
-                        placeholder="Acme Inc."
                         maxLength={100}
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium mb-2 text-foreground">Email Address *</label>
+                      <label className="block text-sm font-medium mb-2 text-foreground">{t('quote.emailAddress')} *</label>
                       <input
                         type="email"
                         value={form.email}
                         onChange={e => setForm(prev => ({ ...prev, email: e.target.value }))}
                         className="form-input"
-                        placeholder="john@company.com"
                         maxLength={255}
                       />
                     </div>
@@ -313,16 +309,16 @@ const Quote = () => {
                 disabled={step === 0}
                 className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
               >
-                <ArrowLeft className="w-4 h-4" /> Back
+                <ArrowLeft className="w-4 h-4" /> {t('quote.back')}
               </button>
 
-              {step < STEPS.length - 1 ? (
+              {step < (Array.isArray(steps) ? steps.length : 4) - 1 ? (
                 <button
                   onClick={() => setStep(s => s + 1)}
                   disabled={!canProceed()}
                   className="btn-primary px-6 py-3 rounded-xl text-sm font-semibold flex items-center gap-2 disabled:opacity-40 disabled:cursor-not-allowed"
                 >
-                  Continue <ArrowRight className="w-4 h-4" />
+                  {t('quote.continue')} <ArrowRight className="w-4 h-4" />
                 </button>
               ) : (
                 <button
@@ -333,7 +329,7 @@ const Quote = () => {
                   {isSubmitting ? (
                     <div className="w-5 h-5 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
                   ) : (
-                    <>Submit Inquiry <Send className="w-4 h-4" /></>
+                    <>{t('quote.submitInquiry')} <Send className="w-4 h-4" /></>
                   )}
                 </button>
               )}
@@ -346,9 +342,9 @@ const Quote = () => {
       <section className="py-20 md:py-28 border-t border-border">
         <div className="container mx-auto px-4">
           <div className="text-center mb-14">
-            <TextReveal as="h2" className="font-bold mb-4">Our <span className="text-primary">Methodology</span></TextReveal>
+            <TextReveal as="h2" className="font-bold mb-4">{t('quote.methodologyTitle')} <span className="text-primary">{t('quote.methodologyHighlight')}</span></TextReveal>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              A proven 3-step process that turns ideas into high-performing digital products.
+              {t('quote.methodologySubtitle')}
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
@@ -368,7 +364,7 @@ const Quote = () => {
       {/* Tech Marquee */}
       <section className="py-14 border-y border-border overflow-hidden relative">
         <div className="container mx-auto px-4 mb-6 text-center">
-          <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-widest">Integrated Technologies</h3>
+          <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-widest">{t('quote.integratedTech')}</h3>
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background z-10 pointer-events-none" />
         <div className="flex gap-16 animate-marquee whitespace-nowrap">
