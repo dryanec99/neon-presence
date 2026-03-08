@@ -8,6 +8,7 @@ import TextReveal from '@/components/motion/TextReveal';
 import StaggerChildren from '@/components/motion/StaggerChildren';
 import MagneticButton from '@/components/motion/MagneticButton';
 import MouseGlowCard from '@/components/motion/MouseGlowCard';
+import ScrollTimeline from '@/components/ScrollTimeline';
 
 const Home = () => {
   const { t, i18n } = useTranslation();
