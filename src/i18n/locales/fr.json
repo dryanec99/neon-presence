@@ -699,7 +699,9 @@
         "subtitle": "Vêtements premium et e-commerce",
         "category": "E-commerce",
         "description": "Une expérience e-commerce premium élégante conçue pour les marques de mode avant-gardistes. Collections curatées, paiement fluide et présentation visuelle époustouflante.",
-        "features": ["Filtrage de collections curatées", "Processus de paiement sécurisé", "Liste de souhaits et comparaison", "Support catégories mode", "Structure optimisée SEO", "Architecture rapide"]
+        "features": ["Filtrage de collections curatées", "Processus de paiement sécurisé", "Liste de souhaits et comparaison", "Support catégories mode", "Structure optimisée SEO", "Architecture rapide"],
+        "challenge": "Le client avait besoin d'un flagship numérique aussi premium que son atelier physique.",
+        "solution": "Une expérience e-commerce visuellement immersive avec motion design et gestion intégrée des stocks."
       },
       "smilepro": {
         "title": "SmilePro Dental",
