@@ -223,7 +223,7 @@ const RequestBrief = () => {
   }) => (
     <section
       id={id}
-      ref={(el) => { sectionRefs.current[id] = el; }}
+      ref={(el: HTMLDivElement | null) => { sectionRefs.current[id] = el; }}
       className="scroll-mt-24"
     >
       <div className="flex items-start gap-4 mb-6">
