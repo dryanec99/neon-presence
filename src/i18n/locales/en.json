@@ -1,11 +1,11 @@
 {
   "nav": {
     "home": "Home",
-    "services": "Services",
-    "portfolio": "Portfolio",
-    "blog": "Blog",
+    "services": "Core Capabilities",
+    "portfolio": "The Portfolio",
+    "blog": "Insights",
     "contact": "Contact",
-    "planProject": "Plan Your Project",
+    "planProject": "Initiate Discovery",
     "language": "Language"
   },
   "home": {
@@ -13,10 +13,10 @@
     "heroTitle2": "Solutions",
     "heroTitle3": "for Your Business.",
     "availableNow": "Available Now",
-    "planProject": "Plan Your Project",
+    "planProject": "Initiate Discovery",
     "methodology": "Our",
-    "methodologyHighlight": "Methodology",
-    "methodologySubtitle": "A proven 3-step process that turns ideas into high-performing digital products.",
+    "methodologyHighlight": "Strategic Framework",
+    "methodologySubtitle": "A precision-engineered 3-phase process that transforms vision into high-performing digital products.",
     "step01Title": "Analysis & Strategy",
     "step01Desc": "We audit your current digital presence, define clear goals, and create a custom roadmap.",
     "step02Title": "Development & Integration",
@@ -31,10 +31,10 @@
   },
   "hero": {
     "title": "Complete Construction of Your Online Presence",
-    "subtitle": "We build high-performance websites, apps, and digital strategies that convert visitors into customers.",
-    "cta": "Get Started",
-    "ctaSecondary": "View Our Work",
-    "badge": "Digital Agency"
+    "subtitle": "We engineer high-performance digital flagships — websites, applications, and growth strategies that convert visitors into loyal customers.",
+    "cta": "Initiate Discovery",
+    "ctaSecondary": "Explore The Portfolio",
+    "badge": "Digital Studio"
   },
   "aiDelivery": {
     "badge": "AI-Native Workflow",
@@ -48,7 +48,7 @@
     "support": "Support"
   },
   "services": {
-    "title": "Our Services",
+    "title": "Core Capabilities",
     "subtitle": "Everything you need to dominate the digital landscape",
     "categories": {
       "presence": {
@@ -664,7 +664,7 @@
     }
   },
   "portfolio": {
-    "title": "Our Work",
+    "title": "The Portfolio",
     "subtitle": "Live projects powered by our AI-Native workflow — deployed in under 4 hours.",
     "viewProject": "View Details",
     "viewAll": "View All Projects",
@@ -672,7 +672,7 @@
     "close": "Close",
     "features": "Key Features",
     "techStack": "Tech Stack",
-    "requestQuote": "Request a Quote",
+    "requestQuote": "Initiate Discovery",
     "filterAll": "All",
     "filterEcommerce": "E-commerce",
     "filterHealthcare": "Healthcare",
@@ -774,17 +774,32 @@
     "success": "Thank you! We'll be in touch soon."
   },
   "footer": {
-    "description": "Your partner in digital transformation. We build experiences that matter.",
-    "quickLinks": "Quick Links",
-    "services": "Services",
-    "connect": "Connect",
+    "tagline": "Digital flagships engineered for the modern era.",
+    "capabilities": "Capabilities",
+    "studioTitle": "Studio",
+    "studio": {
+      "portfolio": "The Portfolio",
+      "framework": "Strategic Framework",
+      "initiate": "Initiate Discovery"
+    },
+    "connect": "Contact",
     "rights": "All rights reserved.",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service"
   },
   "cta": {
     "title": "Ready to Transform Your Digital Presence?",
-    "subtitle": "Let's discuss how we can help you achieve your goals.",
-    "button": "Start Your Project"
+    "subtitle": "Let's discuss how we can elevate your digital flagship.",
+    "button": "Initiate Discovery"
+  },
+  "notFound": {
+    "title": "Error 404: Project Not Found",
+    "description": "Even the best engineering hits a dead end sometimes. The page you're looking for doesn't exist or has been relocated.",
+    "button": "Return to Forge"
+  },
+  "quote": {
+    "successTitle": "Discovery Initiated",
+    "successMessage": "Our team will review your requirements within 24 hours and respond with a tailored strategy.",
+    "successButton": "Return to Forge"
   }
 }
