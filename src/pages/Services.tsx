@@ -148,7 +148,7 @@ const Services = () => {
                     {t(`services.items.${service.key}.description`)}
                   </p>
                   <div className="mt-5 flex items-center gap-1.5 text-primary/70 text-sm font-medium group-hover:gap-3 transition-all">
-                    View pricing & details
+                    {t('services.viewPricing') || 'View pricing & details'}
                     <ExternalLink className="w-3.5 h-3.5" />
                   </div>
                 </Link>
