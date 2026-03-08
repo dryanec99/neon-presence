@@ -90,7 +90,7 @@ const Home = () => {
               >
                 <div className="flex items-center gap-2 px-4 py-2 rounded-full border-2 border-accent/50 bg-accent/10 text-foreground text-sm font-semibold">
                   <span className="w-2.5 h-2.5 rounded-full bg-accent animate-pulse inline-block" />
-                  {t('hero.badge')} — Available Now
+                  {t('hero.badge')} — {t('home.availableNow')}
                 </div>
               </motion.div>
 
