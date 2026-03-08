@@ -31,7 +31,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-card border-t-2 border-border">
+    <footer className="bg-card/50 backdrop-blur-xl border-t border-border">
       <div className="container mx-auto px-4 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           <div className="lg:col-span-1">
