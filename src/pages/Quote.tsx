@@ -1,9 +1,11 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { supabase } from '@/integrations/supabase/client';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ArrowLeft, Check, Send, Building2, ShoppingCart, Palette, Code, Globe, LayoutDashboard, CreditCard, Search } from 'lucide-react';
 import SEOHead from '@/components/SEOHead';
 import TextReveal from '@/components/motion/TextReveal';
+import { type LanguageCode } from '@/i18n';
 
 const STEPS = ['Project Scope', 'Requirements', 'Project Goals', 'Contact Information'];
 
