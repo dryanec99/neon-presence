@@ -101,7 +101,7 @@ const Header = () => {
             </div>
 
             <Link to={getLocalizedPath('quote')} className="btn-primary px-5 py-2.5 rounded-xl text-sm">
-              Plan Your Project
+              {t('nav.planProject')}
             </Link>
           </div>
 
