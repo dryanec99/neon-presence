@@ -312,7 +312,7 @@ const Home = () => {
       <section className="py-20 md:py-32 relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <TextReveal as="h2" className="font-bold mb-4">Trusted by <span className="text-primary">Real Businesses</span></TextReveal>
+            <TextReveal as="h2" className="font-bold mb-4">{t('home.trustedBy')} <span className="text-primary">{t('home.trustedByHighlight')}</span></TextReveal>
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -320,7 +320,7 @@ const Home = () => {
               transition={{ delay: 0.15 }}
               className="text-muted-foreground max-w-xl mx-auto"
             >
-              Don't take our word for it — here's what our clients say
+              {t('home.trustedBySubtitle')}
             </motion.p>
           </div>
           <StaggerChildren className="grid md:grid-cols-3 gap-6">
