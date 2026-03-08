@@ -113,14 +113,14 @@ const Services = () => {
       <section className="py-20 md:py-32">
         <div className="container mx-auto px-4">
           <div className="text-center mb-14">
-            <TextReveal as="h2" className="font-bold mb-4">Everything You Need to <span className="text-primary">Dominate Online</span></TextReveal>
+            <TextReveal as="h2" className="font-bold mb-4">{t('services.bentoTitle') || 'Everything You Need to'} <span className="text-primary">{t('services.bentoHighlight') || 'Dominate Online'}</span></TextReveal>
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               className="text-muted-foreground max-w-xl mx-auto"
             >
-              From design to deployment to growth — we handle the full digital stack.
+              {t('services.bentoSubtitle') || 'From design to deployment to growth — we handle the full digital stack.'}
             </motion.p>
           </div>
 
