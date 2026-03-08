@@ -324,7 +324,7 @@ const Home = () => {
                     ))}
                   </div>
                   <p className="text-muted-foreground text-sm leading-relaxed flex-1 mb-6">
-                    "{testimonial.text}"
+                    "{t(testimonial.textKey)}"
                   </p>
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-primary/15 flex items-center justify-center text-primary font-bold text-sm">
