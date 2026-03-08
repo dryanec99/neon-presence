@@ -66,7 +66,7 @@ const Contact = () => {
   const contactInfo = [
     { icon: MapPin, labelKey: 'contact.info.address', value: 'Sofia, Bulgaria' },
     { icon: Phone, labelKey: 'contact.info.phone', value: '+359 888 123 456', href: 'tel:+359888123456' },
-    { icon: Mail, labelKey: 'contact.info.email', value: 'hello@miforgixdev.com', href: 'mailto:hello@miforgixdev.com' },
+    { icon: Mail, labelKey: 'contact.info.email', value: 'homer_bart@abv.bg', href: 'mailto:homer_bart@abv.bg' },
     { icon: Clock, labelKey: 'contact.info.workingHours', valueKey: 'contact.info.workingHoursValue' },
   ];
 
