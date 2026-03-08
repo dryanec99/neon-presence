@@ -79,7 +79,7 @@ const Header = () => {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className="absolute right-0 top-full mt-2 py-2 bg-card border-2 border-border rounded-lg shadow-elevated min-w-[140px] z-50"
+                    className="absolute right-0 top-full mt-2 py-2 bg-card border border-border rounded-lg shadow-float min-w-[140px] z-50"
                   >
                     {languages.map((lang) => (
                       <button
