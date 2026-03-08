@@ -329,10 +329,22 @@ serve(async (req) => {
     }
 
     const isBlueprint = formType === "blueprint";
-    const subject = isBlueprint
-      ? `NEW BLUEPRINT DISCOVERY — ${body.companyName || "Unknown"}`
-      : `NEW CLASSIC REQUEST — ${body.projectName || "Unknown"}`;
-    const html = isBlueprint ? buildBlueprintEmail(body) : buildClassicEmail(body);
+    const isBrief = formType === "brief";
+    
+    let subject: string;
+    let html: string;
+    
+    if (isBrief) {
+      subject = `📋 TECHNICAL BRIEF — ${body.projectName || "Unknown"} (${body.companyName || "Unknown"})`;
+      html = buildTechnicalBriefEmail(body);
+    } else if (isBlueprint) {
+      subject = `NEW BLUEPRINT DISCOVERY — ${body.companyName || "Unknown"}`;
+      html = buildBlueprintEmail(body);
+    } else {
+      subject = `NEW CLASSIC REQUEST — ${body.projectName || "Unknown"}`;
+      html = buildClassicEmail(body);
+    }
+    
     const replyTo = body.contactEmail || body.email;
 
     const res = await fetch("https://api.resend.com/emails", {
