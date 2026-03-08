@@ -63,9 +63,9 @@ const Home = () => {
   ];
 
   const methodologySteps = [
-    { num: '01', title: 'Analysis & Strategy', desc: 'We audit your current digital presence, define clear goals, and create a custom roadmap.' },
-    { num: '02', title: 'Development & Integration', desc: 'Our AI-native workflow delivers production-grade code with modern frameworks.' },
-    { num: '03', title: 'Quality Assurance & Launch', desc: 'Rigorous testing, performance optimization, and seamless deployment.' },
+    { num: '01', title: t('home.step01Title'), desc: t('home.step01Desc') },
+    { num: '02', title: t('home.step02Title'), desc: t('home.step02Desc') },
+    { num: '03', title: t('home.step03Title'), desc: t('home.step03Desc') },
   ];
 
   const technologies = ['React', 'Tailwind', 'Supabase', 'Resend', 'PostgreSQL'];
