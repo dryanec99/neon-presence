@@ -774,9 +774,14 @@
     "success": "Merci ! Nous vous contacterons bientôt."
   },
   "footer": {
-    "description": "Votre partenaire en transformation numérique. Nous créons des expériences qui comptent.",
-    "quickLinks": "Liens rapides",
-    "services": "Services",
+    "tagline": "Flagships numériques conçus pour l'ère moderne.",
+    "capabilities": "Compétences",
+    "studioTitle": "Studio",
+    "studio": {
+      "portfolio": "Le Portfolio",
+      "framework": "Cadre stratégique",
+      "initiate": "Lancer un projet"
+    },
     "connect": "Contact",
     "rights": "Tous droits réservés.",
     "privacy": "Politique de confidentialité",
@@ -784,7 +789,17 @@
   },
   "cta": {
     "title": "Prêt à transformer votre présence numérique ?",
-    "subtitle": "Discutons de la façon dont nous pouvons vous aider à atteindre vos objectifs.",
-    "button": "Lancez votre projet"
+    "subtitle": "Discutons de la façon dont nous pouvons élever votre flagship numérique.",
+    "button": "Lancer un projet"
+  },
+  "notFound": {
+    "title": "Erreur 404 : Projet introuvable",
+    "description": "Même la meilleure ingénierie arrive parfois dans une impasse. La page que vous recherchez n'existe pas ou a été déplacée.",
+    "button": "Retour au Forge"
+  },
+  "quote": {
+    "successTitle": "Découverte initiée",
+    "successMessage": "Notre équipe examinera vos exigences dans les 24 heures et répondra avec une stratégie sur mesure.",
+    "successButton": "Retour au Forge"
   }
 }
