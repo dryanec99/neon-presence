@@ -197,17 +197,7 @@ const Home = () => {
             </motion.p>
           </div>
 
-          <StaggerChildren className="grid md:grid-cols-3 gap-8">
-            {methodologySteps.map((step) => (
-              <div key={step.num} className="bento-item group relative">
-                <div className="text-6xl font-black text-accent/30 group-hover:text-accent/50 transition-colors mb-4 leading-none">
-                  {step.num}
-                </div>
-                <h3 className="text-lg font-bold text-foreground mb-2">{step.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{step.desc}</p>
-              </div>
-            ))}
-          </StaggerChildren>
+          <ScrollTimeline steps={methodologySteps} />
         </div>
       </section>
 
