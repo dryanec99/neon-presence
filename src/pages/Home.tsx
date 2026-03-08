@@ -96,13 +96,13 @@ const Home = () => {
 
               <div className="mb-6">
                 <TextReveal as="h1" className="font-black leading-[1.05] mb-2" delay={0.05}>
-                  <span className="text-foreground">Powerful Web</span>
+                  <span className="text-foreground">{t('home.heroTitle1')}</span>
                 </TextReveal>
                 <TextReveal as="h1" className="font-black leading-[1.05] mb-2" delay={0.12}>
-                  <span className="text-primary">Solutions</span>
+                  <span className="text-primary">{t('home.heroTitle2')}</span>
                 </TextReveal>
                 <TextReveal as="h1" className="font-black leading-[1.05]" delay={0.19}>
-                  <span className="text-highlight">for Your Business.</span>
+                  <span className="text-highlight">{t('home.heroTitle3')}</span>
                 </TextReveal>
               </div>
 
