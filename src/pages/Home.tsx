@@ -63,9 +63,9 @@ const Home = () => {
   ];
 
   const methodologySteps = [
-    { num: '01', title: 'Analysis & Strategy', desc: 'We audit your current digital presence, define clear goals, and create a custom roadmap.' },
-    { num: '02', title: 'Development & Integration', desc: 'Our AI-native workflow delivers production-grade code with modern frameworks.' },
-    { num: '03', title: 'Quality Assurance & Launch', desc: 'Rigorous testing, performance optimization, and seamless deployment.' },
+    { num: '01', title: t('home.step01Title'), desc: t('home.step01Desc') },
+    { num: '02', title: t('home.step02Title'), desc: t('home.step02Desc') },
+    { num: '03', title: t('home.step03Title'), desc: t('home.step03Desc') },
   ];
 
   const technologies = ['React', 'Tailwind', 'Supabase', 'Resend', 'PostgreSQL'];
@@ -90,19 +90,19 @@ const Home = () => {
               >
                 <div className="flex items-center gap-2 px-4 py-2 rounded-full border-2 border-accent/50 bg-accent/10 text-foreground text-sm font-semibold">
                   <span className="w-2.5 h-2.5 rounded-full bg-accent animate-pulse inline-block" />
-                  {t('hero.badge')} — Available Now
+                  {t('hero.badge')} — {t('home.availableNow')}
                 </div>
               </motion.div>
 
               <div className="mb-6">
                 <TextReveal as="h1" className="font-black leading-[1.05] mb-2" delay={0.05}>
-                  <span className="text-foreground">Powerful Web</span>
+                  <span className="text-foreground">{t('home.heroTitle1')}</span>
                 </TextReveal>
                 <TextReveal as="h1" className="font-black leading-[1.05] mb-2" delay={0.12}>
-                  <span className="text-primary">Solutions</span>
+                  <span className="text-primary">{t('home.heroTitle2')}</span>
                 </TextReveal>
                 <TextReveal as="h1" className="font-black leading-[1.05]" delay={0.19}>
-                  <span className="text-highlight">for Your Business.</span>
+                  <span className="text-highlight">{t('home.heroTitle3')}</span>
                 </TextReveal>
               </div>
 
@@ -126,7 +126,7 @@ const Home = () => {
                     to={getLocalizedPath('quote')}
                     className="btn-primary px-8 py-4 rounded-xl text-base font-semibold flex items-center gap-2 group"
                   >
-                    Plan Your Project
+                    {t('home.planProject')}
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </MagneticButton>
@@ -185,14 +185,14 @@ const Home = () => {
       <section className="py-20 md:py-32">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <TextReveal as="h2" className="font-bold mb-4">Our <span className="text-primary">Methodology</span></TextReveal>
+            <TextReveal as="h2" className="font-bold mb-4">{t('home.methodology')} <span className="text-primary">{t('home.methodologyHighlight')}</span></TextReveal>
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               className="text-muted-foreground max-w-xl mx-auto"
             >
-              A proven 3-step process that turns ideas into high-performing digital products.
+              {t('home.methodologySubtitle')}
             </motion.p>
           </div>
 
@@ -273,7 +273,7 @@ const Home = () => {
                     {t(`services.categories.${category.key}.description`)}
                   </p>
                   <div className="mt-4 flex items-center gap-1 text-primary/70 text-sm font-medium group-hover:gap-2 transition-all">
-                    Learn more <ArrowRight className="w-3 h-3" />
+                    {t('home.learnMore')} <ArrowRight className="w-3 h-3" />
                   </div>
                 </Link>
               </MouseGlowCard>
@@ -312,7 +312,7 @@ const Home = () => {
       <section className="py-20 md:py-32 relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <TextReveal as="h2" className="font-bold mb-4">Trusted by <span className="text-primary">Real Businesses</span></TextReveal>
+            <TextReveal as="h2" className="font-bold mb-4">{t('home.trustedBy')} <span className="text-primary">{t('home.trustedByHighlight')}</span></TextReveal>
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -320,7 +320,7 @@ const Home = () => {
               transition={{ delay: 0.15 }}
               className="text-muted-foreground max-w-xl mx-auto"
             >
-              Don't take our word for it — here's what our clients say
+              {t('home.trustedBySubtitle')}
             </motion.p>
           </div>
           <StaggerChildren className="grid md:grid-cols-3 gap-6">
@@ -354,7 +354,7 @@ const Home = () => {
       {/* Tech Marquee */}
       <section className="py-16 border-y-2 border-border overflow-hidden relative">
         <div className="container mx-auto px-4 mb-8 text-center">
-          <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-widest">Integrated Technologies</h3>
+          <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-widest">{t('home.integratedTech')}</h3>
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background z-10 pointer-events-none" />
         <div className="flex gap-16 animate-marquee whitespace-nowrap">
@@ -391,7 +391,7 @@ const Home = () => {
                   to={getLocalizedPath('quote')}
                   className="btn-primary px-10 py-4 rounded-xl text-base font-semibold inline-flex items-center gap-2 group"
                 >
-                  Plan Your Project
+                  {t('home.planProject')}
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </MagneticButton>

@@ -4,7 +4,30 @@
     "services": "Services",
     "portfolio": "Portfolio",
     "blog": "Blog",
-    "contact": "Contact"
+    "contact": "Contact",
+    "planProject": "Plan Your Project",
+    "language": "Language"
+  },
+  "home": {
+    "heroTitle1": "Powerful Web",
+    "heroTitle2": "Solutions",
+    "heroTitle3": "for Your Business.",
+    "availableNow": "Available Now",
+    "planProject": "Plan Your Project",
+    "methodology": "Our",
+    "methodologyHighlight": "Methodology",
+    "methodologySubtitle": "A proven 3-step process that turns ideas into high-performing digital products.",
+    "step01Title": "Analysis & Strategy",
+    "step01Desc": "We audit your current digital presence, define clear goals, and create a custom roadmap.",
+    "step02Title": "Development & Integration",
+    "step02Desc": "Our AI-native workflow delivers production-grade code with modern frameworks.",
+    "step03Title": "Quality Assurance & Launch",
+    "step03Desc": "Rigorous testing, performance optimization, and seamless deployment.",
+    "trustedBy": "Trusted by",
+    "trustedByHighlight": "Real Businesses",
+    "trustedBySubtitle": "Don't take our word for it — here's what our clients say",
+    "integratedTech": "Integrated Technologies",
+    "learnMore": "Learn more"
   },
   "hero": {
     "title": "Complete Construction of Your Online Presence",

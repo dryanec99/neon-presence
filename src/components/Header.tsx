@@ -72,7 +72,7 @@ const Header = () => {
                 onClick={() => setIsLangOpen(!isLangOpen)}
                 className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-secondary"
               >
-                {currentLanguage?.nativeName}
+                {currentLanguage?.flag} {currentLanguage?.nativeName}
                 <ChevronDown className={cn("w-4 h-4 transition-transform", isLangOpen && "rotate-180")} />
               </button>
               <AnimatePresence>
@@ -88,11 +88,11 @@ const Header = () => {
                         key={lang.code}
                         onClick={() => handleLanguageChange(lang.code)}
                         className={cn(
-                          "w-full px-4 py-2 text-left text-sm transition-colors",
+                          "w-full px-4 py-2 text-left text-sm transition-colors flex items-center gap-2",
                           lang.code === currentLang ? "text-primary bg-primary/10" : "text-muted-foreground hover:text-foreground hover:bg-secondary"
                         )}
                       >
-                        {lang.nativeName}
+                        <span>{lang.flag}</span> {lang.nativeName}
                       </button>
                     ))}
                   </motion.div>
@@ -101,7 +101,7 @@ const Header = () => {
             </div>
 
             <Link to={getLocalizedPath('quote')} className="btn-primary px-5 py-2.5 rounded-xl text-sm">
-              Plan Your Project
+              {t('nav.planProject')}
             </Link>
           </div>
 
@@ -129,24 +129,24 @@ const Header = () => {
                 </Link>
               ))}
               <div className="mt-4 pt-4 border-t border-border">
-                <p className="px-4 text-xs text-muted-foreground mb-2">Language</p>
+                <p className="px-4 text-xs text-muted-foreground mb-2">{t('nav.language')}</p>
                 <div className="flex gap-2 px-4">
                   {languages.map((lang) => (
                     <button
                       key={lang.code}
                       onClick={() => { handleLanguageChange(lang.code); setIsMenuOpen(false); }}
                       className={cn(
-                        "px-3 py-2 rounded-lg text-sm font-medium transition-colors",
+                        "px-3 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1",
                         lang.code === currentLang ? "bg-primary text-primary-foreground" : "bg-secondary text-muted-foreground hover:text-foreground"
                       )}
                     >
-                      {lang.nativeName}
+                      <span>{lang.flag}</span> {lang.nativeName}
                     </button>
                   ))}
                 </div>
               </div>
-              <Link to={getLocalizedPath('quote')} onClick={() => setIsMenuOpen(false)} className="mt-4 btn-primary px-5 py-3 rounded-lg text-center text-sm">
-                Plan Your Project
+              <Link to={getLocalizedPath('quote')} onClick={() => setIsMenuOpen(false)} className="mt-4 btn-primary px-5 py-3 rounded-xl text-center text-sm">
+                {t('nav.planProject')}
               </Link>
             </nav>
           </motion.div>

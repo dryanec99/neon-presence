@@ -4,7 +4,30 @@
     "services": "Services",
     "portfolio": "Portfolio",
     "blog": "Blog",
-    "contact": "Contact"
+    "contact": "Contact",
+    "planProject": "Planifier un projet",
+    "language": "Langue"
+  },
+  "home": {
+    "heroTitle1": "Des solutions web",
+    "heroTitle2": "puissantes",
+    "heroTitle3": "pour votre entreprise.",
+    "availableNow": "Disponible maintenant",
+    "planProject": "Planifier un projet",
+    "methodology": "Notre",
+    "methodologyHighlight": "méthodologie",
+    "methodologySubtitle": "Un processus éprouvé en 3 étapes qui transforme les idées en produits numériques performants.",
+    "step01Title": "Analyse et stratégie",
+    "step01Desc": "Nous auditons votre présence numérique, définissons des objectifs clairs et créons une feuille de route personnalisée.",
+    "step02Title": "Développement et intégration",
+    "step02Desc": "Notre processus AI-natif produit du code production-grade avec des frameworks modernes.",
+    "step03Title": "Assurance qualité et lancement",
+    "step03Desc": "Tests rigoureux, optimisation des performances et déploiement fluide.",
+    "trustedBy": "La confiance de",
+    "trustedByHighlight": "vraies entreprises",
+    "trustedBySubtitle": "Ne nous croyez pas sur parole — voici ce que disent nos clients",
+    "integratedTech": "Technologies intégrées",
+    "learnMore": "En savoir plus"
   },
   "hero": {
     "title": "Construction complète de votre présence en ligne",
