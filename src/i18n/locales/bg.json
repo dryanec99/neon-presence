@@ -1,11 +1,11 @@
 {
   "nav": {
     "home": "Начало",
-    "services": "Услуги",
+    "services": "Възможности",
     "portfolio": "Портфолио",
-    "blog": "Блог",
+    "blog": "Анализи",
     "contact": "Контакт",
-    "planProject": "Планирай проект",
+    "planProject": "Започни проект",
     "language": "Език"
   },
   "home": {
