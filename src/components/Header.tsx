@@ -79,7 +79,7 @@ const Header = () => {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className="absolute right-0 top-full mt-2 py-2 bg-card border-2 border-border rounded-lg shadow-elevated min-w-[140px] z-50"
+                    className="absolute right-0 top-full mt-2 py-2 bg-card border border-border rounded-lg shadow-float min-w-[140px] z-50"
                   >
                     {languages.map((lang) => (
                       <button
@@ -111,7 +111,7 @@ const Header = () => {
 
       <AnimatePresence>
         {isMenuOpen && (
-          <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} className="lg:hidden border-t-2 border-border bg-background">
+          <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} className="lg:hidden border-t border-border bg-background/95 backdrop-blur-xl">
             <nav className="container mx-auto px-4 py-4 flex flex-col gap-2">
               {navItems.map((item) => (
                 <Link
@@ -126,7 +126,7 @@ const Header = () => {
                   {t(`nav.${item.key}`)}
                 </Link>
               ))}
-              <div className="mt-4 pt-4 border-t-2 border-border">
+              <div className="mt-4 pt-4 border-t border-border">
                 <p className="px-4 text-xs text-muted-foreground mb-2">Language</p>
                 <div className="flex gap-2 px-4">
                   {languages.map((lang) => (

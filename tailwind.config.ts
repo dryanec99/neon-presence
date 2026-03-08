@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['"DM Sans"', '"Sofia Sans"', 'system-ui', 'sans-serif'],
+        sans: ['"Inter"', 'system-ui', '-apple-system', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -70,8 +70,10 @@ export default {
         "3xl": "2rem",
       },
       boxShadow: {
-        card: "0 2px 16px hsl(0 0% 0% / 0.06)",
-        elevated: "0 8px 32px hsl(0 0% 0% / 0.1)",
+        float: "0 20px 60px -15px hsl(0 0% 0% / 0.5)",
+        deep: "0 40px 100px -20px hsl(0 0% 0% / 0.7)",
+        glow: "0 0 40px hsl(239 84% 67% / 0.15)",
+        "glow-strong": "0 0 80px hsl(239 84% 67% / 0.2)",
       },
       keyframes: {
         "accordion-down": {

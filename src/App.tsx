@@ -14,6 +14,7 @@ import ServiceDetail from "./pages/ServiceDetail";
 import Portfolio from "./pages/Portfolio";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
+import Quote from "./pages/Quote";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -51,6 +52,7 @@ const App = () => (
             <Route path="portfolio" element={<Portfolio />} />
             <Route path="blog" element={<Blog />} />
             <Route path="contact" element={<Contact />} />
+            <Route path="quote" element={<Quote />} />
           </Route>
 
           {/* Catch-all for 404 */}

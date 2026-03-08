@@ -31,7 +31,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-card border-t-2 border-border">
+    <footer className="bg-card/50 backdrop-blur-xl border-t border-border">
       <div className="container mx-auto px-4 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           <div className="lg:col-span-1">
@@ -42,7 +42,7 @@ const Footer = () => {
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">{t('footer.description')}</p>
             <div className="flex gap-3">
               {socialLinks.map((social) => (
-                <a key={social.label} href={social.href} aria-label={social.label} className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors border-2 border-transparent hover:border-primary/20">
+                <a key={social.label} href={social.href} aria-label={social.label} className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300 border border-transparent hover:border-primary/20">
                   <social.icon className="w-5 h-5" />
                 </a>
               ))}
@@ -88,7 +88,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t-2 border-border flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-muted-foreground text-sm">© {new Date().getFullYear()} MiForgiX Dev. {t('footer.rights')}</p>
           <div className="flex items-center gap-6 text-sm text-muted-foreground">
             <a href="#" className="hover:text-primary transition-colors">{t('footer.privacy')}</a>
