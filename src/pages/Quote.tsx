@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { supabase } from '@/integrations/supabase/client';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ArrowLeft, Check, Send, Building2, ShoppingCart, Palette, Code, Globe, LayoutDashboard, CreditCard, Search } from 'lucide-react';
 import SEOHead from '@/components/SEOHead';
