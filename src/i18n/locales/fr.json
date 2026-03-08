@@ -664,7 +664,7 @@
     }
   },
   "portfolio": {
-    "title": "Nos réalisations",
+    "title": "Le Portfolio",
     "subtitle": "Projets réels propulsés par notre processus AI-Natif — déployés en moins de 4 heures.",
     "viewProject": "Voir les détails",
     "viewAll": "Voir tous les projets",
@@ -672,7 +672,7 @@
     "close": "Fermer",
     "features": "Fonctionnalités clés",
     "techStack": "Technologies",
-    "requestQuote": "Demander un devis",
+    "requestQuote": "Lancer un projet",
     "filterAll": "Tous",
     "filterEcommerce": "E-commerce",
     "filterHealthcare": "Santé",
