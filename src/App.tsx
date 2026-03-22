@@ -60,6 +60,7 @@ const App = () => (
             <Route path="request-form" element={<RequestForm />} />
             <Route path="blueprint" element={<Blueprint />} />
             <Route path="request-brief" element={<RequestBrief />} />
+            <Route path="detailed-brief" element={<DetailedBrief />} />
           </Route>
 
           {/* Catch-all for 404 */}
