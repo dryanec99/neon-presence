@@ -18,6 +18,7 @@ import Quote from "./pages/Quote";
 import RequestForm from "./pages/RequestForm";
 import Blueprint from "./pages/Blueprint";
 import RequestBrief from "./pages/RequestBrief";
+import DetailedBrief from "./pages/DetailedBrief";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -59,6 +60,7 @@ const App = () => (
             <Route path="request-form" element={<RequestForm />} />
             <Route path="blueprint" element={<Blueprint />} />
             <Route path="request-brief" element={<RequestBrief />} />
+            <Route path="detailed-brief" element={<DetailedBrief />} />
           </Route>
 
           {/* Catch-all for 404 */}

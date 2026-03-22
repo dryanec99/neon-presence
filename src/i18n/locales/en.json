@@ -867,5 +867,95 @@
     "successTitle": "Discovery Initiated",
     "successMessage": "Our team will review your requirements within 24 hours and respond with a tailored strategy.",
     "successButton": "Return to Forge"
+  },
+  "detailedBrief": {
+    "badge": "Comprehensive Brief",
+    "pageTitle": "Detailed Project Technical Brief",
+    "pageSubtitle": "Complete every detail of your project requirements. The more information you provide, the more accurate our proposal will be.",
+    "progress": "Brief Progress",
+    "back": "Back",
+    "next": "Continue",
+    "submit": "Submit Brief",
+    "successTitle": "Brief Submitted Successfully",
+    "successMessage": "Our team will review your comprehensive brief within 24 hours and respond with a detailed project proposal.",
+    "successButton": "Return Home",
+    "steps": ["Personal Info", "Project Identity", "Design & Structure", "Technical / Admin", "SEO & Security", "E-Commerce", "Marketing & Logistics", "Review All"],
+    "stepSubtitles": [
+      "Tell us who you are so we can personalize your experience.",
+      "Define the core identity and type of your project.",
+      "Choose the visual direction and structural preferences.",
+      "Configure admin access, roles, and training needs.",
+      "Select security certificates and optimization features.",
+      "Configure e-commerce integrations if applicable.",
+      "Set up marketing tools, budget, and timeline.",
+      "Review all your selections before submitting."
+    ],
+    "fields": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "projectType": "Project Type",
+      "selectType": "Select project type...",
+      "proposedDomain": "Proposed Domain Name",
+      "isRedesign": "This is a redesign of an existing website",
+      "currentWebsite": "Current Website URL",
+      "projectDescription": "Project Description",
+      "menuPages": "Number of Pages (Menu Structure)",
+      "rolesDescription": "Describe Employee Roles & Access Levels",
+      "budgetRange": "Budget Range",
+      "selectBudget": "Select budget range...",
+      "launchDate": "Expected Launch Date",
+      "additionalNotes": "Additional Notes"
+    },
+    "projectTypes": {
+      "onlineStore": "Online Store",
+      "infoSite": "Informational Website",
+      "catalog": "Product Catalog",
+      "webapp": "Web Application",
+      "landing": "Landing Page"
+    },
+    "designOptions": {
+      "innovative": "Innovative / Modern Design",
+      "responsive": "Mobile Responsive",
+      "contentProtection": "Content Copy Protection",
+      "menuStructure": "Menu Structure (up to 20 pages)"
+    },
+    "techOptions": {
+      "adminPanel": "Admin Panel Access",
+      "employeeRoles": "Employee Roles & Permissions",
+      "videoTraining": "Video Training Required"
+    },
+    "seoOptions": {
+      "ssl": "SSL Certificate",
+      "gdpr": "GDPR Compliance",
+      "onPageSeo": "On-Page SEO",
+      "cache": "Cache Optimization",
+      "robotTxt": "Robots.txt Configuration"
+    },
+    "ecommerceOptions": {
+      "enableEcommerce": "Enable E-Commerce Features",
+      "couriers": "Integrated Couriers",
+      "payments": "Payment Methods",
+      "filters": "Filter Criteria",
+      "chatbot": "Chatbot Integration"
+    },
+    "paymentMethods": {
+      "cod": "Cash on Delivery",
+      "bank": "Bank Transfer",
+      "card": "Card Payment"
+    },
+    "filterOptions": {
+      "price": "Price",
+      "category": "Category",
+      "color": "Color"
+    },
+    "marketingOptions": {
+      "popups": "Pop-up System",
+      "socialSync": "Social Media Sync"
+    },
+    "validation": {
+      "required": "Please fill in all required fields."
+    }
   }
 }
