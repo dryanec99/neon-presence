@@ -867,5 +867,95 @@
     "successTitle": "Découverte initiée",
     "successMessage": "Notre équipe examinera vos exigences dans les 24 heures et répondra avec une stratégie sur mesure.",
     "successButton": "Retour"
+  },
+  "detailedBrief": {
+    "badge": "Brief complet",
+    "pageTitle": "Brief technique détaillé du projet",
+    "pageSubtitle": "Remplissez chaque détail des exigences de votre projet. Plus vous fournissez d'informations, plus notre proposition sera précise.",
+    "progress": "Progression du brief",
+    "back": "Retour",
+    "next": "Continuer",
+    "submit": "Envoyer le brief",
+    "successTitle": "Brief envoyé avec succès",
+    "successMessage": "Notre équipe examinera votre brief détaillé dans les 24 heures et répondra avec une proposition de projet détaillée.",
+    "successButton": "Retour à l'accueil",
+    "steps": ["Informations personnelles", "Identité du projet", "Design et structure", "Technique / Admin", "SEO et sécurité", "E-Commerce", "Marketing et logistique", "Récapitulatif"],
+    "stepSubtitles": [
+      "Dites-nous qui vous êtes pour personnaliser votre expérience.",
+      "Définissez l'identité principale et le type de votre projet.",
+      "Choisissez la direction visuelle et les préférences structurelles.",
+      "Configurez l'accès admin, les rôles et les besoins de formation.",
+      "Sélectionnez les certificats de sécurité et les fonctions d'optimisation.",
+      "Configurez les intégrations e-commerce si applicable.",
+      "Configurez les outils marketing, le budget et le calendrier.",
+      "Vérifiez toutes vos sélections avant l'envoi."
+    ],
+    "fields": {
+      "firstName": "Prénom",
+      "lastName": "Nom de famille",
+      "email": "Adresse e-mail",
+      "phone": "Numéro de téléphone",
+      "projectType": "Type de projet",
+      "selectType": "Sélectionnez le type de projet...",
+      "proposedDomain": "Nom de domaine proposé",
+      "isRedesign": "Il s'agit d'une refonte d'un site existant",
+      "currentWebsite": "URL du site actuel",
+      "projectDescription": "Description du projet",
+      "menuPages": "Nombre de pages (structure du menu)",
+      "rolesDescription": "Décrivez les rôles des employés et les niveaux d'accès",
+      "budgetRange": "Fourchette budgétaire",
+      "selectBudget": "Sélectionnez la fourchette budgétaire...",
+      "launchDate": "Date de lancement prévue",
+      "additionalNotes": "Notes supplémentaires"
+    },
+    "projectTypes": {
+      "onlineStore": "Boutique en ligne",
+      "infoSite": "Site informatif",
+      "catalog": "Catalogue de produits",
+      "webapp": "Application web",
+      "landing": "Page d'atterrissage"
+    },
+    "designOptions": {
+      "innovative": "Design innovant / Moderne",
+      "responsive": "Adaptatif mobile",
+      "contentProtection": "Protection du contenu contre la copie",
+      "menuStructure": "Structure du menu (jusqu'à 20 pages)"
+    },
+    "techOptions": {
+      "adminPanel": "Accès au panneau d'administration",
+      "employeeRoles": "Rôles et permissions des employés",
+      "videoTraining": "Formation vidéo requise"
+    },
+    "seoOptions": {
+      "ssl": "Certificat SSL",
+      "gdpr": "Conformité RGPD",
+      "onPageSeo": "SEO On-Page",
+      "cache": "Optimisation du cache",
+      "robotTxt": "Configuration Robots.txt"
+    },
+    "ecommerceOptions": {
+      "enableEcommerce": "Activer les fonctionnalités e-commerce",
+      "couriers": "Transporteurs intégrés",
+      "payments": "Méthodes de paiement",
+      "filters": "Critères de filtrage",
+      "chatbot": "Intégration chatbot"
+    },
+    "paymentMethods": {
+      "cod": "Paiement à la livraison",
+      "bank": "Virement bancaire",
+      "card": "Paiement par carte"
+    },
+    "filterOptions": {
+      "price": "Prix",
+      "category": "Catégorie",
+      "color": "Couleur"
+    },
+    "marketingOptions": {
+      "popups": "Système de pop-ups",
+      "socialSync": "Synchronisation réseaux sociaux"
+    },
+    "validation": {
+      "required": "Veuillez remplir tous les champs obligatoires."
+    }
   }
 }
