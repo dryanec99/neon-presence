@@ -314,6 +314,85 @@ function buildTechnicalBriefEmail(data: Record<string, unknown>) {
   `;
 }
 
+function buildDetailedBriefEmail(data: Record<string, unknown>) {
+  const boolIcon = (val: unknown) => val ? "✅" : "❌";
+
+  const couriers = [data.courierEcont && "Econt", data.courierSpeedy && "Speedy", data.courierBoxNow && "BoxNow"].filter(Boolean).join(", ") || "None";
+  const payments = [data.paymentCod && "COD", data.paymentBank && "Bank Transfer", data.paymentCard && "Card"].filter(Boolean).join(", ") || "None";
+  const filters = [data.filterPrice && "Price", data.filterCategory && "Category", data.filterColor && "Color"].filter(Boolean).join(", ") || "None";
+  const chatbots = [data.chatMessenger && "Messenger", data.chatWhatsApp && "WhatsApp", data.chatViber && "Viber"].filter(Boolean).join(", ") || "None";
+  const marketing = [data.googleAnalytics && "Google Analytics", data.searchConsole && "Search Console", data.emailMailchimp && "Mailchimp", data.emailBrevo && "Brevo", data.popupSystem && "Pop-ups", data.socialSync && "Social Sync"].filter(Boolean).join(", ") || "None";
+
+  const section = (title: string, icon: string, rows: [string, string][]) => `
+    <div style="margin-bottom:24px;">
+      <h2 style="color:#7d3cff;font-size:16px;margin:0 0 12px;padding-bottom:8px;border-bottom:3px solid #7d3cff;">${icon} ${title}</h2>
+      <table style="width:100%;border-collapse:collapse;">
+        ${rows.map(([l, v], i) => `<tr style="${i % 2 === 0 ? 'background:rgba(125,60,255,0.05);' : ''}">
+          <td style="padding:10px 16px;font-weight:700;width:200px;color:#333;border-bottom:1px solid #e8d9b8;">${l}</td>
+          <td style="padding:10px 16px;color:#222;border-bottom:1px solid #e8d9b8;">${escapeHtml(v)}</td>
+        </tr>`).join("")}
+      </table>
+    </div>
+  `;
+
+  return `
+    <div style="font-family:'Segoe UI',Arial,sans-serif;max-width:700px;margin:0 auto;background:#fceed1;border-radius:12px;overflow:hidden;border:2px solid #7d3cff;">
+      <div style="background:linear-gradient(135deg,#7d3cff 0%,#6366f1 100%);padding:40px 32px;text-align:center;">
+        <h1 style="color:#fff;margin:0;font-size:28px;">📋 DETAILED PROJECT BRIEF</h1>
+        <p style="color:rgba(255,255,255,0.9);margin:12px 0 0;font-size:14px;">Comprehensive Technical Specification</p>
+        <p style="color:rgba(255,255,255,0.7);margin:8px 0 0;font-size:12px;">Submitted: ${new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</p>
+      </div>
+      <div style="padding:32px;">
+        ${section("PERSONAL INFO", "👤", [
+          ["Name", `${data.firstName || ""} ${data.lastName || ""}`],
+          ["Email", String(data.email || "N/A")],
+          ["Phone", String(data.phone || "N/A")],
+        ])}
+        ${section("PROJECT IDENTITY", "🏢", [
+          ["Project Type", String(data.projectType || "N/A")],
+          ["Domain", String(data.proposedDomain || "N/A")],
+          ["Redesign", boolIcon(data.isRedesign)],
+          ["Current Website", String(data.currentWebsite || "N/A")],
+        ])}
+        ${data.projectDescription ? `<div style="margin-bottom:24px;padding:16px;background:rgba(125,60,255,0.05);border-radius:8px;border-left:4px solid #7d3cff;"><strong style="color:#7d3cff;font-size:13px;">PROJECT DESCRIPTION</strong><p style="margin:8px 0 0;color:#333;line-height:1.6;font-size:14px;">${escapeHtml(String(data.projectDescription))}</p></div>` : ""}
+        ${section("DESIGN & STRUCTURE", "🎨", [
+          ["Innovative Design", boolIcon(data.designInnovative)],
+          ["Mobile Responsive", boolIcon(data.designResponsive)],
+          ["Content Protection", boolIcon(data.contentProtection)],
+          ["Menu Pages", String(data.menuStructure || "N/A")],
+        ])}
+        ${section("TECHNICAL / ADMIN", "⚙️", [
+          ["Admin Panel", boolIcon(data.adminPanel)],
+          ["Employee Roles", String(data.employeeRoles && data.employeeRoles !== "default" ? data.employeeRoles : "N/A")],
+          ["Video Training", boolIcon(data.videoTraining)],
+        ])}
+        ${section("SEO & SECURITY", "🔒", [
+          ["SSL Certificate", boolIcon(data.sslCertificate)],
+          ["GDPR Compliance", boolIcon(data.gdprCompliance)],
+          ["On-Page SEO", boolIcon(data.onPageSeo)],
+          ["Cache Optimization", boolIcon(data.cacheOptimization)],
+          ["Robots.txt", boolIcon(data.robotTxt)],
+        ])}
+        ${data.isEcommerce ? section("E-COMMERCE", "🛒", [
+          ["Couriers", couriers],
+          ["Payments", payments],
+          ["Filters", filters],
+          ["Chatbots", chatbots],
+        ]) : ""}
+        ${section("MARKETING & LOGISTICS", "📈", [
+          ["Marketing Tools", marketing],
+          ["Budget Range", String(data.budgetRange || "N/A")],
+          ["Launch Date", String(data.launchDate || "Flexible")],
+        ])}
+        ${data.additionalNotes ? `<div style="padding:16px;background:#fff;border-radius:8px;border:1px solid #e8d9b8;margin-top:16px;"><strong style="color:#7d3cff;font-size:13px;">ADDITIONAL NOTES</strong><p style="margin:8px 0 0;color:#333;line-height:1.6;font-size:14px;">${escapeHtml(String(data.additionalNotes))}</p></div>` : ""}
+      </div>
+      <div style="background:#333;padding:20px 32px;text-align:center;">
+        <p style="color:#999;margin:0;font-size:12px;">Detailed Brief submitted via MiForgiX Dev platform.</p>
+      </div>
+    </div>
+  `;
+}
+
 serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
@@ -330,11 +409,15 @@ serve(async (req) => {
 
     const isBlueprint = formType === "blueprint";
     const isBrief = formType === "brief";
+    const isDetailedBrief = formType === "detailed-brief";
     
     let subject: string;
     let html: string;
     
-    if (isBrief) {
+    if (isDetailedBrief) {
+      subject = `📋 DETAILED BRIEF — ${body.firstName || ""} ${body.lastName || ""} (${body.projectType || "Unknown"})`;
+      html = buildDetailedBriefEmail(body);
+    } else if (isBrief) {
       subject = `📋 TECHNICAL BRIEF — ${body.projectName || "Unknown"} (${body.companyName || "Unknown"})`;
       html = buildTechnicalBriefEmail(body);
     } else if (isBlueprint) {
