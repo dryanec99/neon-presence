@@ -18,6 +18,7 @@ import Quote from "./pages/Quote";
 import RequestForm from "./pages/RequestForm";
 import Blueprint from "./pages/Blueprint";
 import RequestBrief from "./pages/RequestBrief";
+import DetailedBrief from "./pages/DetailedBrief";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
