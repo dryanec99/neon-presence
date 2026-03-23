@@ -134,6 +134,12 @@ const Footer = () => {
               >
                 Option 2: Project Blueprint
               </Link>
+              <Link
+                to={getLocalizedPath('detailed-brief')}
+                className="px-4 py-2 rounded-lg border-2 border-primary/40 bg-primary/5 text-primary text-sm font-semibold hover:bg-primary/10 transition-colors"
+              >
+                Option 3: Detailed Brief
+              </Link>
             </div>
           </div>
 
