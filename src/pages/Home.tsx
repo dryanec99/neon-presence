@@ -10,6 +10,10 @@ import MagneticButton from '@/components/motion/MagneticButton';
 import MouseGlowCard from '@/components/motion/MouseGlowCard';
 import ScrollTimeline from '@/components/ScrollTimeline';
 import BrowserMockup from '@/components/BrowserMockup';
+import ParallaxLayer from '@/components/motion/ParallaxLayer';
+import AnimatedCounter from '@/components/motion/AnimatedCounter';
+import TypeWriter from '@/components/motion/TypeWriter';
+import SectionDivider from '@/components/SectionDivider';
 
 const Home = () => {
   const { t, i18n } = useTranslation();
@@ -82,10 +86,13 @@ const Home = () => {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
-        {/* Gradient mesh background */}
+        {/* Floating animated orbs */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/8 rounded-full blur-[120px]" />
-          <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-accent/6 rounded-full blur-[100px]" />
+          <div className="floating-orb floating-orb-1" />
+          <div className="floating-orb floating-orb-2" />
+          <div className="floating-orb floating-orb-3" />
+          <div className="floating-orb floating-orb-4" />
+          <div className="gradient-mesh-animated absolute inset-0" />
         </div>
 
         <div className="container mx-auto px-4 py-32 relative z-10">
@@ -103,14 +110,14 @@ const Home = () => {
                 </TextReveal>
               </div>
 
-              <motion.p
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ type: 'spring', damping: 25, stiffness: 180, delay: 0.3 }}
                 className="text-lg text-muted-foreground max-w-xl mb-10 leading-relaxed"
               >
-                {t('hero.subtitle')}
-              </motion.p>
+                <TypeWriter text={t('hero.subtitle')} delay={0.4} speed={0.02} />
+              </motion.div>
 
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -154,9 +161,11 @@ const Home = () => {
               </motion.div>
             </div>
 
-            {/* Browser mockup carousel */}
+            {/* Browser mockup carousel with parallax */}
             <div className="hidden lg:block">
-              <BrowserMockup />
+              <ParallaxLayer offset={30}>
+                <BrowserMockup />
+              </ParallaxLayer>
             </div>
           </div>
 
@@ -164,7 +173,7 @@ const Home = () => {
           <StaggerChildren className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 lg:hidden">
             {stats.map((stat) => (
               <div key={stat.labelKey} className="text-center">
-                <div className="text-3xl font-black text-primary mb-1">{stat.value}</div>
+                <AnimatedCounter value={stat.value} className="text-3xl font-black text-primary mb-1" />
                 <div className="text-xs text-muted-foreground">{t(stat.labelKey)}</div>
               </div>
             ))}
@@ -172,8 +181,10 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Why Choose Us — replacing client marquee */}
-      <section className="py-16 md:py-24 border-y-2 border-border">
+      <SectionDivider variant="wave" />
+
+      {/* Why Choose Us */}
+      <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <TextReveal as="h2" className="font-bold mb-4">
@@ -203,7 +214,7 @@ const Home = () => {
             ))}
           </StaggerChildren>
 
-          {/* Stats row */}
+          {/* Stats row with animated counters */}
           <div className="hidden lg:grid grid-cols-4 gap-6 mt-12">
             {stats.map((stat, i) => (
               <motion.div
@@ -214,7 +225,7 @@ const Home = () => {
                 transition={{ delay: i * 0.1 }}
                 className="text-center"
               >
-                <div className="text-4xl font-black text-primary mb-1">{stat.value}</div>
+                <AnimatedCounter value={stat.value} className="text-4xl font-black text-primary mb-1 block" />
                 <div className="text-sm text-muted-foreground">{t(stat.labelKey)}</div>
               </motion.div>
             ))}
@@ -222,11 +233,15 @@ const Home = () => {
         </div>
       </section>
 
+      <SectionDivider variant="curve" flip />
+
       {/* Methodology */}
       <section className="py-20 md:py-32">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <TextReveal as="h2" className="font-bold mb-4">{t('home.methodology')} <span className="text-primary">{t('home.methodologyHighlight')}</span></TextReveal>
+            <ParallaxLayer offset={20}>
+              <TextReveal as="h2" className="font-bold mb-4">{t('home.methodology')} <span className="text-primary">{t('home.methodologyHighlight')}</span></TextReveal>
+            </ParallaxLayer>
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -240,6 +255,8 @@ const Home = () => {
           <ScrollTimeline steps={methodologySteps} />
         </div>
       </section>
+
+      <SectionDivider variant="wave" />
 
       {/* AI Delivery Banner */}
       <section className="py-16 md:py-24 relative overflow-hidden">
@@ -270,6 +287,8 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      <SectionDivider variant="curve" flip />
 
       {/* Service Categories */}
       <section className="py-20 md:py-32">
@@ -339,6 +358,8 @@ const Home = () => {
         </div>
       </section>
 
+      <SectionDivider variant="wave" />
+
       {/* Testimonials */}
       <section className="py-20 md:py-32 relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
@@ -382,8 +403,10 @@ const Home = () => {
         </div>
       </section>
 
+      <SectionDivider variant="curve" flip />
+
       {/* Tech Marquee */}
-      <section className="py-16 border-y-2 border-border overflow-hidden relative">
+      <section className="py-16 overflow-hidden relative">
         <div className="container mx-auto px-4 mb-8 text-center">
           <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-widest">{t('home.integratedTech')}</h3>
         </div>
@@ -396,6 +419,8 @@ const Home = () => {
           ))}
         </div>
       </section>
+
+      <SectionDivider variant="wave" />
 
       {/* CTA Section */}
       <section className="py-20 md:py-32 relative overflow-hidden">

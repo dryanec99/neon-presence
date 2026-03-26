@@ -331,6 +331,87 @@
   }
 }
 
+/* Floating orbs */
+.floating-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  will-change: transform;
+  pointer-events: none;
+}
+.floating-orb-1 {
+  width: 400px;
+  height: 400px;
+  background: hsl(var(--primary) / 0.12);
+  top: 10%;
+  left: 15%;
+  animation: floatOrbit1 12s ease-in-out infinite;
+}
+.floating-orb-2 {
+  width: 300px;
+  height: 300px;
+  background: hsl(var(--accent) / 0.10);
+  bottom: 20%;
+  right: 10%;
+  animation: floatOrbit2 16s ease-in-out infinite;
+}
+.floating-orb-3 {
+  width: 250px;
+  height: 250px;
+  background: hsl(var(--primary) / 0.08);
+  top: 60%;
+  left: 50%;
+  animation: floatOrbit3 20s ease-in-out infinite;
+}
+.floating-orb-4 {
+  width: 200px;
+  height: 200px;
+  background: hsl(var(--accent) / 0.06);
+  top: 5%;
+  right: 30%;
+  animation: floatOrbit4 14s ease-in-out infinite;
+}
+
+@keyframes floatOrbit1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(40px, -30px) scale(1.05); }
+  66% { transform: translate(-20px, 20px) scale(0.95); }
+}
+@keyframes floatOrbit2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-30px, 40px) scale(1.08); }
+  66% { transform: translate(25px, -15px) scale(0.92); }
+}
+@keyframes floatOrbit3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(35px, -40px) scale(1.1); }
+}
+@keyframes floatOrbit4 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-25px, 30px) scale(1.06); }
+}
+
+/* Animated gradient mesh */
+.gradient-mesh-animated {
+  background: radial-gradient(ellipse at 20% 50%, hsl(var(--primary) / 0.04) 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 20%, hsl(var(--accent) / 0.04) 0%, transparent 50%),
+              radial-gradient(ellipse at 50% 80%, hsl(var(--primary) / 0.03) 0%, transparent 50%);
+  background-size: 200% 200%;
+  animation: meshShift 20s ease-in-out infinite;
+}
+@keyframes meshShift {
+  0%, 100% { background-position: 0% 0%, 100% 0%, 50% 100%; }
+  50% { background-position: 100% 100%, 0% 100%, 50% 0%; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .floating-orb,
+  .gradient-mesh-animated {
+    animation: none !important;
+  }
+}
+
 /* Fluid typography */
 h1 {
   font-size: clamp(2.25rem, 5vw + 0.5rem, 5rem);
