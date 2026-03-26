@@ -118,7 +118,24 @@ const Footer = () => {
             </div>
           </div>
 
-
+          {/* CEO Review — Intake Options */}
+          <div className="mt-12 pt-8 border-t border-border">
+            <h4 className="text-foreground font-semibold mb-4 text-sm uppercase tracking-widest">CEO Review — Intake Options</h4>
+            <div className="flex flex-wrap gap-4">
+              <Link to={getLocalizedPath('request-form')} className="text-sm text-primary hover:underline transition-colors">
+                → Classic Request Form
+              </Link>
+              <Link to={getLocalizedPath('blueprint')} className="text-sm text-primary hover:underline transition-colors">
+                → Blueprint Discovery
+              </Link>
+              <Link to={getLocalizedPath('request-brief')} className="text-sm text-primary hover:underline transition-colors">
+                → Request Brief
+              </Link>
+              <Link to={getLocalizedPath('detailed-brief')} className="text-sm text-primary hover:underline transition-colors">
+                → Detailed Brief
+              </Link>
+            </div>
+          </div>
 
           <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-muted-foreground text-sm">© {new Date().getFullYear()} MiForgiX Dev. {t('footer.rights')}</p>
