@@ -20,6 +20,7 @@ const Header = () => {
     { key: 'home', path: '' },
     { key: 'services', path: 'services' },
     { key: 'portfolio', path: 'portfolio' },
+    { key: 'pricing', path: 'pricing' },
     { key: 'blog', path: 'blog' },
     { key: 'contact', path: 'contact' },
   ];

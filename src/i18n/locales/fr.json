@@ -5,6 +5,7 @@
     "portfolio": "Portfolio",
     "blog": "Insights",
     "contact": "Contact",
+    "pricing": "Tarifs",
     "planProject": "Lancer un projet",
     "language": "Langue"
   },
@@ -30,7 +31,16 @@
     "learnMore": "En savoir plus",
     "testimonial1": "MiForgiX a livré notre flagship 3 semaines en avance. L'ingénierie est impeccable.",
     "testimonial2": "Le meilleur investissement de l'année. Nos taux de conversion ont triplé dès le premier mois.",
-    "testimonial3": "Livraison incroyablement rapide. Notre nouveau site se charge en moins d'1 seconde."
+    "testimonial3": "Livraison incroyablement rapide. Notre nouveau site se charge en moins d'1 seconde.",
+    "whyChooseUs": "Pourquoi les entreprises nous choisissent",
+    "whyChooseUsSubtitle": "Des résultats réels pour les entreprises bulgares depuis 2020",
+    "reason1Title": "Livraison ultra-rapide",
+    "reason1Desc": "La plupart des projets sont lancés en 2-4 semaines. Sans délais, sans excuses.",
+    "reason2Title": "Tarifs transparents",
+    "reason2Desc": "Des forfaits clairs en лв. Pas de frais cachés, pas de surprises.",
+    "reason3Title": "Support local bulgare",
+    "reason3Desc": "De vraies personnes qui parlent votre langue et comprennent votre marché.",
+    "trustBadge": "La confiance de plus de 150 entreprises bulgares"
   },
   "hero": {
     "title": "Construction complète de votre présence en ligne",
@@ -956,6 +966,51 @@
     },
     "validation": {
       "required": "Veuillez remplir tous les champs obligatoires."
+  },
+  "pricing": {
+    "title": "Tarifs transparents",
+    "subtitle": "Des forfaits clairs conçus pour les petites entreprises bulgares. Pas de frais cachés.",
+    "mostPopular": "Le plus populaire",
+    "getStarted": "Commencer",
+    "custom": "Nous contacter",
+    "deliveryLabel": "Livraison",
+    "tiers": {
+      "basic": {
+        "name": "Site web basique",
+        "price": "799",
+        "currency": "лв",
+        "period": "unique",
+        "description": "Parfait pour les petites entreprises qui ont besoin d'une présence en ligne professionnelle.",
+        "features": ["Jusqu'à 5 pages", "Design responsive mobile", "Formulaire de contact", "Configuration SEO de base", "Intégration Google Maps", "1 mois de support gratuit"],
+        "delivery": "2-3 semaines"
+      },
+      "ecommerce": {
+        "name": "Boutique en ligne",
+        "price": "1 999",
+        "currency": "лв",
+        "period": "unique",
+        "description": "Pour les entreprises prêtes à vendre en ligne avec une boutique complète.",
+        "features": ["Jusqu'à 100 produits", "Passerelle de paiement sécurisée", "Gestion des commandes", "Filtrage et recherche", "Checkout optimisé mobile", "3 mois de support gratuit"],
+        "delivery": "4-6 semaines"
+      },
+      "custom": {
+        "name": "Projet sur mesure",
+        "price": "Nous contacter",
+        "currency": "",
+        "period": "",
+        "description": "Projets complexes avec des exigences uniques et des fonctionnalités sur mesure.",
+        "features": ["Pages illimitées", "Fonctionnalités personnalisées", "Support multilingue", "Intégrations API", "Animations avancées", "12 mois de support prioritaire"],
+        "delivery": "6-12 semaines"
+      }
+    },
+    "faqTitle": "Questions fréquentes",
+    "faq": {
+      "0": { "q": "Qu'est-ce qui est inclus dans le prix ?", "a": "Tous les forfaits incluent design, développement, tests et déploiement. La configuration d'hébergement est incluse mais les coûts d'hébergement sont séparés." },
+      "1": { "q": "Proposez-vous des facilités de paiement ?", "a": "Oui, 50% d'acompte et 50% à la livraison pour tous les forfaits." },
+      "2": { "q": "Et l'hébergement et le domaine ?", "a": "Nous vous aidons à configurer l'hébergement (à partir de 10 лв/mois) et pouvons enregistrer votre domaine." },
+      "3": { "q": "Proposez-vous un support continu ?", "a": "Tous les forfaits incluent un support gratuit. Ensuite, les plans de maintenance démarrent à 99 лв/mois." },
+      "4": { "q": "Puis-je mettre à niveau mon forfait plus tard ?", "a": "Absolument ! Nous pouvons ajouter des fonctionnalités ou faire évoluer votre site à tout moment." }
     }
   }
+}
 }
