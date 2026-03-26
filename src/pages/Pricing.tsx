@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Check, ArrowRight, Clock, MessageSquare } from 'lucide-react';
+import { Check, ArrowRight, MessageSquare } from 'lucide-react';
 import { type LanguageCode } from '@/i18n';
 import SEOHead from '@/components/SEOHead';
 import TextReveal from '@/components/motion/TextReveal';
@@ -80,13 +80,6 @@ const Pricing = () => {
                       {!isCustom && (
                         <p className="text-xs text-muted-foreground mt-1">{t(`pricing.tiers.${tier}.period`)}</p>
                       )}
-                    </div>
-
-                    <div className="flex items-center gap-2 mb-6 px-3 py-2 rounded-lg bg-accent/10 border border-accent/20">
-                      <Clock className="w-4 h-4 text-accent" />
-                      <span className="text-sm font-medium text-foreground">
-                        {t('pricing.deliveryLabel')}: {t(`pricing.tiers.${tier}.delivery`)}
-                      </span>
                     </div>
 
                     <ul className="space-y-3 flex-1 mb-8">
