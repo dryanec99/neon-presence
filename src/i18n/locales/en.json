@@ -966,6 +966,51 @@
     },
     "validation": {
       "required": "Please fill in all required fields."
+  },
+  "pricing": {
+    "title": "Transparent Pricing",
+    "subtitle": "Clear packages designed for Bulgarian small businesses. No hidden fees.",
+    "mostPopular": "Most Popular",
+    "getStarted": "Get Started",
+    "custom": "Contact Us",
+    "deliveryLabel": "Delivery",
+    "tiers": {
+      "basic": {
+        "name": "Basic Website",
+        "price": "799",
+        "currency": "лв",
+        "period": "one-time",
+        "description": "Perfect for small businesses that need a professional online presence.",
+        "features": ["Up to 5 pages", "Mobile-responsive design", "Contact form", "Basic SEO setup", "Google Maps integration", "1 month free support"],
+        "delivery": "2-3 weeks"
+      },
+      "ecommerce": {
+        "name": "E-commerce Store",
+        "price": "1,999",
+        "currency": "лв",
+        "period": "one-time",
+        "description": "For businesses ready to sell online with a full-featured store.",
+        "features": ["Up to 100 products", "Secure payment gateway", "Order management", "Product filtering & search", "Mobile-optimized checkout", "3 months free support"],
+        "delivery": "4-6 weeks"
+      },
+      "custom": {
+        "name": "Custom Project",
+        "price": "Contact Us",
+        "currency": "",
+        "period": "",
+        "description": "Complex projects with unique requirements and custom functionality.",
+        "features": ["Unlimited pages", "Custom functionality", "Multi-language support", "API integrations", "Advanced animations", "12 months priority support"],
+        "delivery": "6-12 weeks"
+      }
+    },
+    "faqTitle": "Frequently Asked Questions",
+    "faq": {
+      "0": { "q": "What's included in the price?", "a": "All packages include design, development, testing, and deployment. Hosting setup is included but hosting costs are separate." },
+      "1": { "q": "Do you offer payment plans?", "a": "Yes, we offer 50% upfront and 50% on delivery for all packages." },
+      "2": { "q": "What about hosting and domain?", "a": "We help you set up hosting (from 10 лв/month) and can register your domain for you." },
+      "3": { "q": "Do you provide ongoing support?", "a": "All packages include free support. After that, maintenance plans start at 99 лв/month." },
+      "4": { "q": "Can I upgrade my package later?", "a": "Absolutely! We can add features or scale your website at any time." }
     }
   }
+}
 }
