@@ -818,7 +818,12 @@
     "connect": "Contact",
     "rights": "Tous droits réservés.",
     "privacy": "Politique de confidentialité",
-    "terms": "Conditions d'utilisation"
+    "terms": "Conditions d'utilisation",
+    "ceoReview": "Revue — Options de demande",
+    "classicRequest": "Demande classique",
+    "blueprintDiscovery": "Découverte Blueprint",
+    "requestBrief": "Demande brève",
+    "detailedBrief": "Demande détaillée"
   },
   "cta": {
     "title": "Prêt à transformer votre présence numérique ?",

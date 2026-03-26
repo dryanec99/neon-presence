@@ -818,7 +818,12 @@
     "connect": "Contact",
     "rights": "All rights reserved.",
     "privacy": "Privacy Policy",
-    "terms": "Terms of Service"
+    "terms": "Terms of Service",
+    "ceoReview": "CEO Review — Intake Options",
+    "classicRequest": "Classic Request Form",
+    "blueprintDiscovery": "Blueprint Discovery",
+    "requestBrief": "Request Brief",
+    "detailedBrief": "Detailed Brief"
   },
   "cta": {
     "title": "Ready to Transform Your Digital Presence?",
