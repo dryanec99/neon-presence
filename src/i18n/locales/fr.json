@@ -66,6 +66,23 @@
   },
   "services": {
     "title": "Compétences clés",
+    "systemStatus": "Tous les systèmes opérationnels",
+    "techSpecs": "Spécifications techniques",
+    "tabs": {
+      "web": "Écosystèmes Web",
+      "mobile": "Solutions Mobiles"
+    },
+    "specs": {
+      "webDesign": { "0": "Architecture : Composants", "1": "Frontend : React / Next.js", "2": "Performance : Chargement < 1s" },
+      "ecommerce": { "0": "Plateforme : Headless Commerce", "1": "Paiements : Stripe / PayPal", "2": "Base de données : PostgreSQL" },
+      "mobileApps": { "0": "Framework : React Native", "1": "Plateformes : iOS + Android", "2": "Backend : Cloud Functions" },
+      "googleAds": { "0": "Ciblage : Optimisé par IA", "1": "Suivi : Attribution complète", "2": "Rapports : Temps réel" },
+      "seoOptimization": { "0": "Audit : 200+ vérifications", "1": "Contenu : Schema Markup", "2": "Monitoring : Suivi de rang" },
+      "googleMyBusiness": { "0": "Fiches : Multi-sites", "1": "Avis : Réponse auto", "2": "Analyse : Données locales" },
+      "socialNetworks": { "0": "Plateformes : Meta / TikTok / X", "1": "Contenu : Assisté par IA", "2": "Analyse : Métriques" },
+      "onlineReputation": { "0": "Monitoring : Alertes 24/7", "1": "Réponse : Protocole de crise", "2": "Rapports : Analyse de sentiment" },
+      "emailMarketing": { "0": "Plateforme : Automatisation", "1": "Segmentation : Comportementale", "2": "Analyse : Tests A/B" }
+    },
     "subtitle": "Tout ce dont vous avez besoin pour dominer le paysage numérique",
     "specializedLabel": "services spécialisés",
     "bentoTitle": "Tout ce dont vous avez besoin pour",
