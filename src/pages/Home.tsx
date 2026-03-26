@@ -10,7 +10,6 @@ import MagneticButton from '@/components/motion/MagneticButton';
 import MouseGlowCard from '@/components/motion/MouseGlowCard';
 import ScrollTimeline from '@/components/ScrollTimeline';
 import BrowserMockup from '@/components/BrowserMockup';
-import heroMockup from '@/assets/hero-mockup.jpg';
 
 const Home = () => {
   const { t, i18n } = useTranslation();
