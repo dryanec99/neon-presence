@@ -8,11 +8,8 @@ import TextReveal from '@/components/motion/TextReveal';
 import StaggerChildren from '@/components/motion/StaggerChildren';
 import MagneticButton from '@/components/motion/MagneticButton';
 import MouseGlowCard from '@/components/motion/MouseGlowCard';
-import ScrollTimeline from '@/components/ScrollTimeline';
-import BrowserMockup from '@/components/BrowserMockup';
 import ParallaxLayer from '@/components/motion/ParallaxLayer';
 import AnimatedCounter from '@/components/motion/AnimatedCounter';
-import TypeWriter from '@/components/motion/TypeWriter';
 import SectionDivider from '@/components/SectionDivider';
 import ParticleField from '@/components/motion/ParticleField';
 
