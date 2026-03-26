@@ -8,11 +8,8 @@ import TextReveal from '@/components/motion/TextReveal';
 import StaggerChildren from '@/components/motion/StaggerChildren';
 import MagneticButton from '@/components/motion/MagneticButton';
 import MouseGlowCard from '@/components/motion/MouseGlowCard';
-import ScrollTimeline from '@/components/ScrollTimeline';
-import BrowserMockup from '@/components/BrowserMockup';
 import ParallaxLayer from '@/components/motion/ParallaxLayer';
 import AnimatedCounter from '@/components/motion/AnimatedCounter';
-import TypeWriter from '@/components/motion/TypeWriter';
 import SectionDivider from '@/components/SectionDivider';
 import ParticleField from '@/components/motion/ParticleField';
 
@@ -68,78 +65,163 @@ const Home = () => {
       <SEOHead title="MiForgiX Dev - Powerful Web Solutions" description={t('hero.subtitle')} />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-[hsl(240,10%,3%)]">
         <ParticleField />
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="floating-orb floating-orb-1" />
-          <div className="floating-orb floating-orb-2" />
-          <div className="floating-orb floating-orb-3" />
-          <div className="floating-orb floating-orb-4" />
-          <div className="gradient-mesh-animated absolute inset-0" />
+        {/* Animated mesh gradient — bottom-right corner */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute -bottom-1/4 -right-1/4 w-[800px] h-[800px] rounded-full opacity-30 blur-[160px] animate-pulse-slow"
+            style={{ background: 'radial-gradient(circle, hsl(262 80% 50% / 0.6), hsl(230 60% 30% / 0.3), transparent 70%)' }} />
+          <div className="absolute -top-1/4 -left-1/4 w-[600px] h-[600px] rounded-full opacity-20 blur-[120px] animate-pulse-slow"
+            style={{ background: 'radial-gradient(circle, hsl(230 70% 40% / 0.4), transparent 70%)', animationDelay: '2s' }} />
+          {/* Fine grid overlay */}
+          <div className="absolute inset-0 opacity-[0.03]"
+            style={{ backgroundImage: 'linear-gradient(hsl(0 0% 100% / 0.1) 1px, transparent 1px), linear-gradient(90deg, hsl(0 0% 100% / 0.1) 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
         </div>
 
         <div className="container mx-auto px-4 py-32 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* Left — Copy */}
             <div>
-              <div className="mb-6">
-                <TextReveal as="h1" className="font-black leading-[1.05] mb-2" delay={0.05}>
-                  <span className="text-foreground">{t('home.heroTitle1')}</span>
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-primary text-xs font-medium tracking-wide uppercase mb-8"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                {t('hero.badge')}
+              </motion.div>
+
+              <div className="mb-8">
+                <TextReveal as="h1" className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.08] tracking-[-0.03em] text-white mb-3" delay={0.05}>
+                  {t('home.heroLine1')}
                 </TextReveal>
-                <TextReveal as="h1" className="font-black leading-[1.05] mb-2" delay={0.12}>
-                  <span className="text-primary">{t('home.heroTitle2')}</span>
-                </TextReveal>
-                <TextReveal as="h1" className="font-black leading-[1.05]" delay={0.19}>
-                  <span className="text-highlight">{t('home.heroTitle3')}</span>
+                <TextReveal as="h1" className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.08] tracking-[-0.03em] text-primary" delay={0.15}>
+                  {t('home.heroLine2')}
                 </TextReveal>
               </div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
+              <motion.p
+                initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ type: 'spring', damping: 25, stiffness: 180, delay: 0.3 }}
-                className="text-lg text-muted-foreground max-w-xl mb-10 leading-relaxed"
+                transition={{ duration: 0.7, delay: 0.35 }}
+                className="text-base md:text-lg text-[hsl(220,10%,60%)] max-w-lg mb-10 leading-relaxed tracking-[-0.01em]"
               >
-                <TypeWriter text={t('hero.subtitle')} delay={0.4} speed={0.02} />
-              </motion.div>
+                {t('hero.subtitle')}
+              </motion.p>
 
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ type: 'spring', damping: 25, stiffness: 180, delay: 0.4 }}
+                transition={{ duration: 0.6, delay: 0.45 }}
                 className="flex flex-col sm:flex-row gap-4"
               >
                 <MagneticButton>
-                  <Link to={getLocalizedPath('quote')} className="btn-primary px-8 py-4 rounded-xl text-base font-semibold flex items-center gap-2 group">
-                    {t('home.planProject')}
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <Link
+                    to={getLocalizedPath('quote')}
+                    className="relative inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-sm tracking-wide group overflow-hidden transition-all hover:shadow-[0_0_30px_hsl(262_100%_68%/0.4)]"
+                  >
+                    <span className="relative z-10 flex items-center gap-2">
+                      {t('home.startProject')}
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </span>
                   </Link>
                 </MagneticButton>
-                <Link to={getLocalizedPath('portfolio')} className="btn-outline px-8 py-4 rounded-xl text-base font-semibold flex items-center gap-2 group">
-                  {t('hero.ctaSecondary')}
+                <Link
+                  to={getLocalizedPath('services')}
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-xl border border-[hsl(0,0%,20%)] text-[hsl(0,0%,75%)] font-semibold text-sm tracking-wide hover:border-primary/40 hover:text-primary transition-all group"
+                >
+                  {t('home.viewMethodology')}
                   <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </motion.div>
 
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className="mt-8 flex items-center gap-3">
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7 }} className="mt-10 flex items-center gap-3">
                 <div className="flex -space-x-1">
-                  {[...Array(5)].map((_, i) => (<Star key={i} className="w-4 h-4 fill-accent text-accent" />))}
+                  {[...Array(5)].map((_, i) => (<Star key={i} className="w-3.5 h-3.5 fill-primary/80 text-primary/80" />))}
                 </div>
-                <span className="text-sm text-muted-foreground font-medium">{t('home.trustBadge')}</span>
+                <span className="text-xs text-[hsl(220,10%,50%)] font-medium tracking-wide">{t('home.trustBadge')}</span>
               </motion.div>
             </div>
 
+            {/* Right — Glassmorphic Dashboard */}
             <div className="hidden lg:block">
-              <ParallaxLayer offset={30}>
-                <BrowserMockup />
+              <ParallaxLayer offset={20}>
+                <motion.div
+                  initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ type: 'spring', damping: 20, stiffness: 100, delay: 0.5 }}
+                  className="relative"
+                >
+                  {/* Glow behind card */}
+                  <div className="absolute -inset-8 rounded-3xl bg-primary/10 blur-[60px]" />
+
+                  {/* Main glass card */}
+                  <div className="relative rounded-2xl border border-[hsl(0,0%,15%)] bg-[hsl(240,6%,8%)/0.8] backdrop-blur-xl p-6 shadow-[0_40px_100px_-20px_hsl(262_100%_50%/0.15)]">
+                    {/* Top bar */}
+                    <div className="flex items-center justify-between mb-6">
+                      <div className="flex items-center gap-2">
+                        <div className="w-3 h-3 rounded-full bg-primary/60" />
+                        <span className="text-xs text-[hsl(0,0%,45%)] font-mono tracking-wider">DASHBOARD</span>
+                      </div>
+                      <div className="flex gap-1.5">
+                        <div className="w-2.5 h-2.5 rounded-full bg-[hsl(0,70%,50%)/0.5]" />
+                        <div className="w-2.5 h-2.5 rounded-full bg-[hsl(45,80%,55%)/0.5]" />
+                        <div className="w-2.5 h-2.5 rounded-full bg-[hsl(140,60%,45%)/0.5]" />
+                      </div>
+                    </div>
+
+                    {/* Metrics row */}
+                    <div className="grid grid-cols-3 gap-3 mb-5">
+                      {[
+                        { label: 'Conversion', val: '94.2%', trend: '+12%' },
+                        { label: 'Load Time', val: '0.8s', trend: '-45%' },
+                        { label: 'Uptime', val: '99.99%', trend: '→' },
+                      ].map((m) => (
+                        <div key={m.label} className="rounded-xl border border-[hsl(0,0%,12%)] bg-[hsl(240,5%,6%)] p-3">
+                          <div className="text-[10px] text-[hsl(0,0%,40%)] uppercase tracking-widest mb-1">{m.label}</div>
+                          <div className="text-lg font-bold text-white tracking-tight">{m.val}</div>
+                          <div className="text-[10px] text-primary font-medium">{m.trend}</div>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Faux chart bars */}
+                    <div className="rounded-xl border border-[hsl(0,0%,12%)] bg-[hsl(240,5%,6%)] p-4">
+                      <div className="text-[10px] text-[hsl(0,0%,40%)] uppercase tracking-widest mb-3">Performance</div>
+                      <div className="flex items-end gap-2 h-20">
+                        {[40, 65, 45, 80, 55, 90, 70, 95, 60, 85, 75, 100].map((h, i) => (
+                          <motion.div
+                            key={i}
+                            initial={{ height: 0 }}
+                            animate={{ height: `${h}%` }}
+                            transition={{ duration: 0.8, delay: 0.6 + i * 0.05, ease: 'easeOut' }}
+                            className="flex-1 rounded-sm bg-gradient-to-t from-primary/40 to-primary/80"
+                          />
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Bottom status */}
+                    <div className="mt-4 flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[hsl(140,60%,50%)] animate-pulse" />
+                        <span className="text-[10px] text-[hsl(0,0%,40%)] tracking-wider">ALL SYSTEMS OPERATIONAL</span>
+                      </div>
+                      <span className="text-[10px] text-[hsl(0,0%,30%)] font-mono">v3.2.1</span>
+                    </div>
+                  </div>
+                </motion.div>
               </ParallaxLayer>
             </div>
           </div>
 
+          {/* Stats row — mobile */}
           <StaggerChildren className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 lg:hidden">
             {stats.map((stat) => (
               <div key={stat.labelKey} className="text-center">
                 <AnimatedCounter value={stat.value} className="text-3xl font-black text-primary mb-1" />
-                <div className="text-xs text-muted-foreground">{t(stat.labelKey)}</div>
+                <div className="text-xs text-[hsl(220,10%,50%)]">{t(stat.labelKey)}</div>
               </div>
             ))}
           </StaggerChildren>

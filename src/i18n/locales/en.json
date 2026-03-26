@@ -10,10 +10,14 @@
     "language": "Language"
   },
   "home": {
+    "heroLine1": "Precision Engineering.",
+    "heroLine2": "Accelerated Delivery.",
     "heroTitle1": "Powerful Web",
     "heroTitle2": "Solutions",
     "heroTitle3": "for Your Business.",
     "availableNow": "Available Now",
+    "startProject": "Start a Project",
+    "viewMethodology": "View Our Methodology",
     "planProject": "Initiate Discovery",
     "methodology": "Velocity &",
     "methodologyHighlight": "Precision",
@@ -44,7 +48,7 @@
   },
   "hero": {
     "title": "Complete Construction of Your Online Presence",
-    "subtitle": "We engineer high-performance digital flagships — websites, applications, and growth strategies that convert visitors into loyal customers.",
+    "subtitle": "We build high-performance digital ecosystems for forward-thinking brands. Leveraging our proprietary development frameworks to move from strategy to deployment at industry-leading speeds.",
     "cta": "Initiate Discovery",
     "ctaSecondary": "Explore The Portfolio",
     "badge": "Digital Studio"

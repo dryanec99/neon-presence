@@ -10,10 +10,14 @@
     "language": "Langue"
   },
   "home": {
+    "heroLine1": "Ingénierie de précision.",
+    "heroLine2": "Livraison accélérée.",
     "heroTitle1": "Des solutions web",
     "heroTitle2": "puissantes",
     "heroTitle3": "pour votre entreprise.",
     "availableNow": "Disponible maintenant",
+    "startProject": "Lancer un projet",
+    "viewMethodology": "Notre méthodologie",
     "planProject": "Lancer un projet",
     "methodology": "Vélocité &",
     "methodologyHighlight": "Précision",
@@ -44,7 +48,7 @@
   },
   "hero": {
     "title": "Construction complète de votre présence en ligne",
-    "subtitle": "Nous créons des sites web, applications et stratégies numériques performants qui convertissent les visiteurs en clients.",
+    "subtitle": "Nous construisons des écosystèmes numériques haute performance pour les marques visionnaires. Nos frameworks propriétaires accélèrent le passage de la stratégie au déploiement.",
     "cta": "Commencer",
     "ctaSecondary": "Voir nos réalisations",
     "badge": "Agence Digitale"
