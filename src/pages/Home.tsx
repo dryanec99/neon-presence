@@ -10,7 +10,6 @@ import MagneticButton from '@/components/motion/MagneticButton';
 import MouseGlowCard from '@/components/motion/MouseGlowCard';
 import ScrollTimeline from '@/components/ScrollTimeline';
 import BrowserMockup from '@/components/BrowserMockup';
-import heroMockup from '@/assets/hero-mockup.jpg';
 
 const Home = () => {
   const { t, i18n } = useTranslation();
@@ -92,18 +91,6 @@ const Home = () => {
         <div className="container mx-auto px-4 py-32 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ type: 'spring', damping: 25, stiffness: 180 }}
-                className="flex items-center gap-3 mb-8"
-              >
-                <div className="flex items-center gap-2 px-4 py-2 rounded-full border-2 border-accent/50 bg-accent/10 text-foreground text-sm font-semibold">
-                  <span className="w-2.5 h-2.5 rounded-full bg-accent animate-pulse inline-block" />
-                  {t('hero.badge')} — {t('home.availableNow')}
-                </div>
-              </motion.div>
-
               <div className="mb-6">
                 <TextReveal as="h1" className="font-black leading-[1.05] mb-2" delay={0.05}>
                   <span className="text-foreground">{t('home.heroTitle1')}</span>
@@ -167,9 +154,9 @@ const Home = () => {
               </motion.div>
             </div>
 
-            {/* Browser mockup */}
+            {/* Browser mockup carousel */}
             <div className="hidden lg:block">
-              <BrowserMockup imageSrc={heroMockup} title="dnk-store.bg" />
+              <BrowserMockup />
             </div>
           </div>
 
