@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Globe, Search, Megaphone, Code, Smartphone, ShoppingCart, Zap, Star, ChevronRight, Clock, BadgeDollarSign, Headphones } from 'lucide-react';
 import { type LanguageCode } from '@/i18n';
+import BrowserMockup from '@/components/BrowserMockup';
 import SEOHead from '@/components/SEOHead';
 import TextReveal from '@/components/motion/TextReveal';
 import StaggerChildren from '@/components/motion/StaggerChildren';
