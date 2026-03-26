@@ -59,9 +59,10 @@ const PreviewModal = ({ url, title, open, onClose }: PreviewModalProps) => {
 
             <button
               onClick={onClose}
-              className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"
+              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-destructive/10 text-destructive hover:bg-destructive hover:text-destructive-foreground border border-destructive/20 hover:border-destructive font-medium text-sm transition-all duration-200"
             >
-              <X className="w-5 h-5" />
+              <X className="w-4 h-4" />
+              {t('portfolio.closePreview', 'Close')}
             </button>
           </div>
 
