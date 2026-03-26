@@ -66,6 +66,23 @@
   },
   "services": {
     "title": "Core Capabilities",
+    "systemStatus": "All Systems Operational",
+    "techSpecs": "Technical Specs",
+    "tabs": {
+      "web": "Web Ecosystems",
+      "mobile": "Mobile Solutions"
+    },
+    "specs": {
+      "webDesign": { "0": "Architecture: Component-Based", "1": "Frontend: React / Next.js", "2": "Performance: Sub-1s Load" },
+      "ecommerce": { "0": "Platform: Headless Commerce", "1": "Payments: Stripe / PayPal", "2": "Database: Real-time PostgreSQL" },
+      "mobileApps": { "0": "Framework: React Native", "1": "Platforms: iOS + Android", "2": "Backend: Cloud Functions" },
+      "googleAds": { "0": "Targeting: AI-Optimized", "1": "Tracking: Full Attribution", "2": "Reporting: Real-time Dashboard" },
+      "seoOptimization": { "0": "Audit: 200+ Technical Checks", "1": "Content: Schema Markup", "2": "Monitoring: Rank Tracking" },
+      "googleMyBusiness": { "0": "Listings: Multi-Location", "1": "Reviews: Auto-Response", "2": "Analytics: Local Insights" },
+      "socialNetworks": { "0": "Platforms: Meta / TikTok / X", "1": "Content: AI-Assisted", "2": "Analytics: Engagement Metrics" },
+      "onlineReputation": { "0": "Monitoring: 24/7 Alerts", "1": "Response: Crisis Protocol", "2": "Reporting: Sentiment Analysis" },
+      "emailMarketing": { "0": "Platform: Advanced Automation", "1": "Segmentation: Behavioral", "2": "Analytics: A/B Testing" }
+    },
     "subtitle": "Everything you need to dominate the digital landscape",
     "specializedLabel": "Specialized Services",
     "bentoTitle": "Everything You Need to",
