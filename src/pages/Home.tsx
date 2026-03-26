@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Globe, Search, Megaphone, Code, Smartphone, ShoppingCart, Zap, Star, ChevronRight, Clock, BadgeDollarSign, Headphones } from 'lucide-react';
 import { type LanguageCode } from '@/i18n';
+import BrowserMockup from '@/components/BrowserMockup';
 import SEOHead from '@/components/SEOHead';
 import TextReveal from '@/components/motion/TextReveal';
 import StaggerChildren from '@/components/motion/StaggerChildren';
@@ -82,16 +83,6 @@ const Home = () => {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Left — Copy */}
             <div>
-              <motion.div
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-primary text-xs font-medium tracking-wide uppercase mb-8"
-              >
-                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-                {t('hero.badge')}
-              </motion.div>
-
               <div className="mb-8">
                 <TextReveal as="h1" className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.08] tracking-[-0.03em] text-white mb-3" delay={0.05}>
                   {t('home.heroLine1')}
@@ -144,74 +135,10 @@ const Home = () => {
               </motion.div>
             </div>
 
-            {/* Right — Glassmorphic Dashboard */}
+            {/* Right — Project Showcase */}
             <div className="hidden lg:block">
               <ParallaxLayer offset={20}>
-                <motion.div
-                  initial={{ opacity: 0, y: 40, scale: 0.95 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  transition={{ type: 'spring', damping: 20, stiffness: 100, delay: 0.5 }}
-                  className="relative"
-                >
-                  {/* Glow behind card */}
-                  <div className="absolute -inset-8 rounded-3xl bg-primary/10 blur-[60px]" />
-
-                  {/* Main glass card */}
-                  <div className="relative rounded-2xl border border-[hsl(0,0%,15%)] bg-[hsl(240,6%,8%)/0.8] backdrop-blur-xl p-6 shadow-[0_40px_100px_-20px_hsl(262_100%_50%/0.15)]">
-                    {/* Top bar */}
-                    <div className="flex items-center justify-between mb-6">
-                      <div className="flex items-center gap-2">
-                        <div className="w-3 h-3 rounded-full bg-primary/60" />
-                        <span className="text-xs text-[hsl(0,0%,45%)] font-mono tracking-wider">DASHBOARD</span>
-                      </div>
-                      <div className="flex gap-1.5">
-                        <div className="w-2.5 h-2.5 rounded-full bg-[hsl(0,70%,50%)/0.5]" />
-                        <div className="w-2.5 h-2.5 rounded-full bg-[hsl(45,80%,55%)/0.5]" />
-                        <div className="w-2.5 h-2.5 rounded-full bg-[hsl(140,60%,45%)/0.5]" />
-                      </div>
-                    </div>
-
-                    {/* Metrics row */}
-                    <div className="grid grid-cols-3 gap-3 mb-5">
-                      {[
-                        { label: 'Conversion', val: '94.2%', trend: '+12%' },
-                        { label: 'Load Time', val: '0.8s', trend: '-45%' },
-                        { label: 'Uptime', val: '99.99%', trend: '→' },
-                      ].map((m) => (
-                        <div key={m.label} className="rounded-xl border border-[hsl(0,0%,12%)] bg-[hsl(240,5%,6%)] p-3">
-                          <div className="text-[10px] text-[hsl(0,0%,40%)] uppercase tracking-widest mb-1">{m.label}</div>
-                          <div className="text-lg font-bold text-white tracking-tight">{m.val}</div>
-                          <div className="text-[10px] text-primary font-medium">{m.trend}</div>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Faux chart bars */}
-                    <div className="rounded-xl border border-[hsl(0,0%,12%)] bg-[hsl(240,5%,6%)] p-4">
-                      <div className="text-[10px] text-[hsl(0,0%,40%)] uppercase tracking-widest mb-3">Performance</div>
-                      <div className="flex items-end gap-2 h-20">
-                        {[40, 65, 45, 80, 55, 90, 70, 95, 60, 85, 75, 100].map((h, i) => (
-                          <motion.div
-                            key={i}
-                            initial={{ height: 0 }}
-                            animate={{ height: `${h}%` }}
-                            transition={{ duration: 0.8, delay: 0.6 + i * 0.05, ease: 'easeOut' }}
-                            className="flex-1 rounded-sm bg-gradient-to-t from-primary/40 to-primary/80"
-                          />
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Bottom status */}
-                    <div className="mt-4 flex items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[hsl(140,60%,50%)] animate-pulse" />
-                        <span className="text-[10px] text-[hsl(0,0%,40%)] tracking-wider">ALL SYSTEMS OPERATIONAL</span>
-                      </div>
-                      <span className="text-[10px] text-[hsl(0,0%,30%)] font-mono">v3.2.1</span>
-                    </div>
-                  </div>
-                </motion.div>
+                <BrowserMockup className="max-w-lg ml-auto" />
               </ParallaxLayer>
             </div>
           </div>
