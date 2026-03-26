@@ -4,6 +4,11 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Calendar, Clock, User } from 'lucide-react';
 import { type LanguageCode } from '@/i18n';
 import SEOHead from '@/components/SEOHead';
+import TextReveal from '@/components/motion/TextReveal';
+import StaggerChildren from '@/components/motion/StaggerChildren';
+import MouseGlowCard from '@/components/motion/MouseGlowCard';
+import MagneticButton from '@/components/motion/MagneticButton';
+import ParallaxLayer from '@/components/motion/ParallaxLayer';
 
 const BLOG_TITLES: Record<string, Record<string, string>> = {
   1: { en: 'How to Choose the Right Web Agency', bg: 'Как да изберете правилната уеб агенция', ru: 'Как выбрать правильное веб-агентство', fr: 'Comment choisir la bonne agence web' },
@@ -26,11 +31,7 @@ const BLOG_EXCERPTS: Record<string, Record<string, string>> = {
 const Blog = () => {
   const { t, i18n } = useTranslation();
   const currentLang = (i18n.language || 'en') as LanguageCode;
-
-  const getLocalizedPath = (path: string) => {
-    return `/${currentLang}${path ? `/${path}` : ''}`;
-  };
-
+  const getLocalizedPath = (path: string) => `/${currentLang}${path ? `/${path}` : ''}`;
   const getTitle = (id: number) => BLOG_TITLES[id]?.[currentLang] || BLOG_TITLES[id]?.en || '';
   const getExcerpt = (id: number) => BLOG_EXCERPTS[id]?.[currentLang] || BLOG_EXCERPTS[id]?.en || '';
 
@@ -45,55 +46,42 @@ const Blog = () => {
 
   return (
     <>
-      <SEOHead 
-        title={`${t('blog.title')} - MiForgiX Dev`}
-        description={t('blog.subtitle')}
-      />
+      <SEOHead title={`${t('blog.title')} - MiForgiX Dev`} description={t('blog.subtitle')} />
 
       {/* Hero */}
       <section className="py-20 md:py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-hero-glow pointer-events-none" />
         <div className="container mx-auto px-4 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto text-center"
-          >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">{t('blog.title')}</h1>
-            <p className="text-lg md:text-xl text-muted-foreground">{t('blog.subtitle')}</p>
-          </motion.div>
+          <div className="max-w-3xl mx-auto text-center">
+            <TextReveal as="h1" className="font-bold mb-6">{t('blog.title')}</TextReveal>
+            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} className="text-lg md:text-xl text-muted-foreground">
+              {t('blog.subtitle')}
+            </motion.p>
+          </div>
         </div>
       </section>
 
-      {/* Featured Post */}
+      {/* Featured Post with Parallax */}
       <section className="pb-16 md:pb-24">
         <div className="container mx-auto px-4">
-          <motion.article
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="group"
-          >
+          <motion.article initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="group">
             <div className="bento-item p-0 overflow-hidden grid md:grid-cols-2 gap-0">
-              <div className="relative aspect-[16/10] md:aspect-auto overflow-hidden">
+              <ParallaxLayer offset={15} className="relative aspect-[16/10] md:aspect-auto overflow-hidden">
                 <img src={blogPosts[0].image} alt={getTitle(blogPosts[0].id)} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-              </div>
+              </ParallaxLayer>
               <div className="p-6 md:p-10 flex flex-col justify-center">
                 <span className="text-primary text-sm font-medium mb-3">{blogPosts[0].category}</span>
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors">
-                  {getTitle(blogPosts[0].id)}
-                </h2>
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors">{getTitle(blogPosts[0].id)}</h2>
                 <p className="text-muted-foreground mb-6">{getExcerpt(blogPosts[0].id)}</p>
                 <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
                   <span className="flex items-center gap-1"><User className="w-4 h-4" />{blogPosts[0].author}</span>
                   <span className="flex items-center gap-1"><Calendar className="w-4 h-4" />{blogPosts[0].date}</span>
                   <span className="flex items-center gap-1"><Clock className="w-4 h-4" />{blogPosts[0].readTime}</span>
                 </div>
-                <button className="btn-primary px-6 py-3 rounded-lg text-sm self-start flex items-center gap-2">
-                  {t('blog.readMore')} <ArrowRight className="w-4 h-4" />
-                </button>
+                <MagneticButton>
+                  <button className="btn-primary px-6 py-3 rounded-lg text-sm self-start flex items-center gap-2">
+                    {t('blog.readMore')} <ArrowRight className="w-4 h-4" />
+                  </button>
+                </MagneticButton>
               </div>
             </div>
           </motion.article>
@@ -103,25 +91,16 @@ const Blog = () => {
       {/* Blog Grid */}
       <section className="py-16 md:py-24 bg-card/50">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {blogPosts.slice(1).map((post, index) => (
-              <motion.article
-                key={post.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group"
-              >
-                <div className="bento-item p-0 overflow-hidden h-full flex flex-col">
+          <StaggerChildren className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {blogPosts.slice(1).map((post) => (
+              <MouseGlowCard key={post.id} className="rounded-2xl">
+                <div className="bento-item p-0 overflow-hidden h-full flex flex-col group">
                   <div className="relative aspect-[16/10] overflow-hidden">
                     <img src={post.image} alt={getTitle(post.id)} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                   </div>
                   <div className="p-6 flex-1 flex flex-col">
                     <span className="text-primary text-xs font-medium mb-2">{post.category}</span>
-                    <h3 className="text-lg font-semibold mb-2 text-foreground group-hover:text-primary transition-colors">
-                      {getTitle(post.id)}
-                    </h3>
+                    <h3 className="text-lg font-semibold mb-2 text-foreground group-hover:text-primary transition-colors">{getTitle(post.id)}</h3>
                     <p className="text-muted-foreground text-sm mb-4 flex-1">{getExcerpt(post.id)}</p>
                     <div className="flex items-center gap-3 text-xs text-muted-foreground">
                       <span className="flex items-center gap-1"><Calendar className="w-3 h-3" />{post.date}</span>
@@ -129,32 +108,26 @@ const Blog = () => {
                     </div>
                   </div>
                 </div>
-              </motion.article>
+              </MouseGlowCard>
             ))}
-          </div>
+          </StaggerChildren>
         </div>
       </section>
 
       {/* CTA */}
       <section className="py-20 md:py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
         <div className="container mx-auto px-4 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto text-center"
-          >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">{t('cta.title')}</h2>
-            <p className="text-lg text-muted-foreground mb-10">{t('cta.subtitle')}</p>
-            <Link
-              to={getLocalizedPath('contact')}
-              className="btn-primary px-10 py-4 rounded-xl text-base font-semibold inline-flex items-center gap-2 group"
-            >
-              {t('cta.button')} <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </motion.div>
+          <div className="max-w-3xl mx-auto text-center">
+            <TextReveal as="h2" className="font-bold mb-6">{t('cta.title')}</TextReveal>
+            <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-lg text-muted-foreground mb-10">
+              {t('cta.subtitle')}
+            </motion.p>
+            <MagneticButton>
+              <Link to={getLocalizedPath('contact')} className="btn-primary px-10 py-4 rounded-xl text-base font-semibold inline-flex items-center gap-2 group">
+                {t('cta.button')} <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </MagneticButton>
+          </div>
         </div>
       </section>
     </>

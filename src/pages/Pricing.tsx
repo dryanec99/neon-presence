@@ -55,7 +55,7 @@ const Pricing = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className={`bento-item h-full flex flex-col relative ${isPopular ? 'border-primary ring-2 ring-primary/20' : ''}`}
+                    className={`bento-item h-full flex flex-col relative ${isPopular ? 'border-beam border-primary ring-2 ring-primary/20' : ''}`}
                   >
                     {isPopular && (
                       <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-primary text-primary-foreground text-xs font-bold uppercase tracking-wider">
@@ -101,11 +101,7 @@ const Pricing = () => {
                     <MagneticButton className="w-full">
                       <Link
                         to={getLocalizedPath('quote')}
-                        className={`w-full px-6 py-3.5 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 transition-all ${
-                          isPopular
-                            ? 'btn-primary'
-                            : 'btn-outline'
-                        }`}
+                        className={`w-full px-6 py-3.5 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 transition-all ${isPopular ? 'btn-primary' : 'btn-outline'}`}
                       >
                         {isCustom ? (
                           <><MessageSquare className="w-4 h-4" /> {t('pricing.custom')}</>

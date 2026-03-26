@@ -14,6 +14,7 @@ import ParallaxLayer from '@/components/motion/ParallaxLayer';
 import AnimatedCounter from '@/components/motion/AnimatedCounter';
 import TypeWriter from '@/components/motion/TypeWriter';
 import SectionDivider from '@/components/SectionDivider';
+import ParticleField from '@/components/motion/ParticleField';
 
 const Home = () => {
   const { t, i18n } = useTranslation();
@@ -49,24 +50,9 @@ const Home = () => {
   ];
 
   const testimonials = [
-    {
-      name: 'Elena Kostadinova',
-      role: 'CEO, FemmeFlora',
-      textKey: 'home.testimonial1',
-      rating: 5,
-    },
-    {
-      name: 'Ivan Petrov',
-      role: 'Director, Nexus Digital',
-      textKey: 'home.testimonial2',
-      rating: 5,
-    },
-    {
-      name: 'Maria Stefanova',
-      role: 'Founder, SmilePro Clinic',
-      textKey: 'home.testimonial3',
-      rating: 5,
-    },
+    { name: 'Elena Kostadinova', role: 'CEO, FemmeFlora', textKey: 'home.testimonial1', rating: 5 },
+    { name: 'Ivan Petrov', role: 'Director, Nexus Digital', textKey: 'home.testimonial2', rating: 5 },
+    { name: 'Maria Stefanova', role: 'Founder, SmilePro Clinic', textKey: 'home.testimonial3', rating: 5 },
   ];
 
   const methodologySteps = [
@@ -79,14 +65,11 @@ const Home = () => {
 
   return (
     <>
-      <SEOHead 
-        title="MiForgiX Dev - Powerful Web Solutions"
-        description={t('hero.subtitle')}
-      />
+      <SEOHead title="MiForgiX Dev - Powerful Web Solutions" description={t('hero.subtitle')} />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
-        {/* Floating animated orbs */}
+        <ParticleField />
         <div className="absolute inset-0 pointer-events-none">
           <div className="floating-orb floating-orb-1" />
           <div className="floating-orb floating-orb-2" />
@@ -126,42 +109,25 @@ const Home = () => {
                 className="flex flex-col sm:flex-row gap-4"
               >
                 <MagneticButton>
-                  <Link
-                    to={getLocalizedPath('quote')}
-                    className="btn-primary px-8 py-4 rounded-xl text-base font-semibold flex items-center gap-2 group"
-                  >
+                  <Link to={getLocalizedPath('quote')} className="btn-primary px-8 py-4 rounded-xl text-base font-semibold flex items-center gap-2 group">
                     {t('home.planProject')}
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </MagneticButton>
-                <Link
-                  to={getLocalizedPath('portfolio')}
-                  className="btn-outline px-8 py-4 rounded-xl text-base font-semibold flex items-center gap-2 group"
-                >
+                <Link to={getLocalizedPath('portfolio')} className="btn-outline px-8 py-4 rounded-xl text-base font-semibold flex items-center gap-2 group">
                   {t('hero.ctaSecondary')}
                   <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </motion.div>
 
-              {/* Trust badge */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.6 }}
-                className="mt-8 flex items-center gap-3"
-              >
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className="mt-8 flex items-center gap-3">
                 <div className="flex -space-x-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-accent text-accent" />
-                  ))}
+                  {[...Array(5)].map((_, i) => (<Star key={i} className="w-4 h-4 fill-accent text-accent" />))}
                 </div>
-                <span className="text-sm text-muted-foreground font-medium">
-                  {t('home.trustBadge')}
-                </span>
+                <span className="text-sm text-muted-foreground font-medium">{t('home.trustBadge')}</span>
               </motion.div>
             </div>
 
-            {/* Browser mockup carousel with parallax */}
             <div className="hidden lg:block">
               <ParallaxLayer offset={30}>
                 <BrowserMockup />
@@ -169,7 +135,6 @@ const Home = () => {
             </div>
           </div>
 
-          {/* Mobile stats */}
           <StaggerChildren className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 lg:hidden">
             {stats.map((stat) => (
               <div key={stat.labelKey} className="text-center">
@@ -187,15 +152,8 @@ const Home = () => {
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <TextReveal as="h2" className="font-bold mb-4">
-              {t('home.whyChooseUs')}
-            </TextReveal>
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="text-muted-foreground max-w-xl mx-auto"
-            >
+            <TextReveal as="h2" className="font-bold mb-4">{t('home.whyChooseUs')}</TextReveal>
+            <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-muted-foreground max-w-xl mx-auto">
               {t('home.whyChooseUsSubtitle')}
             </motion.p>
           </div>
@@ -214,17 +172,9 @@ const Home = () => {
             ))}
           </StaggerChildren>
 
-          {/* Stats row with animated counters */}
           <div className="hidden lg:grid grid-cols-4 gap-6 mt-12">
             {stats.map((stat, i) => (
-              <motion.div
-                key={stat.labelKey}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="text-center"
-              >
+              <motion.div key={stat.labelKey} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="text-center">
                 <AnimatedCounter value={stat.value} className="text-4xl font-black text-primary mb-1 block" />
                 <div className="text-sm text-muted-foreground">{t(stat.labelKey)}</div>
               </motion.div>
@@ -242,16 +192,10 @@ const Home = () => {
             <ParallaxLayer offset={20}>
               <TextReveal as="h2" className="font-bold mb-4">{t('home.methodology')} <span className="text-primary">{t('home.methodologyHighlight')}</span></TextReveal>
             </ParallaxLayer>
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="text-muted-foreground max-w-xl mx-auto"
-            >
+            <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-muted-foreground max-w-xl mx-auto">
               {t('home.methodologySubtitle')}
             </motion.p>
           </div>
-
           <ScrollTimeline steps={methodologySteps} />
         </div>
       </section>
@@ -263,25 +207,14 @@ const Home = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-accent/10 via-accent/20 to-accent/10 pointer-events-none" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <motion.span
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 text-foreground text-sm font-medium mb-6 border-2 border-accent/30"
-            >
+            <motion.span initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 text-foreground text-sm font-medium mb-6 border-2 border-accent/30">
               <Zap className="w-4 h-4 text-primary" />
               {t('aiDelivery.badge')}
             </motion.span>
             <TextReveal as="h2" className="font-bold mb-4">
               <span className="text-primary">{t('aiDelivery.title')}</span>
             </TextReveal>
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="text-lg text-muted-foreground max-w-2xl mx-auto"
-            >
+            <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="text-lg text-muted-foreground max-w-2xl mx-auto">
               {t('aiDelivery.subtitle')}
             </motion.p>
           </div>
@@ -295,13 +228,7 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <TextReveal as="h2" className="font-bold mb-4">{t('services.title')}</TextReveal>
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.15 }}
-              className="text-lg text-muted-foreground max-w-2xl mx-auto"
-            >
+            <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.15 }} className="text-lg text-muted-foreground max-w-2xl mx-auto">
               {t('services.subtitle')}
             </motion.p>
           </div>
@@ -309,10 +236,7 @@ const Home = () => {
           <StaggerChildren className="grid md:grid-cols-3 gap-6 lg:gap-8">
             {serviceCategories.map((category) => (
               <MouseGlowCard key={category.key} className="rounded-2xl">
-                <Link
-                  to={getLocalizedPath('services')}
-                  className="bento-item block h-full group"
-                >
+                <Link to={getLocalizedPath('services')} className="bento-item block h-full group">
                   <div className="w-14 h-14 rounded-xl bg-accent/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                     <category.icon className="w-7 h-7 text-primary" />
                   </div>
@@ -337,20 +261,13 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <StaggerChildren className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
             {featuredServices.map((service, index) => (
-              <MouseGlowCard
-                key={service.key}
-                className={`rounded-2xl ${index === 0 ? 'md:col-span-2 lg:col-span-1' : ''}`}
-              >
+              <MouseGlowCard key={service.key} className={`rounded-2xl ${index === 0 ? 'md:col-span-2 lg:col-span-1' : ''}`}>
                 <div className="bento-item group h-full">
                   <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center mb-4 group-hover:bg-accent/30 transition-colors">
                     <service.icon className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="text-lg font-semibold mb-2 text-foreground">
-                    {t(`services.items.${service.key}.title`)}
-                  </h3>
-                  <p className="text-muted-foreground text-sm">
-                    {t(`services.items.${service.key}.description`)}
-                  </p>
+                  <h3 className="text-lg font-semibold mb-2 text-foreground">{t(`services.items.${service.key}.title`)}</h3>
+                  <p className="text-muted-foreground text-sm">{t(`services.items.${service.key}.description`)}</p>
                 </div>
               </MouseGlowCard>
             ))}
@@ -365,13 +282,7 @@ const Home = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <TextReveal as="h2" className="font-bold mb-4">{t('home.trustedBy')} <span className="text-primary">{t('home.trustedByHighlight')}</span></TextReveal>
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.15 }}
-              className="text-muted-foreground max-w-xl mx-auto"
-            >
+            <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.15 }} className="text-muted-foreground max-w-xl mx-auto">
               {t('home.trustedBySubtitle')}
             </motion.p>
           </div>
@@ -380,17 +291,11 @@ const Home = () => {
               <MouseGlowCard key={i} className="rounded-2xl">
                 <div className="bento-item h-full flex flex-col">
                   <div className="flex gap-1 mb-4">
-                    {Array.from({ length: testimonial.rating }).map((_, j) => (
-                      <Star key={j} className="w-4 h-4 fill-accent text-accent" />
-                    ))}
+                    {Array.from({ length: testimonial.rating }).map((_, j) => (<Star key={j} className="w-4 h-4 fill-accent text-accent" />))}
                   </div>
-                  <p className="text-muted-foreground text-sm leading-relaxed flex-1 mb-6">
-                    "{t(testimonial.textKey)}"
-                  </p>
+                  <p className="text-muted-foreground text-sm leading-relaxed flex-1 mb-6">"{t(testimonial.textKey)}"</p>
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-primary/15 flex items-center justify-center text-primary font-bold text-sm">
-                      {testimonial.name.charAt(0)}
-                    </div>
+                    <div className="w-10 h-10 rounded-full bg-primary/15 flex items-center justify-center text-primary font-bold text-sm">{testimonial.name.charAt(0)}</div>
                     <div>
                       <div className="text-sm font-semibold text-foreground">{testimonial.name}</div>
                       <div className="text-xs text-muted-foreground">{testimonial.role}</div>
@@ -405,17 +310,20 @@ const Home = () => {
 
       <SectionDivider variant="curve" flip />
 
-      {/* Tech Marquee */}
+      {/* Tech Marquee — Dual Track */}
       <section className="py-16 overflow-hidden relative">
         <div className="container mx-auto px-4 mb-8 text-center">
           <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-widest">{t('home.integratedTech')}</h3>
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background z-10 pointer-events-none" />
-        <div className="flex gap-16 animate-marquee whitespace-nowrap">
+        <div className="flex gap-16 animate-marquee whitespace-nowrap mb-4">
           {[...technologies, ...technologies, ...technologies, ...technologies].map((tech, i) => (
-            <span key={i} className="text-foreground/70 text-2xl font-bold tracking-wider uppercase shrink-0 hover:text-primary transition-colors cursor-default">
-              {tech}
-            </span>
+            <span key={i} className="text-foreground/70 text-2xl font-bold tracking-wider uppercase shrink-0 hover:text-primary transition-colors cursor-default">{tech}</span>
+          ))}
+        </div>
+        <div className="flex gap-16 animate-marquee-reverse whitespace-nowrap">
+          {[...technologies.reverse(), ...technologies, ...technologies, ...technologies].map((tech, i) => (
+            <span key={i} className="text-foreground/30 text-xl font-bold tracking-wider uppercase shrink-0 hover:text-primary transition-colors cursor-default">{tech}</span>
           ))}
         </div>
       </section>
@@ -427,35 +335,17 @@ const Home = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <TextReveal as="h2" className="font-bold mb-6">{t('cta.title')}</TextReveal>
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.15 }}
-              className="text-lg text-muted-foreground mb-10"
-            >
+            <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.15 }} className="text-lg text-muted-foreground mb-10">
               {t('cta.subtitle')}
             </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ type: 'spring', damping: 25, stiffness: 180, delay: 0.25 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
-            >
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ type: 'spring', damping: 25, stiffness: 180, delay: 0.25 }} className="flex flex-col sm:flex-row gap-4 justify-center">
               <MagneticButton>
-                <Link
-                  to={getLocalizedPath('quote')}
-                  className="btn-primary px-10 py-4 rounded-xl text-base font-semibold inline-flex items-center gap-2 group"
-                >
+                <Link to={getLocalizedPath('quote')} className="btn-primary px-10 py-4 rounded-xl text-base font-semibold inline-flex items-center gap-2 group">
                   {t('home.planProject')}
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </MagneticButton>
-              <Link
-                to={getLocalizedPath('pricing')}
-                className="btn-outline px-10 py-4 rounded-xl text-base font-semibold inline-flex items-center gap-2 group"
-              >
+              <Link to={getLocalizedPath('pricing')} className="btn-outline px-10 py-4 rounded-xl text-base font-semibold inline-flex items-center gap-2 group">
                 {t('nav.pricing')}
                 <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
