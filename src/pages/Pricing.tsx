@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Check, ArrowRight, Clock, MessageSquare } from 'lucide-react';
+import { Check, ArrowRight, MessageSquare } from 'lucide-react';
 import { type LanguageCode } from '@/i18n';
 import SEOHead from '@/components/SEOHead';
 import TextReveal from '@/components/motion/TextReveal';
