@@ -19,6 +19,7 @@ import RequestForm from "./pages/RequestForm";
 import Blueprint from "./pages/Blueprint";
 import RequestBrief from "./pages/RequestBrief";
 import DetailedBrief from "./pages/DetailedBrief";
+import Pricing from "./pages/Pricing";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -55,6 +56,7 @@ const App = () => (
             <Route path="services/:serviceSlug" element={<ServiceDetail />} />
             <Route path="portfolio" element={<Portfolio />} />
             <Route path="blog" element={<Blog />} />
+            <Route path="pricing" element={<Pricing />} />
             <Route path="contact" element={<Contact />} />
             <Route path="quote" element={<Quote />} />
             <Route path="request-form" element={<RequestForm />} />

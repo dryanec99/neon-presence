@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Globe, Search, Megaphone, Code, Smartphone, ShoppingCart, Zap, Star, ChevronRight } from 'lucide-react';
+import { ArrowRight, Globe, Search, Megaphone, Code, Smartphone, ShoppingCart, Zap, Star, ChevronRight, Clock, BadgeDollarSign, Headphones } from 'lucide-react';
 import { type LanguageCode } from '@/i18n';
 import SEOHead from '@/components/SEOHead';
 import TextReveal from '@/components/motion/TextReveal';
@@ -9,6 +9,8 @@ import StaggerChildren from '@/components/motion/StaggerChildren';
 import MagneticButton from '@/components/motion/MagneticButton';
 import MouseGlowCard from '@/components/motion/MouseGlowCard';
 import ScrollTimeline from '@/components/ScrollTimeline';
+import BrowserMockup from '@/components/BrowserMockup';
+import heroMockup from '@/assets/hero-mockup.jpg';
 
 const Home = () => {
   const { t, i18n } = useTranslation();
@@ -37,9 +39,10 @@ const Home = () => {
     { value: '24/7', labelKey: 'stats.support' },
   ];
 
-  const clients = [
-    'FemmeFlora', 'DailyMarket', 'SmilePro', 'Nexus Digital',
-    'TechForge', 'AuraStudio', 'VeloShop', 'MindBridge',
+  const reasons = [
+    { icon: Clock, titleKey: 'home.reason1Title', descKey: 'home.reason1Desc' },
+    { icon: BadgeDollarSign, titleKey: 'home.reason2Title', descKey: 'home.reason2Desc' },
+    { icon: Headphones, titleKey: 'home.reason3Title', descKey: 'home.reason3Desc' },
   ];
 
   const testimonials = [
@@ -80,8 +83,14 @@ const Home = () => {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
+        {/* Gradient mesh background */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/8 rounded-full blur-[120px]" />
+          <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-accent/6 rounded-full blur-[100px]" />
+        </div>
+
         <div className="container mx-auto px-4 py-32 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -139,22 +148,28 @@ const Home = () => {
                   <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </motion.div>
+
+              {/* Trust badge */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.6 }}
+                className="mt-8 flex items-center gap-3"
+              >
+                <div className="flex -space-x-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-accent text-accent" />
+                  ))}
+                </div>
+                <span className="text-sm text-muted-foreground font-medium">
+                  {t('home.trustBadge')}
+                </span>
+              </motion.div>
             </div>
 
-            {/* Stats bento */}
-            <div className="hidden lg:grid grid-cols-2 gap-4">
-              {stats.map((stat, i) => (
-                <motion.div
-                  key={stat.labelKey}
-                  initial={{ opacity: 0, y: 30, scale: 0.95 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  transition={{ type: 'spring', damping: 20, stiffness: 160, delay: 0.3 + i * 0.08 }}
-                  className="bento-item text-center"
-                >
-                  <div className="text-4xl font-black text-primary mb-1">{stat.value}</div>
-                  <div className="text-sm text-muted-foreground">{t(stat.labelKey)}</div>
-                </motion.div>
-              ))}
+            {/* Browser mockup */}
+            <div className="hidden lg:block">
+              <BrowserMockup imageSrc={heroMockup} title="dnk-store.bg" />
             </div>
           </div>
 
@@ -170,15 +185,53 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Client Marquee */}
-      <section className="py-12 border-y-2 border-border overflow-hidden relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background z-10 pointer-events-none" />
-        <div className="flex gap-12 animate-marquee whitespace-nowrap">
-          {[...clients, ...clients].map((client, i) => (
-            <span key={i} className="text-muted-foreground/60 text-sm font-semibold tracking-widest uppercase shrink-0 hover:text-primary transition-colors cursor-default">
-              {client}
-            </span>
-          ))}
+      {/* Why Choose Us — replacing client marquee */}
+      <section className="py-16 md:py-24 border-y-2 border-border">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <TextReveal as="h2" className="font-bold mb-4">
+              {t('home.whyChooseUs')}
+            </TextReveal>
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="text-muted-foreground max-w-xl mx-auto"
+            >
+              {t('home.whyChooseUsSubtitle')}
+            </motion.p>
+          </div>
+
+          <StaggerChildren className="grid md:grid-cols-3 gap-6 lg:gap-8">
+            {reasons.map((reason) => (
+              <MouseGlowCard key={reason.titleKey} className="rounded-2xl">
+                <div className="bento-item h-full text-center">
+                  <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-5 border-2 border-primary/20">
+                    <reason.icon className="w-8 h-8 text-primary" />
+                  </div>
+                  <h3 className="text-lg font-bold mb-2 text-foreground">{t(reason.titleKey)}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{t(reason.descKey)}</p>
+                </div>
+              </MouseGlowCard>
+            ))}
+          </StaggerChildren>
+
+          {/* Stats row */}
+          <div className="hidden lg:grid grid-cols-4 gap-6 mt-12">
+            {stats.map((stat, i) => (
+              <motion.div
+                key={stat.labelKey}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="text-center"
+              >
+                <div className="text-4xl font-black text-primary mb-1">{stat.value}</div>
+                <div className="text-sm text-muted-foreground">{t(stat.labelKey)}</div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -376,6 +429,7 @@ const Home = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ type: 'spring', damping: 25, stiffness: 180, delay: 0.25 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center"
             >
               <MagneticButton>
                 <Link
@@ -386,6 +440,13 @@ const Home = () => {
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </MagneticButton>
+              <Link
+                to={getLocalizedPath('pricing')}
+                className="btn-outline px-10 py-4 rounded-xl text-base font-semibold inline-flex items-center gap-2 group"
+              >
+                {t('nav.pricing')}
+                <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
             </motion.div>
           </div>
         </div>
