@@ -120,19 +120,19 @@ const Footer = () => {
 
           {/* CEO Review — Intake Options */}
           <div className="mt-12 pt-8 border-t border-border">
-            <h4 className="text-foreground font-semibold mb-4 text-sm uppercase tracking-widest">CEO Review — Intake Options</h4>
+            <h4 className="text-foreground font-semibold mb-4 text-sm uppercase tracking-widest">{t('footer.ceoReview')}</h4>
             <div className="flex flex-wrap gap-4">
               <Link to={getLocalizedPath('request-form')} className="text-sm text-primary hover:underline transition-colors">
-                → Classic Request Form
+                → {t('footer.classicRequest')}
               </Link>
               <Link to={getLocalizedPath('blueprint')} className="text-sm text-primary hover:underline transition-colors">
-                → Blueprint Discovery
+                → {t('footer.blueprintDiscovery')}
               </Link>
               <Link to={getLocalizedPath('request-brief')} className="text-sm text-primary hover:underline transition-colors">
-                → Request Brief
+                → {t('footer.requestBrief')}
               </Link>
               <Link to={getLocalizedPath('detailed-brief')} className="text-sm text-primary hover:underline transition-colors">
-                → Detailed Brief
+                → {t('footer.detailedBrief')}
               </Link>
             </div>
           </div>
