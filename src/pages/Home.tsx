@@ -155,9 +155,9 @@ const Home = () => {
               </motion.div>
             </div>
 
-            {/* Browser mockup */}
+            {/* Browser mockup carousel */}
             <div className="hidden lg:block">
-              <BrowserMockup imageSrc={heroMockup} title="dnk-store.bg" />
+              <BrowserMockup />
             </div>
           </div>
 
