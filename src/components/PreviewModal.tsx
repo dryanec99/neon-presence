@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { X, Monitor, Tablet, Smartphone } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -20,7 +20,20 @@ const PreviewModal = ({ url, title, open, onClose }: PreviewModalProps) => {
   const { t } = useTranslation();
   const [activeDevice, setActiveDevice] = useState<string>('desktop');
 
-  if (!open) return null;
+  const handleEscape = useCallback((e: KeyboardEvent) => {
+    if (e.key === 'Escape') onClose();
+  }, [onClose]);
+
+  useEffect(() => {
+    if (open) {
+      document.addEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'hidden';
+    }
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = '';
+    };
+  }, [open, handleEscape]);
 
   const currentWidth = DEVICES.find(d => d.key === activeDevice)?.width || '100%';
 
@@ -31,10 +44,10 @@ const PreviewModal = ({ url, title, open, onClose }: PreviewModalProps) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 bg-background/95 backdrop-blur-sm flex flex-col"
+          className="fixed inset-0 z-[100] bg-[hsl(240,6%,4%,0.97)] backdrop-blur-md flex flex-col"
         >
-          {/* Control Bar */}
-          <div className="flex items-center justify-between px-4 md:px-6 py-3 border-b border-border glass">
+          {/* Top bar */}
+          <div className="flex items-center justify-between px-4 md:px-6 py-3 border-b border-[hsl(0,0%,14%)] bg-[hsl(240,6%,8%)]">
             <h3 className="text-sm font-semibold text-foreground truncate max-w-[200px] md:max-w-none">
               {title}
             </h3>
@@ -57,25 +70,24 @@ const PreviewModal = ({ url, title, open, onClose }: PreviewModalProps) => {
               ))}
             </div>
 
+            {/* Close button - prominent */}
             <button
               onClick={onClose}
-              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-destructive/10 text-destructive hover:bg-destructive hover:text-destructive-foreground border border-destructive/20 hover:border-destructive font-medium text-sm transition-all duration-200"
+              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-red-500/15 text-red-400 hover:bg-red-500 hover:text-white border border-red-500/30 hover:border-red-500 font-semibold text-sm transition-all duration-200"
             >
               <X className="w-4 h-4" />
-              {t('portfolio.closePreview', 'Close')}
+              Close
+              <kbd className="hidden md:inline text-[10px] px-1.5 py-0.5 rounded bg-red-500/20 border border-red-500/30 font-mono">ESC</kbd>
             </button>
           </div>
 
-          {/* Iframe Container */}
+          {/* Iframe */}
           <div className="flex-1 flex items-start justify-center overflow-auto p-4 md:p-6">
             <motion.div
               layout
               transition={{ duration: 0.3, ease: 'easeInOut' }}
-              className="h-full rounded-xl overflow-hidden border border-border shadow-elevated bg-background"
-              style={{
-                width: currentWidth,
-                maxWidth: '100%',
-              }}
+              className="h-full rounded-xl overflow-hidden border border-[hsl(0,0%,14%)] shadow-[0_0_60px_-15px_hsl(0,0%,0%,0.5)] bg-background"
+              style={{ width: currentWidth, maxWidth: '100%' }}
             >
               <iframe
                 src={url}
@@ -85,6 +97,15 @@ const PreviewModal = ({ url, title, open, onClose }: PreviewModalProps) => {
               />
             </motion.div>
           </div>
+
+          {/* Floating close — always visible */}
+          <button
+            onClick={onClose}
+            className="fixed top-4 right-4 z-[101] w-12 h-12 rounded-full bg-red-500 text-white flex items-center justify-center shadow-[0_0_20px_hsl(0,80%,50%,0.4)] hover:scale-110 transition-transform md:hidden"
+            aria-label="Close preview"
+          >
+            <X className="w-5 h-5" />
+          </button>
         </motion.div>
       )}
     </AnimatePresence>
