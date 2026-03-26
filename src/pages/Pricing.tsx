@@ -82,13 +82,6 @@ const Pricing = () => {
                       )}
                     </div>
 
-                    <div className="flex items-center gap-2 mb-6 px-3 py-2 rounded-lg bg-accent/10 border border-accent/20">
-                      <Clock className="w-4 h-4 text-accent" />
-                      <span className="text-sm font-medium text-foreground">
-                        {t('pricing.deliveryLabel')}: {t(`pricing.tiers.${tier}.delivery`)}
-                      </span>
-                    </div>
-
                     <ul className="space-y-3 flex-1 mb-8">
                       {Array.isArray(features) && features.map((feature, i) => (
                         <li key={i} className="flex items-start gap-2">
