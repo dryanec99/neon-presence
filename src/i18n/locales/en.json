@@ -975,6 +975,7 @@
     },
     "validation": {
       "required": "Please fill in all required fields."
+    }
   },
   "pricing": {
     "title": "Transparent Pricing",
