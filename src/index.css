@@ -412,10 +412,20 @@
   50% { background-position: 100% 100%, 0% 100%, 50% 0%; }
 }
 
+/* Pulse slow for hero mesh */
+@keyframes pulseSlow {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.05); }
+}
+.animate-pulse-slow {
+  animation: pulseSlow 8s ease-in-out infinite;
+}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .floating-orb,
-  .gradient-mesh-animated {
+  .gradient-mesh-animated,
+  .animate-pulse-slow {
     animation: none !important;
   }
 }
