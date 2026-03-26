@@ -185,18 +185,44 @@ const Home = () => {
 
       <SectionDivider variant="curve" flip />
 
-      {/* Methodology */}
-      <section className="py-20 md:py-32">
-        <div className="container mx-auto px-4">
+      {/* Methodology — Velocity & Precision */}
+      <section className="py-20 md:py-32 relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px]" />
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <ParallaxLayer offset={20}>
-              <TextReveal as="h2" className="font-bold mb-4">{t('home.methodology')} <span className="text-primary">{t('home.methodologyHighlight')}</span></TextReveal>
+              <TextReveal as="h2" className="font-black mb-4 text-4xl md:text-5xl">
+                {t('home.methodology')} <span className="text-primary">{t('home.methodologyHighlight')}</span>
+              </TextReveal>
             </ParallaxLayer>
-            <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-muted-foreground max-w-xl mx-auto">
+            <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-muted-foreground max-w-2xl mx-auto text-lg">
               {t('home.methodologySubtitle')}
             </motion.p>
           </div>
-          <ScrollTimeline steps={methodologySteps} />
+
+          <StaggerChildren className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {methodologySteps.map((step, i) => (
+              <MouseGlowCard key={step.num} className="rounded-2xl">
+                <div className="bento-item group flex flex-col h-full min-h-[280px] relative overflow-hidden">
+                  <div className="absolute top-4 right-4 text-[80px] font-black leading-none text-primary/[0.07] group-hover:text-primary/15 transition-colors select-none">
+                    {step.num}
+                  </div>
+                  <div className="w-14 h-14 rounded-xl bg-primary/10 border-2 border-primary/20 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-primary/20 transition-all">
+                    <span className="text-highlight font-black text-xl">{step.num}</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                    {step.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed flex-1">
+                    {step.desc}
+                  </p>
+                  <div className="mt-6 h-1 w-12 rounded-full bg-primary/20 group-hover:w-full group-hover:bg-primary/40 transition-all duration-500" />
+                </div>
+              </MouseGlowCard>
+            ))}
+          </StaggerChildren>
         </div>
       </section>
 
