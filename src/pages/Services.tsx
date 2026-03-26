@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { motion, AnimatePresence, LayoutGroup } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Code, Smartphone, ShoppingCart, 
   Search, BarChart3, MapPin,
@@ -152,69 +152,67 @@ const Services = () => {
           </div>
 
           {/* Tech Cards Grid */}
-          <LayoutGroup>
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeTab}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto"
-              >
-                {activeServices.map((key, index) => {
-                  const Icon = iconMap[key];
-                  return (
-                    <motion.div
-                      key={key}
-                      initial={{ opacity: 0, y: 30 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * 0.06, duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeTab}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto"
+            >
+              {activeServices.map((key, index) => {
+                const Icon = iconMap[key];
+                return (
+                  <motion.div
+                    key={key}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.06, duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+                  >
+                    <Link
+                      to={getLocalizedPath(`services/${slugMap[key]}`)}
+                      className="group block h-full rounded-2xl border border-white/[0.08] bg-white/[0.02] p-6 hover:border-primary/40 hover:bg-primary/[0.03] transition-all duration-400 relative overflow-hidden"
                     >
-                      <Link
-                        to={getLocalizedPath(`services/${slugMap[key]}`)}
-                        className="group block h-full rounded-2xl border border-white/[0.08] bg-white/[0.02] p-6 hover:border-primary/40 hover:bg-primary/[0.03] transition-all duration-400 relative overflow-hidden"
-                      >
-                        {/* Hover glow */}
-                        <div className="absolute top-0 right-0 w-32 h-32 bg-primary/0 group-hover:bg-primary/10 rounded-full blur-[60px] transition-all duration-500 -translate-y-1/2 translate-x-1/2" />
+                      {/* Hover glow */}
+                      <div className="absolute top-0 right-0 w-32 h-32 bg-primary/0 group-hover:bg-primary/10 rounded-full blur-[60px] transition-all duration-500 -translate-y-1/2 translate-x-1/2" />
 
-                        <div className="flex items-center gap-3 mb-5">
-                          <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center">
-                            <Icon className="w-5 h-5 text-primary" />
+                      <div className="flex items-center gap-3 mb-5">
+                        <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center">
+                          <Icon className="w-5 h-5 text-primary" />
+                        </div>
+                        <h3 className="font-mono font-bold text-white tracking-tight text-base">
+                          {t(`services.items.${key}.title`)}
+                        </h3>
+                      </div>
+
+                      <p className="text-white/40 text-sm leading-relaxed mb-5">
+                        {t(`services.items.${key}.description`)}
+                      </p>
+
+                      {/* Technical Specs */}
+                      <div className="border-t border-white/[0.06] pt-4 space-y-2.5">
+                        <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-primary/60">
+                          {t('services.techSpecs')}
+                        </span>
+                        {specs[key]?.map((specKey, i) => (
+                          <div key={i} className="flex items-center gap-2">
+                            <Check className="w-3.5 h-3.5 text-green-400 shrink-0" />
+                            <span className="text-xs font-mono text-white/50">{t(specKey)}</span>
                           </div>
-                          <h3 className="font-mono font-bold text-white tracking-tight text-base">
-                            {t(`services.items.${key}.title`)}
-                          </h3>
-                        </div>
+                        ))}
+                      </div>
 
-                        <p className="text-white/40 text-sm leading-relaxed mb-5">
-                          {t(`services.items.${key}.description`)}
-                        </p>
-
-                        {/* Technical Specs */}
-                        <div className="border-t border-white/[0.06] pt-4 space-y-2.5">
-                          <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-primary/60">
-                            {t('services.techSpecs')}
-                          </span>
-                          {specs[key]?.map((specKey, i) => (
-                            <div key={i} className="flex items-center gap-2">
-                              <Check className="w-3.5 h-3.5 text-green-400 shrink-0" />
-                              <span className="text-xs font-mono text-white/50">{t(specKey)}</span>
-                            </div>
-                          ))}
-                        </div>
-
-                        <div className="mt-5 flex items-center gap-1.5 text-primary/60 text-xs font-mono group-hover:text-primary group-hover:gap-3 transition-all">
-                          {t('services.viewPricing')}
-                          <ExternalLink className="w-3 h-3" />
-                        </div>
-                      </Link>
-                    </motion.div>
-                  );
-                })}
-              </motion.div>
-            </AnimatePresence>
-          </LayoutGroup>
+                      <div className="mt-5 flex items-center gap-1.5 text-primary/60 text-xs font-mono group-hover:text-primary group-hover:gap-3 transition-all">
+                        {t('services.viewPricing')}
+                        <ExternalLink className="w-3 h-3" />
+                      </div>
+                    </Link>
+                  </motion.div>
+                );
+              })}
+            </motion.div>
+          </AnimatePresence>
         </div>
       </section>
 
