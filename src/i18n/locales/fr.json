@@ -975,6 +975,7 @@
     },
     "validation": {
       "required": "Veuillez remplir tous les champs obligatoires."
+    }
   },
   "pricing": {
     "title": "Tarifs transparents",
