@@ -4,6 +4,9 @@ import { useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Send, MapPin, Phone, Mail, Clock, CheckCircle } from 'lucide-react';
 import SEOHead from '@/components/SEOHead';
+import TextReveal from '@/components/motion/TextReveal';
+import StaggerChildren from '@/components/motion/StaggerChildren';
+import MagneticButton from '@/components/motion/MagneticButton';
 import { cn } from '@/lib/utils';
 import { toast } from '@/hooks/use-toast';
 
@@ -76,10 +79,12 @@ const Contact = () => {
 
       <section className="py-20 md:py-32 relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground">{t('contact.title')}</h1>
-            <p className="text-lg md:text-xl text-muted-foreground">{t('contact.subtitle')}</p>
-          </motion.div>
+          <div className="max-w-3xl mx-auto text-center">
+            <TextReveal as="h1" className="font-bold mb-6">{t('contact.title')}</TextReveal>
+            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} className="text-lg md:text-xl text-muted-foreground">
+              {t('contact.subtitle')}
+            </motion.p>
+          </div>
         </div>
       </section>
 
@@ -128,31 +133,39 @@ const Contact = () => {
                       <textarea id="message" name="message" value={formData.message} onChange={handleChange} rows={6} className={cn("form-input resize-none", errors.message && "border-destructive focus:ring-destructive")} maxLength={1000} />
                       {errors.message && <p className="mt-1 text-sm text-destructive">{errors.message}</p>}
                     </div>
-                    <button type="submit" disabled={isSubmitting} className="btn-primary w-full md:w-auto px-8 py-4 rounded-xl text-base font-semibold flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
-                      {isSubmitting ? <div className="w-5 h-5 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" /> : <>{t('contact.form.submit')} <Send className="w-5 h-5" /></>}
-                    </button>
+                    <MagneticButton>
+                      <button type="submit" disabled={isSubmitting} className="btn-primary w-full md:w-auto px-8 py-4 rounded-xl text-base font-semibold flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
+                        {isSubmitting ? <div className="w-5 h-5 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" /> : <>{t('contact.form.submit')} <Send className="w-5 h-5" /></>}
+                      </button>
+                    </MagneticButton>
                   </form>
                 )}
               </div>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="lg:col-span-2 space-y-6">
-              {contactInfo.map((info, index) => (
-                <div key={index} className="bento-item flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center shrink-0">
-                    <info.icon className="w-6 h-6 text-primary" />
+            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="lg:col-span-2">
+              <StaggerChildren className="space-y-6">
+                {contactInfo.map((info, index) => (
+                  <div key={index} className="bento-item flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center shrink-0 relative">
+                      <info.icon className="w-6 h-6 text-primary" />
+                      {/* Pulsing online dot for phone and email */}
+                      {(info.icon === Phone || info.icon === Mail) && (
+                        <span className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-green-500 border-2 border-card animate-pulse" />
+                      )}
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground mb-1">{t(info.labelKey)}</p>
+                      {info.href ? (
+                        <a href={info.href} className="text-foreground font-medium hover:text-primary transition-colors">{info.value}</a>
+                      ) : (
+                        <p className="text-foreground font-medium">{info.valueKey ? t(info.valueKey) : info.value}</p>
+                      )}
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground mb-1">{t(info.labelKey)}</p>
-                    {info.href ? (
-                      <a href={info.href} className="text-foreground font-medium hover:text-primary transition-colors">{info.value}</a>
-                    ) : (
-                      <p className="text-foreground font-medium">{info.valueKey ? t(info.valueKey) : info.value}</p>
-                    )}
-                  </div>
-                </div>
-              ))}
-              <div className="bento-item p-0 overflow-hidden aspect-[4/3] rounded-2xl border-2 border-border">
+                ))}
+              </StaggerChildren>
+              <div className="mt-6 bento-item p-0 overflow-hidden aspect-[4/3] rounded-2xl border-2 border-border">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d93720.20921920727!2d23.24374585!3d42.69576835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa8682cb317bf5%3A0x400a01269bf5e60!2sSofia%2C%20Bulgaria!5e0!3m2!1sen!2s!4v1704903600000!5m2!1sen!2s"
                   width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Location Map"

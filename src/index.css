@@ -325,6 +325,14 @@
     to { transform: translateX(-50%); }
   }
 
+  .animate-marquee-reverse {
+    animation: marquee-reverse 35s linear infinite;
+  }
+  @keyframes marquee-reverse {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+  }
+
   /* Text glow */
   .text-glow {
     text-shadow: 0 0 30px hsl(262 100% 62% / 0.4);

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Linkedin, Github, ArrowUp, Mail } from 'lucide-react';
 import { type LanguageCode } from '@/i18n';
+import SectionDivider from './SectionDivider';
 
 const XIcon = () => (
   <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
@@ -47,21 +48,18 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="bg-card/50 backdrop-blur-xl border-t-2 border-border">
+      <SectionDivider variant="wave" />
+      <footer className="bg-card/50 backdrop-blur-xl border-t-2 border-border relative z-10">
         <div className="container mx-auto px-4 py-16 md:py-20">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
-            {/* Column 1: Brand */}
             <div className="lg:col-span-1">
               <Link to={getLocalizedPath('')} className="inline-flex items-center gap-2 text-2xl font-bold mb-4 tracking-tight">
                 <span className="text-primary">MiForgiX</span>
                 <span className="text-foreground/70 font-light text-lg">DEV</span>
               </Link>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                {t('footer.tagline')}
-              </p>
+              <p className="text-muted-foreground text-sm leading-relaxed">{t('footer.tagline')}</p>
             </div>
 
-            {/* Column 2: Capabilities */}
             <div>
               <h4 className="text-foreground font-semibold mb-6 text-sm uppercase tracking-widest">{t('footer.capabilities')}</h4>
               <ul className="space-y-3">
@@ -75,7 +73,6 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Column 3: Studio */}
             <div>
               <h4 className="text-foreground font-semibold mb-6 text-sm uppercase tracking-widest">{t('footer.studioTitle')}</h4>
               <ul className="space-y-3">
@@ -89,7 +86,6 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Column 4: Contact */}
             <div>
               <h4 className="text-foreground font-semibold mb-6 text-sm uppercase tracking-widest">{t('footer.connect')}</h4>
               <ul className="space-y-3 mb-6">
@@ -101,17 +97,8 @@ const Footer = () => {
               </ul>
               <div className="flex gap-3">
                 {socialLinks.map((social) => (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    aria-label={social.label}
-                    className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300 border border-transparent hover:border-primary/20"
-                  >
-                    {typeof social.icon === 'function' && social.icon.toString().includes('svg') ? (
-                      <social.icon />
-                    ) : (
-                      <social.icon className="w-5 h-5" />
-                    )}
+                  <a key={social.label} href={social.href} aria-label={social.label} className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300 border border-transparent hover:border-primary/20">
+                    {typeof social.icon === 'function' && social.icon.toString().includes('svg') ? <social.icon /> : <social.icon className="w-5 h-5" />}
                   </a>
                 ))}
               </div>
@@ -122,18 +109,10 @@ const Footer = () => {
           <div className="mt-12 pt-8 border-t border-border">
             <h4 className="text-foreground font-semibold mb-4 text-sm uppercase tracking-widest">{t('footer.ceoReview')}</h4>
             <div className="flex flex-wrap gap-4">
-              <Link to={getLocalizedPath('request-form')} className="text-sm text-primary hover:underline transition-colors">
-                → {t('footer.classicRequest')}
-              </Link>
-              <Link to={getLocalizedPath('blueprint')} className="text-sm text-primary hover:underline transition-colors">
-                → {t('footer.blueprintDiscovery')}
-              </Link>
-              <Link to={getLocalizedPath('request-brief')} className="text-sm text-primary hover:underline transition-colors">
-                → {t('footer.requestBrief')}
-              </Link>
-              <Link to={getLocalizedPath('detailed-brief')} className="text-sm text-primary hover:underline transition-colors">
-                → {t('footer.detailedBrief')}
-              </Link>
+              <Link to={getLocalizedPath('request-form')} className="text-sm text-primary hover:underline transition-colors">→ {t('footer.classicRequest')}</Link>
+              <Link to={getLocalizedPath('blueprint')} className="text-sm text-primary hover:underline transition-colors">→ {t('footer.blueprintDiscovery')}</Link>
+              <Link to={getLocalizedPath('request-brief')} className="text-sm text-primary hover:underline transition-colors">→ {t('footer.requestBrief')}</Link>
+              <Link to={getLocalizedPath('detailed-brief')} className="text-sm text-primary hover:underline transition-colors">→ {t('footer.detailedBrief')}</Link>
             </div>
           </div>
 
@@ -147,7 +126,6 @@ const Footer = () => {
         </div>
       </footer>
 
-      {/* Back to Top */}
       <AnimatePresence>
         {showBackToTop && (
           <motion.button
