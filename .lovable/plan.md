@@ -1,37 +1,40 @@
 
 
-# Hero Section Text & Layout Fixes
+# Hero Text Fix + Live Website Embed + Services Page Stability
 
-## What Changes
+## 3 Changes
 
-### 1. Update hero headline text
-Replace "Precision Engineering. / Accelerated Delivery." with something more natural and client-facing. New copy:
-- **Line 1**: "We Build Digital Products"
-- **Line 2**: "That Drive Growth."
+### 1. Hero headline: "That Drive Growth." → "Architected for Performance."
+Update `home.heroLine2` in all 4 locale files (en, bg, fr, ru) with appropriate translations.
 
-### 2. Remove the purple "Digital Studio" badge
-Delete the badge pill element above the headline (lines 85-93 in Home.tsx). Update `hero.badge` key removal or just remove the JSX.
+### 2. Browser mockup → Live website iframe embed
+Replace the `BrowserMockup` component's image-based approach with actual `<iframe>` embeds of your websites. The browser chrome (URL bar, dots, navigation arrows) stays the same, but instead of `<img>`, render an `<iframe>` pointing to the real URLs.
 
-### 3. Replace the glassmorphic dashboard with a scrollable project showcase
-Remove the fake dashboard (metrics, chart bars, status bar) on the right side of the hero. Replace it with the existing `BrowserMockup` component which already has auto-rotating project screenshots with navigation arrows and dot indicators. This lets visitors see real work samples right in the hero.
+Changes to `src/components/BrowserMockup.tsx`:
+- Update `DEFAULT_PROJECTS` to use real URLs (the existing `.bg` domains)
+- Replace `<motion.img>` with `<iframe>` inside the content area
+- Add `pointer-events-none` on the iframe wrapper to prevent interaction stealing scroll, with a "Visit Site" overlay button
+- Keep the auto-rotate, arrows, and dots navigation
 
-### 4. Fix the CTA section phrase
-Replace "Ready to Transform Your Digital Presence?" with something direct like "Let's Build Something Great Together" across all 4 locale files.
+### 3. Services page — add error boundary / loading resilience
+The "sometimes nothing loads" issue is likely a race condition with Framer Motion's `AnimatePresence` + `LayoutGroup`. Fix:
+- In `src/pages/Services.tsx`, remove `LayoutGroup` wrapper (it can cause blank renders when combined with `AnimatePresence mode="wait"`)
+- Add `key={activeTab}` on the grid container to force clean re-renders
+- Keep `AnimatePresence` for the transition animation
 
 ## Files Changed
 
 | File | What |
 |---|---|
-| `src/pages/Home.tsx` | Remove badge, replace dashboard with `BrowserMockup`, update headline keys |
-| `src/i18n/locales/en.json` | New heroLine1/2, remove badge, update cta.title |
-| `src/i18n/locales/bg.json` | Same translations in Bulgarian |
-| `src/i18n/locales/fr.json` | Same translations in French |
-| `src/i18n/locales/ru.json` | Same translations in Russian |
+| `src/i18n/locales/en.json` | heroLine2 → "Architected for Performance." |
+| `src/i18n/locales/bg.json` | heroLine2 → "Проектирани за производителност." |
+| `src/i18n/locales/fr.json` | heroLine2 → "Conçus pour la performance." |
+| `src/i18n/locales/ru.json` | heroLine2 → "Спроектированы для производительности." |
+| `src/components/BrowserMockup.tsx` | Replace `<img>` with `<iframe>`, update default project URLs |
+| `src/pages/Services.tsx` | Remove `LayoutGroup`, stabilize AnimatePresence rendering |
 
-## Technical Details
-
-- Import `BrowserMockup` in Home.tsx (already exists at `src/components/BrowserMockup.tsx`)
-- The BrowserMockup component already has 4 default projects with auto-rotation, arrows, and dots — no extra config needed
-- Remove the entire glassmorphic dashboard block (lines ~148-216) and replace with `<BrowserMockup />`
-- The badge JSX block (lines 85-93) gets deleted entirely
+## Technical Notes
+- Iframes will use `sandbox="allow-scripts allow-same-origin"` and `loading="lazy"` for security and performance
+- The iframe will have `pointer-events-none` by default to prevent scroll hijacking, with a clickable overlay to open the site in a new tab
+- Removing `LayoutGroup` from Services fixes the intermittent blank-render bug without losing the tab-switch animation
 
