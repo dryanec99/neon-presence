@@ -80,15 +80,6 @@ const Services = () => {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ type: 'spring', damping: 25, stiffness: 180 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 text-primary text-sm font-mono font-medium mb-8 tracking-wider uppercase"
-            >
-              <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse inline-block" />
-              {t('services.systemStatus')}
-            </motion.div>
             <TextReveal as="h1" className="font-black mb-6 text-white">
               {t('services.title')}
             </TextReveal>
